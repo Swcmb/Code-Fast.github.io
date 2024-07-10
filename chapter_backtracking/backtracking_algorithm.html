@@ -1,0 +1,393 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Code-Fast | Code-Fast</title><meta name="author" content="Ianwusb"><meta name="copyright" content="Ianwusb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="回溯算法「回溯算法 backtracking algorithm」是一种通过穷举来解决问题的方法，它的核心思想是从一个初始状态出发，暴力搜索所有可能的解决方案，当遇到正确的解则将其记录，直到找到解或者尝试了所有可能的选择都无法找到解为止。 回溯算法通常采用“深度优先搜索”来遍历解空间。在二叉树章节中，我们提到前序、中序和后序遍历都属于深度优先搜索。接下来，我们利用前序遍历构造一个回溯问题，逐步了解">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Code-Fast">
+<meta property="og:url" content="http://example.com/chapter_backtracking/backtracking_algorithm.html">
+<meta property="og:site_name" content="Code-Fast">
+<meta property="og:description" content="回溯算法「回溯算法 backtracking algorithm」是一种通过穷举来解决问题的方法，它的核心思想是从一个初始状态出发，暴力搜索所有可能的解决方案，当遇到正确的解则将其记录，直到找到解或者尝试了所有可能的选择都无法找到解为止。 回溯算法通常采用“深度优先搜索”来遍历解空间。在二叉树章节中，我们提到前序、中序和后序遍历都属于深度优先搜索。接下来，我们利用前序遍历构造一个回溯问题，逐步了解">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-07-10T15:24:44.516Z">
+<meta property="article:modified_time" content="2024-07-10T15:24:44.516Z">
+<meta property="article:author" content="Ianwusb">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/chapter_backtracking/backtracking_algorithm.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Code-Fast',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-07-10 23:24:44'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_appendix"><span> 附录</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_array_and_linkedlist"><span> 数组和链表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_backtracking"><span> 回溯</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_computational_complexity"><span> 计算复杂性</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_data_structure"><span> 数据结构</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_divide_and_conquer"><span> 分治</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_dynamic_programming"><span> 动态规划</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_graph"><span> 图表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_greedy"><span> 贪心算法</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_hashing"><span> 哈希</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_heap"><span> 堆</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_introduction"><span> 介绍</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_preface"><span> 前言</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_reference"><span> 参考文献</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_searching"><span> 搜索</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_sorting"><span> 排序</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_stack_and_queue"><span> 堆栈和队列</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_tree"><span> 树</span></a></div><div class="menus_item"><a class="site-page" href="/link"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about"><span> 关于</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://github.com/Swcmb/Code-Fast.github.io"><span> Github</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Code-Fast"><span class="site-name">Code-Fast</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_appendix"><span> 附录</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_array_and_linkedlist"><span> 数组和链表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_backtracking"><span> 回溯</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_computational_complexity"><span> 计算复杂性</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_data_structure"><span> 数据结构</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_divide_and_conquer"><span> 分治</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_dynamic_programming"><span> 动态规划</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_graph"><span> 图表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_greedy"><span> 贪心算法</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_hashing"><span> 哈希</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_heap"><span> 堆</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_introduction"><span> 介绍</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_preface"><span> 前言</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_reference"><span> 参考文献</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_searching"><span> 搜索</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_sorting"><span> 排序</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_stack_and_queue"><span> 堆栈和队列</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_tree"><span> 树</span></a></div><div class="menus_item"><a class="site-page" href="/link"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about"><span> 关于</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://github.com/Swcmb/Code-Fast.github.io"><span> Github</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">Code-Fast</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h1><p>「回溯算法 backtracking algorithm」是一种通过穷举来解决问题的方法，它的核心思想是从一个初始状态出发，暴力搜索所有可能的解决方案，当遇到正确的解则将其记录，直到找到解或者尝试了所有可能的选择都无法找到解为止。</p>
+<p>回溯算法通常采用“深度优先搜索”来遍历解空间。在二叉树章节中，我们提到前序、中序和后序遍历都属于深度优先搜索。接下来，我们利用前序遍历构造一个回溯问题，逐步了解回溯算法的工作原理。</p>
+<p>!!! question “例题一”</p>
+<pre><code>给定一个二叉树，搜索并记录所有值为 $7$ 的节点，请返回节点列表。
+</code></pre>
+<p>对于此题，我们前序遍历这颗树，并判断当前节点的值是否为 $7$ ，若是则将该节点的值加入到结果列表 <code>res</code> 之中。相关过程实现如下图和以下代码所示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;preorder_traversal_i_compact&#125;-[class]&#123;&#125;-[func]&#123;pre_order&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/backtracking_algorithm.assets/preorder_find_nodes.png" alt="在前序遍历中搜索节点"></p>
+<h2 id="尝试与回退"><a href="#尝试与回退" class="headerlink" title="尝试与回退"></a>尝试与回退</h2><p><strong>之所以称之为回溯算法，是因为该算法在搜索解空间时会采用“尝试”与“回退”的策略</strong>。当算法在搜索过程中遇到某个状态无法继续前进或无法得到满足条件的解时，它会撤销上一步的选择，退回到之前的状态，并尝试其他可能的选择。</p>
+<p>对于例题一，访问每个节点都代表一次“尝试”，而越过叶节点或返回父节点的 <code>return</code> 则表示“回退”。</p>
+<p>值得说明的是，<strong>回退并不仅仅包括函数返回</strong>。为解释这一点，我们对例题一稍作拓展。</p>
+<p>!!! question “例题二”</p>
+<pre><code>在二叉树中搜索所有值为 $7$ 的节点，**请返回根节点到这些节点的路径**。
+</code></pre>
+<p>在例题一代码的基础上，我们需要借助一个列表 <code>path</code> 记录访问过的节点路径。当访问到值为 $7$ 的节点时，则复制 <code>path</code> 并添加进结果列表 <code>res</code> 。遍历完成后，<code>res</code> 中保存的就是所有的解。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;preorder_traversal_ii_compact&#125;-[class]&#123;&#125;-[func]&#123;pre_order&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在每次“尝试”中，我们通过将当前节点添加进 <code>path</code> 来记录路径；而在“回退”前，我们需要将该节点从 <code>path</code> 中弹出，<strong>以恢复本次尝试之前的状态</strong>。</p>
+<p>观察下图所示的过程，<strong>我们可以将尝试和回退理解为“前进”与“撤销”</strong>，两个操作是互为逆向的。</p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;1&gt;”<br>    <img src="/backtracking_algorithm.assets/preorder_find_paths_step1.png" alt="尝试与回退"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;2&gt;”<br>    <img src="/backtracking_algorithm.assets/preorder_find_paths_step2.png" alt="preorder_find_paths_step2"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;3&gt;”<br>    <img src="/backtracking_algorithm.assets/preorder_find_paths_step3.png" alt="preorder_find_paths_step3"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;4&gt;”<br>    <img src="/backtracking_algorithm.assets/preorder_find_paths_step4.png" alt="preorder_find_paths_step4"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;5&gt;”<br>    <img src="/backtracking_algorithm.assets/preorder_find_paths_step5.png" alt="preorder_find_paths_step5"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;6&gt;”<br>    <img src="/backtracking_algorithm.assets/preorder_find_paths_step6.png" alt="preorder_find_paths_step6"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;7&gt;”<br>    <img src="/backtracking_algorithm.assets/preorder_find_paths_step7.png" alt="preorder_find_paths_step7"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;8&gt;”<br>    <img src="/backtracking_algorithm.assets/preorder_find_paths_step8.png" alt="preorder_find_paths_step8"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;9&gt;”<br>    <img src="/backtracking_algorithm.assets/preorder_find_paths_step9.png" alt="preorder_find_paths_step9"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;10&gt;”<br>    <img src="/backtracking_algorithm.assets/preorder_find_paths_step10.png" alt="preorder_find_paths_step10"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;11&gt;”<br>    <img src="/backtracking_algorithm.assets/preorder_find_paths_step11.png" alt="preorder_find_paths_step11"></p>
+<h2 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h2><p>复杂的回溯问题通常包含一个或多个约束条件，<strong>约束条件通常可用于“剪枝”</strong>。</p>
+<p>!!! question “例题三”</p>
+<pre><code>在二叉树中搜索所有值为 $7$ 的节点，请返回根节点到这些节点的路径，**并要求路径中不包含值为 $3$ 的节点**。
+</code></pre>
+<p>为了满足以上约束条件，<strong>我们需要添加剪枝操作</strong>：在搜索过程中，若遇到值为 $3$ 的节点，则提前返回，停止继续搜索。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;preorder_traversal_iii_compact&#125;-[class]&#123;&#125;-[func]&#123;pre_order&#125;</span><br></pre></td></tr></table></figure>
+
+<p>剪枝是一个非常形象的名词。如下图所示，在搜索过程中，<strong>我们“剪掉”了不满足约束条件的搜索分支</strong>，避免许多无意义的尝试，从而提高了搜索效率。</p>
+<p><img src="/backtracking_algorithm.assets/preorder_find_constrained_paths.png" alt="根据约束条件剪枝"></p>
+<h2 id="框架代码"><a href="#框架代码" class="headerlink" title="框架代码"></a>框架代码</h2><p>接下来，我们尝试将回溯的“尝试、回退、剪枝”的主体框架提炼出来，提升代码的通用性。</p>
+<p>在以下框架代码中，<code>state</code> 表示问题的当前状态，<code>choices</code> 表示当前状态下可以做出的选择。</p>
+<p>&#x3D;&#x3D;&#x3D; “Python”</p>
+<pre><code><figure class="highlight python"><figcaption><span>title</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">backtrack</span>(<span class="params">state: State, choices: <span class="built_in">list</span>[choice], res: <span class="built_in">list</span>[state]</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;回溯算法框架&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 判断是否为解</span></span><br><span class="line">    <span class="keyword">if</span> is_solution(state):</span><br><span class="line">        <span class="comment"># 记录解</span></span><br><span class="line">        record_solution(state, res)</span><br><span class="line">        <span class="comment"># 停止继续搜索</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="comment"># 遍历所有选择</span></span><br><span class="line">    <span class="keyword">for</span> choice <span class="keyword">in</span> choices:</span><br><span class="line">        <span class="comment"># 剪枝：判断选择是否合法</span></span><br><span class="line">        <span class="keyword">if</span> is_valid(state, choice):</span><br><span class="line">            <span class="comment"># 尝试：做出选择，更新状态</span></span><br><span class="line">            make_choice(state, choice)</span><br><span class="line">            backtrack(state, choices, res)</span><br><span class="line">            <span class="comment"># 回退：撤销选择，恢复到之前的状态</span></span><br><span class="line">            undo_choice(state, choice)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D; “C++”</p>
+<pre><code><figure class="highlight cpp"><figcaption><span>title</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 回溯算法框架 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">backtrack</span><span class="params">(State *state, vector&lt;Choice *&gt; &amp;choices, vector&lt;State *&gt; &amp;res)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 判断是否为解</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">isSolution</span>(state)) &#123;</span><br><span class="line">        <span class="comment">// 记录解</span></span><br><span class="line">        <span class="built_in">recordSolution</span>(state, res);</span><br><span class="line">        <span class="comment">// 停止继续搜索</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历所有选择</span></span><br><span class="line">    <span class="keyword">for</span> (Choice choice : choices) &#123;</span><br><span class="line">        <span class="comment">// 剪枝：判断选择是否合法</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">isValid</span>(state, choice)) &#123;</span><br><span class="line">            <span class="comment">// 尝试：做出选择，更新状态</span></span><br><span class="line">            <span class="built_in">makeChoice</span>(state, choice);</span><br><span class="line">            <span class="built_in">backtrack</span>(state, choices, res);</span><br><span class="line">            <span class="comment">// 回退：撤销选择，恢复到之前的状态</span></span><br><span class="line">            <span class="built_in">undoChoice</span>(state, choice);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D; “Java”</p>
+<pre><code><figure class="highlight java"><figcaption><span>title</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 回溯算法框架 */</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">backtrack</span><span class="params">(State state, List&lt;Choice&gt; choices, List&lt;State&gt; res)</span> &#123;</span><br><span class="line">    <span class="comment">// 判断是否为解</span></span><br><span class="line">    <span class="keyword">if</span> (isSolution(state)) &#123;</span><br><span class="line">        <span class="comment">// 记录解</span></span><br><span class="line">        recordSolution(state, res);</span><br><span class="line">        <span class="comment">// 停止继续搜索</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历所有选择</span></span><br><span class="line">    <span class="keyword">for</span> (Choice choice : choices) &#123;</span><br><span class="line">        <span class="comment">// 剪枝：判断选择是否合法</span></span><br><span class="line">        <span class="keyword">if</span> (isValid(state, choice)) &#123;</span><br><span class="line">            <span class="comment">// 尝试：做出选择，更新状态</span></span><br><span class="line">            makeChoice(state, choice);</span><br><span class="line">            backtrack(state, choices, res);</span><br><span class="line">            <span class="comment">// 回退：撤销选择，恢复到之前的状态</span></span><br><span class="line">            undoChoice(state, choice);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D; “C#”</p>
+<pre><code><figure class="highlight csharp"><figcaption><span>title</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 回溯算法框架 */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Backtrack</span>(<span class="params">State state, List&lt;Choice&gt; choices, List&lt;State&gt; res</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 判断是否为解</span></span><br><span class="line">    <span class="keyword">if</span> (IsSolution(state)) &#123;</span><br><span class="line">        <span class="comment">// 记录解</span></span><br><span class="line">        RecordSolution(state, res);</span><br><span class="line">        <span class="comment">// 停止继续搜索</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历所有选择</span></span><br><span class="line">    <span class="keyword">foreach</span> (Choice choice <span class="keyword">in</span> choices) &#123;</span><br><span class="line">        <span class="comment">// 剪枝：判断选择是否合法</span></span><br><span class="line">        <span class="keyword">if</span> (IsValid(state, choice)) &#123;</span><br><span class="line">            <span class="comment">// 尝试：做出选择，更新状态</span></span><br><span class="line">            MakeChoice(state, choice);</span><br><span class="line">            Backtrack(state, choices, res);</span><br><span class="line">            <span class="comment">// 回退：撤销选择，恢复到之前的状态</span></span><br><span class="line">            UndoChoice(state, choice);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D; “Go”</p>
+<pre><code><figure class="highlight go"><figcaption><span>title</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 回溯算法框架 */</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">backtrack</span><span class="params">(state *State, choices []Choice, res *[]State)</span></span> &#123;</span><br><span class="line">    <span class="comment">// 判断是否为解</span></span><br><span class="line">    <span class="keyword">if</span> isSolution(state) &#123;</span><br><span class="line">        <span class="comment">// 记录解</span></span><br><span class="line">        recordSolution(state, res)</span><br><span class="line">        <span class="comment">// 停止继续搜索</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历所有选择</span></span><br><span class="line">    <span class="keyword">for</span> _, choice := <span class="keyword">range</span> choices &#123;</span><br><span class="line">        <span class="comment">// 剪枝：判断选择是否合法</span></span><br><span class="line">        <span class="keyword">if</span> isValid(state, choice) &#123;</span><br><span class="line">            <span class="comment">// 尝试：做出选择，更新状态</span></span><br><span class="line">            makeChoice(state, choice)</span><br><span class="line">            backtrack(state, choices, res)</span><br><span class="line">            <span class="comment">// 回退：撤销选择，恢复到之前的状态</span></span><br><span class="line">            undoChoice(state, choice)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D; “Swift”</p>
+<pre><code><figure class="highlight swift"><figcaption><span>title</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 回溯算法框架 */</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">backtrack</span>(<span class="params">state</span>: <span class="keyword">inout</span> <span class="type">State</span>, <span class="params">choices</span>: [<span class="type">Choice</span>], <span class="params">res</span>: <span class="keyword">inout</span> [<span class="type">State</span>]) &#123;</span><br><span class="line">    <span class="comment">// 判断是否为解</span></span><br><span class="line">    <span class="keyword">if</span> isSolution(state: state) &#123;</span><br><span class="line">        <span class="comment">// 记录解</span></span><br><span class="line">        recordSolution(state: state, res: <span class="operator">&amp;</span>res)</span><br><span class="line">        <span class="comment">// 停止继续搜索</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历所有选择</span></span><br><span class="line">    <span class="keyword">for</span> choice <span class="keyword">in</span> choices &#123;</span><br><span class="line">        <span class="comment">// 剪枝：判断选择是否合法</span></span><br><span class="line">        <span class="keyword">if</span> isValid(state: state, choice: choice) &#123;</span><br><span class="line">            <span class="comment">// 尝试：做出选择，更新状态</span></span><br><span class="line">            makeChoice(state: <span class="operator">&amp;</span>state, choice: choice)</span><br><span class="line">            backtrack(state: <span class="operator">&amp;</span>state, choices: choices, res: <span class="operator">&amp;</span>res)</span><br><span class="line">            <span class="comment">// 回退：撤销选择，恢复到之前的状态</span></span><br><span class="line">            undoChoice(state: <span class="operator">&amp;</span>state, choice: choice)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D; “JS”</p>
+<pre><code><figure class="highlight javascript"><figcaption><span>title</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 回溯算法框架 */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">backtrack</span>(<span class="params">state, choices, res</span>) &#123;</span><br><span class="line">    <span class="comment">// 判断是否为解</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">isSolution</span>(state)) &#123;</span><br><span class="line">        <span class="comment">// 记录解</span></span><br><span class="line">        <span class="title function_">recordSolution</span>(state, res);</span><br><span class="line">        <span class="comment">// 停止继续搜索</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历所有选择</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> choice <span class="keyword">of</span> choices) &#123;</span><br><span class="line">        <span class="comment">// 剪枝：判断选择是否合法</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="title function_">isValid</span>(state, choice)) &#123;</span><br><span class="line">            <span class="comment">// 尝试：做出选择，更新状态</span></span><br><span class="line">            <span class="title function_">makeChoice</span>(state, choice);</span><br><span class="line">            <span class="title function_">backtrack</span>(state, choices, res);</span><br><span class="line">            <span class="comment">// 回退：撤销选择，恢复到之前的状态</span></span><br><span class="line">            <span class="title function_">undoChoice</span>(state, choice);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D; “TS”</p>
+<pre><code><figure class="highlight typescript"><figcaption><span>title</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 回溯算法框架 */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">backtrack</span>(<span class="params"><span class="attr">state</span>: <span class="title class_">State</span>, <span class="attr">choices</span>: <span class="title class_">Choice</span>[], <span class="attr">res</span>: <span class="title class_">State</span>[]</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="comment">// 判断是否为解</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">isSolution</span>(state)) &#123;</span><br><span class="line">        <span class="comment">// 记录解</span></span><br><span class="line">        <span class="title function_">recordSolution</span>(state, res);</span><br><span class="line">        <span class="comment">// 停止继续搜索</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历所有选择</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> choice <span class="keyword">of</span> choices) &#123;</span><br><span class="line">        <span class="comment">// 剪枝：判断选择是否合法</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="title function_">isValid</span>(state, choice)) &#123;</span><br><span class="line">            <span class="comment">// 尝试：做出选择，更新状态</span></span><br><span class="line">            <span class="title function_">makeChoice</span>(state, choice);</span><br><span class="line">            <span class="title function_">backtrack</span>(state, choices, res);</span><br><span class="line">            <span class="comment">// 回退：撤销选择，恢复到之前的状态</span></span><br><span class="line">            <span class="title function_">undoChoice</span>(state, choice);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D; “Dart”</p>
+<pre><code><figure class="highlight dart"><figcaption><span>title</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 回溯算法框架 */</span></span><br><span class="line"><span class="keyword">void</span> backtrack(State state, <span class="built_in">List</span>&lt;Choice&gt;, <span class="built_in">List</span>&lt;State&gt; res) &#123;</span><br><span class="line">  <span class="comment">// 判断是否为解</span></span><br><span class="line">  <span class="keyword">if</span> (isSolution(state)) &#123;</span><br><span class="line">    <span class="comment">// 记录解</span></span><br><span class="line">    recordSolution(state, res);</span><br><span class="line">    <span class="comment">// 停止继续搜索</span></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 遍历所有选择</span></span><br><span class="line">  <span class="keyword">for</span> (Choice choice <span class="keyword">in</span> choices) &#123;</span><br><span class="line">    <span class="comment">// 剪枝：判断选择是否合法</span></span><br><span class="line">    <span class="keyword">if</span> (isValid(state, choice)) &#123;</span><br><span class="line">      <span class="comment">// 尝试：做出选择，更新状态</span></span><br><span class="line">      makeChoice(state, choice);</span><br><span class="line">      backtrack(state, choices, res);</span><br><span class="line">      <span class="comment">// 回退：撤销选择，恢复到之前的状态</span></span><br><span class="line">      undoChoice(state, choice);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D; “Rust”</p>
+<pre><code><figure class="highlight rust"><figcaption><span>title</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 回溯算法框架 */</span></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">backtrack</span>(state: &amp;<span class="keyword">mut</span> State, choices: &amp;<span class="type">Vec</span>&lt;Choice&gt;, res: &amp;<span class="keyword">mut</span> <span class="type">Vec</span>&lt;State&gt;) &#123;</span><br><span class="line">    <span class="comment">// 判断是否为解</span></span><br><span class="line">    <span class="keyword">if</span> <span class="title function_ invoke__">is_solution</span>(state) &#123;</span><br><span class="line">        <span class="comment">// 记录解</span></span><br><span class="line">        <span class="title function_ invoke__">record_solution</span>(state, res);</span><br><span class="line">        <span class="comment">// 停止继续搜索</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历所有选择</span></span><br><span class="line">    <span class="keyword">for</span> <span class="variable">choice</span> <span class="keyword">in</span> choices &#123;</span><br><span class="line">        <span class="comment">// 剪枝：判断选择是否合法</span></span><br><span class="line">        <span class="keyword">if</span> <span class="title function_ invoke__">is_valid</span>(state, choice) &#123;</span><br><span class="line">            <span class="comment">// 尝试：做出选择，更新状态</span></span><br><span class="line">            <span class="title function_ invoke__">make_choice</span>(state, choice);</span><br><span class="line">            <span class="title function_ invoke__">backtrack</span>(state, choices, res);</span><br><span class="line">            <span class="comment">// 回退：撤销选择，恢复到之前的状态</span></span><br><span class="line">            <span class="title function_ invoke__">undo_choice</span>(state, choice);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D; “C”</p>
+<pre><code><figure class="highlight c"><figcaption><span>title</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 回溯算法框架 */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">backtrack</span><span class="params">(State *state, Choice *choices, <span class="type">int</span> numChoices, State *res, <span class="type">int</span> numRes)</span> &#123;</span><br><span class="line">    <span class="comment">// 判断是否为解</span></span><br><span class="line">    <span class="keyword">if</span> (isSolution(state)) &#123;</span><br><span class="line">        <span class="comment">// 记录解</span></span><br><span class="line">        recordSolution(state, res, numRes);</span><br><span class="line">        <span class="comment">// 停止继续搜索</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历所有选择</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; numChoices; i++) &#123;</span><br><span class="line">        <span class="comment">// 剪枝：判断选择是否合法</span></span><br><span class="line">        <span class="keyword">if</span> (isValid(state, &amp;choices[i])) &#123;</span><br><span class="line">            <span class="comment">// 尝试：做出选择，更新状态</span></span><br><span class="line">            makeChoice(state, &amp;choices[i]);</span><br><span class="line">            backtrack(state, choices, numChoices, res, numRes);</span><br><span class="line">            <span class="comment">// 回退：撤销选择，恢复到之前的状态</span></span><br><span class="line">            undoChoice(state, &amp;choices[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D; “Zig”</p>
+<pre><code><figure class="highlight plaintext"><figcaption><span>title</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>接下来，我们基于框架代码来解决例题三。状态 <code>state</code> 为节点遍历路径，选择 <code>choices</code> 为当前节点的左子节点和右子节点，结果 <code>res</code> 是路径列表。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;preorder_traversal_iii_template&#125;-[class]&#123;&#125;-[func]&#123;backtrack&#125;</span><br></pre></td></tr></table></figure>
+
+<p>根据题意，我们在找到值为 $7$ 的节点后应该继续搜索，<strong>因此需要将记录解之后的 <code>return</code> 语句删除</strong>。下图对比了保留或删除 <code>return</code> 语句的搜索过程。</p>
+<p><img src="/backtracking_algorithm.assets/backtrack_remove_return_or_not.png" alt="保留与删除 return 的搜索过程对比"></p>
+<p>相比基于前序遍历的代码实现，基于回溯算法框架的代码实现虽然显得啰嗦，但通用性更好。实际上，<strong>许多回溯问题都可以在该框架下解决</strong>。我们只需根据具体问题来定义 <code>state</code> 和 <code>choices</code> ，并实现框架中的各个方法即可。</p>
+<h2 id="常用术语"><a href="#常用术语" class="headerlink" title="常用术语"></a>常用术语</h2><p>为了更清晰地分析算法问题，我们总结一下回溯算法中常用术语的含义，并对照例题三给出对应示例。</p>
+<p align="center"> 表 <id> &nbsp; 常见的回溯算法术语 </p>
+
+<table>
+<thead>
+<tr>
+<th>名词</th>
+<th>定义</th>
+<th>例题三</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>解 Solution</td>
+<td>解是满足问题特定条件的答案，可能有一个或多个</td>
+<td>根节点到节点 $7$ 的满足约束条件的所有路径</td>
+</tr>
+<tr>
+<td>约束条件 Constraint</td>
+<td>约束条件是问题中限制解的可行性的条件，通常用于剪枝</td>
+<td>路径中不包含节点 $3$</td>
+</tr>
+<tr>
+<td>状态 State</td>
+<td>状态表示问题在某一时刻的情况，包括已经做出的选择</td>
+<td>当前已访问的节点路径，即 <code>path</code> 节点列表</td>
+</tr>
+<tr>
+<td>尝试 Attempt</td>
+<td>尝试是根据可用选择来探索解空间的过程，包括做出选择，更新状态，检查是否为解</td>
+<td>递归访问左（右）子节点，将节点添加进 <code>path</code> ，判断节点的值是否为 $7$</td>
+</tr>
+<tr>
+<td>回退 Backtracking</td>
+<td>回退指遇到不满足约束条件的状态时，撤销前面做出的选择，回到上一个状态</td>
+<td>当越过叶节点、结束节点访问、遇到值为 $3$ 的节点时终止搜索，函数返回</td>
+</tr>
+<tr>
+<td>剪枝 Pruning</td>
+<td>剪枝是根据问题特性和约束条件避免无意义的搜索路径的方法，可提高搜索效率</td>
+<td>当遇到值为 $3$ 的节点时，则终止继续搜索</td>
+</tr>
+</tbody></table>
+<p>!!! tip</p>
+<pre><code>问题、解、状态等概念是通用的，在分治、回溯、动态规划、贪心等算法中都有涉及。
+</code></pre>
+<h2 id="优势与局限性"><a href="#优势与局限性" class="headerlink" title="优势与局限性"></a>优势与局限性</h2><p>回溯算法本质上是一种深度优先搜索算法，它尝试所有可能的解决方案直到找到满足条件的解。这种方法的优势在于它能够找到所有可能的解决方案，而且在合理的剪枝操作下，具有很高的效率。</p>
+<p>然而，在处理大规模或者复杂问题时，<strong>回溯算法的运行效率可能难以接受</strong>。</p>
+<ul>
+<li><strong>时间</strong>：回溯算法通常需要遍历状态空间的所有可能，时间复杂度可以达到指数阶或阶乘阶。</li>
+<li><strong>空间</strong>：在递归调用中需要保存当前的状态（例如路径、用于剪枝的辅助变量等），当深度很大时，空间需求可能会变得很大。</li>
+</ul>
+<p>即便如此，<strong>回溯算法仍然是某些搜索问题和约束满足问题的最佳解决方案</strong>。对于这些问题，由于无法预测哪些选择可生成有效的解，因此我们必须对所有可能的选择进行遍历。在这种情况下，<strong>关键是如何进行效率优化</strong>，常见的效率优化方法有两种。</p>
+<ul>
+<li><strong>剪枝</strong>：避免搜索那些肯定不会产生解的路径，从而节省时间和空间。</li>
+<li><strong>启发式搜索</strong>：在搜索过程中引入一些策略或者估计值，从而优先搜索最有可能产生有效解的路径。</li>
+</ul>
+<h2 id="回溯典型例题"><a href="#回溯典型例题" class="headerlink" title="回溯典型例题"></a>回溯典型例题</h2><p>回溯算法可用于解决许多搜索问题、约束满足问题和组合优化问题。</p>
+<p><strong>搜索问题</strong>：这类问题的目标是找到满足特定条件的解决方案。</p>
+<ul>
+<li>全排列问题：给定一个集合，求出其所有可能的排列组合。</li>
+<li>子集和问题：给定一个集合和一个目标和，找到集合中所有和为目标和的子集。</li>
+<li>汉诺塔问题：给定三个柱子和一系列大小不同的圆盘，要求将所有圆盘从一个柱子移动到另一个柱子，每次只能移动一个圆盘，且不能将大圆盘放在小圆盘上。</li>
+</ul>
+<p><strong>约束满足问题</strong>：这类问题的目标是找到满足所有约束条件的解。</p>
+<ul>
+<li>$n$ 皇后：在 $n \times n$ 的棋盘上放置 $n$ 个皇后，使得它们互不攻击。</li>
+<li>数独：在 $9 \times 9$ 的网格中填入数字 $1$ ~ $9$ ，使得每行、每列和每个 $3 \times 3$ 子网格中的数字不重复。</li>
+<li>图着色问题：给定一个无向图，用最少的颜色给图的每个顶点着色，使得相邻顶点颜色不同。</li>
+</ul>
+<p><strong>组合优化问题</strong>：这类问题的目标是在一个组合空间中找到满足某些条件的最优解。</p>
+<ul>
+<li>0-1 背包问题：给定一组物品和一个背包，每个物品有一定的价值和重量，要求在背包容量限制内，选择物品使得总价值最大。</li>
+<li>旅行商问题：在一个图中，从一个点出发，访问所有其他点恰好一次后返回起点，求最短路径。</li>
+<li>最大团问题：给定一个无向图，找到最大的完全子图，即子图中的任意两个顶点之间都有边相连。</li>
+</ul>
+<p>请注意，对于许多组合优化问题，回溯都不是最优解决方案。</p>
+<ul>
+<li>0-1 背包问题通常使用动态规划解决，以达到更高的时间效率。</li>
+<li>旅行商是一个著名的 NP-Hard 问题，常用解法有遗传算法和蚁群算法等。</li>
+<li>最大团问题是图论中的一个经典问题，可用贪心等启发式算法来解决。</li>
+</ul>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ianwusb</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/10/hello-world/" title="Hello World">Hello World</a><time datetime="2024-07-10T13:22:58.019Z" title="发表于 2024-07-10 21:22:58">2024-07-10</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">1</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">75</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-07-10T15:55:19.176Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Ianwusb</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Code-Fast | Code-Fast</title><meta name="author" content="Ianwusb"><meta name="copyright" content="Ianwusb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="迭代与递归在算法中，重复执行某个任务是很常见的，其与复杂度分析息息相关。因此，在展开介绍时间复杂度和空间复杂度之前，我们先来了解如何在程序中实现重复执行任务，即两种基本的程序控制结构：迭代、递归。 迭代「迭代 iteration」是一种重复执行某个任务的控制结构。在迭代中，程序会在满足一定的条件下重复执行某段代码，直到这个条件不再满足。 for 循环for 循环是最常见的迭代形式之一，适合预先知道">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Code-Fast">
+<meta property="og:url" content="http://example.com/chapter_computational_complexity/iteration_and_recursion.html">
+<meta property="og:site_name" content="Code-Fast">
+<meta property="og:description" content="迭代与递归在算法中，重复执行某个任务是很常见的，其与复杂度分析息息相关。因此，在展开介绍时间复杂度和空间复杂度之前，我们先来了解如何在程序中实现重复执行任务，即两种基本的程序控制结构：迭代、递归。 迭代「迭代 iteration」是一种重复执行某个任务的控制结构。在迭代中，程序会在满足一定的条件下重复执行某段代码，直到这个条件不再满足。 for 循环for 循环是最常见的迭代形式之一，适合预先知道">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-07-10T15:24:44.525Z">
+<meta property="article:modified_time" content="2024-07-10T15:24:44.525Z">
+<meta property="article:author" content="Ianwusb">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/chapter_computational_complexity/iteration_and_recursion.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Code-Fast',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-07-10 23:24:44'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_appendix"><span> 附录</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_array_and_linkedlist"><span> 数组和链表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_backtracking"><span> 回溯</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_computational_complexity"><span> 计算复杂性</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_data_structure"><span> 数据结构</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_divide_and_conquer"><span> 分治</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_dynamic_programming"><span> 动态规划</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_graph"><span> 图表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_greedy"><span> 贪心算法</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_hashing"><span> 哈希</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_heap"><span> 堆</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_introduction"><span> 介绍</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_preface"><span> 前言</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_reference"><span> 参考文献</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_searching"><span> 搜索</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_sorting"><span> 排序</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_stack_and_queue"><span> 堆栈和队列</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_tree"><span> 树</span></a></div><div class="menus_item"><a class="site-page" href="/link"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about"><span> 关于</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://github.com/Swcmb/Code-Fast.github.io"><span> Github</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Code-Fast"><span class="site-name">Code-Fast</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_appendix"><span> 附录</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_array_and_linkedlist"><span> 数组和链表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_backtracking"><span> 回溯</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_computational_complexity"><span> 计算复杂性</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_data_structure"><span> 数据结构</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_divide_and_conquer"><span> 分治</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_dynamic_programming"><span> 动态规划</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_graph"><span> 图表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_greedy"><span> 贪心算法</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_hashing"><span> 哈希</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_heap"><span> 堆</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_introduction"><span> 介绍</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_preface"><span> 前言</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_reference"><span> 参考文献</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_searching"><span> 搜索</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_sorting"><span> 排序</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_stack_and_queue"><span> 堆栈和队列</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_tree"><span> 树</span></a></div><div class="menus_item"><a class="site-page" href="/link"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about"><span> 关于</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://github.com/Swcmb/Code-Fast.github.io"><span> Github</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">Code-Fast</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="迭代与递归"><a href="#迭代与递归" class="headerlink" title="迭代与递归"></a>迭代与递归</h1><p>在算法中，重复执行某个任务是很常见的，其与复杂度分析息息相关。因此，在展开介绍时间复杂度和空间复杂度之前，我们先来了解如何在程序中实现重复执行任务，即两种基本的程序控制结构：迭代、递归。</p>
+<h2 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h2><p>「迭代 iteration」是一种重复执行某个任务的控制结构。在迭代中，程序会在满足一定的条件下重复执行某段代码，直到这个条件不再满足。</p>
+<h3 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h3><p><code>for</code> 循环是最常见的迭代形式之一，<strong>适合预先知道迭代次数时使用</strong>。</p>
+<p>以下函数基于 <code>for</code> 循环实现了求和 $1 + 2 + \dots + n$ ，求和结果使用变量 <code>res</code> 记录。需要注意的是，Python 中 <code>range(a, b)</code> 对应的区间是“左闭右开”的，对应的遍历范围为 $a, a + 1, \dots, b-1$ 。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;iteration&#125;-[class]&#123;&#125;-[func]&#123;for_loop&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下图展示了该求和函数的流程框图。</p>
+<p><img src="/iteration_and_recursion.assets/iteration.png" alt="求和函数的流程框图"></p>
+<p>此求和函数的操作数量与输入数据大小 $n$ 成正比，或者说成“线性关系”。实际上，<strong>时间复杂度描述的就是这个“线性关系”</strong>。相关内容将会在下一节中详细介绍。</p>
+<h3 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h3><p>与 <code>for</code> 循环类似，<code>while</code> 循环也是一种实现迭代的方法。在 <code>while</code> 循环中，程序每轮都会先检查条件，如果条件为真则继续执行，否则就结束循环。</p>
+<p>下面，我们用 <code>while</code> 循环来实现求和 $1 + 2 + \dots + n$ 。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;iteration&#125;-[class]&#123;&#125;-[func]&#123;while_loop&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>while</code> 循环比 <code>for</code> 循环的自由度更高</strong>。在 <code>while</code> 循环中，我们可以自由设计条件变量的初始化和更新步骤。</p>
+<p>例如在以下代码中，条件变量 $i$ 每轮进行了两次更新，这种情况就不太方便用 <code>for</code> 循环实现。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;iteration&#125;-[class]&#123;&#125;-[func]&#123;while_loop_ii&#125;</span><br></pre></td></tr></table></figure>
+
+<p>总的来说，**<code>for</code> 循环的代码更加紧凑，<code>while</code> 循环更加灵活**，两者都可以实现迭代结构。选择使用哪一个应该根据特定问题的需求来决定。</p>
+<h3 id="嵌套循环"><a href="#嵌套循环" class="headerlink" title="嵌套循环"></a>嵌套循环</h3><p>我们可以在一个循环结构内嵌套另一个循环结构，以 <code>for</code> 循环为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;iteration&#125;-[class]&#123;&#125;-[func]&#123;nested_for_loop&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下图给出了该嵌套循环的流程框图。</p>
+<p><img src="/iteration_and_recursion.assets/nested_iteration.png" alt="嵌套循环的流程框图"></p>
+<p>在这种情况下，函数的操作数量与 $n^2$ 成正比，或者说算法运行时间和输入数据大小 $n$ 成“平方关系”。</p>
+<p>我们可以继续添加嵌套循环，每一次嵌套都是一次“升维”，将会使时间复杂度提高至“立方关系”、“四次方关系”、以此类推。</p>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p> 「递归 recursion」是一种算法策略，通过函数调用自身来解决问题。它主要包含两个阶段。</p>
+<ol>
+<li><strong>递</strong>：程序不断深入地调用自身，通常传入更小或更简化的参数，直到达到“终止条件”。</li>
+<li><strong>归</strong>：触发“终止条件”后，程序从最深层的递归函数开始逐层返回，汇聚每一层的结果。</li>
+</ol>
+<p>而从实现的角度看，递归代码主要包含三个要素。</p>
+<ol>
+<li><strong>终止条件</strong>：用于决定什么时候由“递”转“归”。</li>
+<li><strong>递归调用</strong>：对应“递”，函数调用自身，通常输入更小或更简化的参数。</li>
+<li><strong>返回结果</strong>：对应“归”，将当前递归层级的结果返回至上一层。</li>
+</ol>
+<p>观察以下代码，我们只需调用函数 <code>recur(n)</code>  ，就可以完成 $1 + 2 + \dots + n$ 的计算：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;recursion&#125;-[class]&#123;&#125;-[func]&#123;recur&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下图展示了该函数的递归过程。</p>
+<p><img src="/iteration_and_recursion.assets/recursion_sum.png" alt="求和函数的递归过程"></p>
+<p>虽然从计算角度看，迭代与递归可以得到相同的结果，<strong>但它们代表了两种完全不同的思考和解决问题的范式</strong>。</p>
+<ul>
+<li><strong>迭代</strong>：“自下而上”地解决问题。从最基础的步骤开始，然后不断重复或累加这些步骤，直到任务完成。</li>
+<li><strong>递归</strong>：“自上而下”地解决问题。将原问题分解为更小的子问题，这些子问题和原问题具有相同的形式。接下来将子问题继续分解为更小的子问题，直到基本情况时停止（基本情况的解是已知的）。</li>
+</ul>
+<p>以上述的求和函数为例，设问题 $f(n) &#x3D; 1 + 2 + \dots + n$ 。</p>
+<ul>
+<li><strong>迭代</strong>：在循环中模拟求和过程，从 $1$ 遍历到 $n$ ，每轮执行求和操作，即可求得 $f(n)$ 。</li>
+<li><strong>递归</strong>：将问题分解为子问题 $f(n) &#x3D; n + f(n-1)$ ，不断（递归地）分解下去，直至基本情况 $f(1) &#x3D; 1$ 时终止。</li>
+</ul>
+<h3 id="调用栈"><a href="#调用栈" class="headerlink" title="调用栈"></a>调用栈</h3><p>递归函数每次调用自身时，系统都会为新开启的函数分配内存，以存储局部变量、调用地址和其他信息等。这将导致两方面的结果。</p>
+<ul>
+<li>函数的上下文数据都存储在称为“栈帧空间”的内存区域中，直至函数返回后才会被释放。因此，<strong>递归通常比迭代更加耗费内存空间</strong>。</li>
+<li>递归调用函数会产生额外的开销。<strong>因此递归通常比循环的时间效率更低</strong>。</li>
+</ul>
+<p>如下图所示，在触发终止条件前，同时存在 $n$ 个未返回的递归函数，<strong>递归深度为 $n$</strong> 。</p>
+<p><img src="/iteration_and_recursion.assets/recursion_sum_depth.png" alt="递归调用深度"></p>
+<p>在实际中，编程语言允许的递归深度通常是有限的，过深的递归可能导致栈溢出报错。</p>
+<h3 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h3><p>有趣的是，<strong>如果函数在返回前的最后一步才进行递归调用</strong>，则该函数可以被编译器或解释器优化，使其在空间效率上与迭代相当。这种情况被称为「尾递归 tail recursion」。</p>
+<ul>
+<li><strong>普通递归</strong>：当函数返回到上一层级的函数后，需要继续执行代码，因此系统需要保存上一层调用的上下文。</li>
+<li><strong>尾递归</strong>：递归调用是函数返回前的最后一个操作，这意味着函数返回到上一层级后，无需继续执行其他操作，因此系统无需保存上一层函数的上下文。</li>
+</ul>
+<p>以计算 $1 + 2 + \dots + n$ 为例，我们可以将结果变量 <code>res</code> 设为函数参数，从而实现尾递归。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;recursion&#125;-[class]&#123;&#125;-[func]&#123;tail_recur&#125;</span><br></pre></td></tr></table></figure>
+
+<p>尾递归的执行过程如下图所示。对比普通递归和尾递归，求和操作的执行点是不同的。</p>
+<ul>
+<li><strong>普通递归</strong>：求和操作是在“归”的过程中执行的，每层返回后都要再执行一次求和操作。</li>
+<li><strong>尾递归</strong>：求和操作是在“递”的过程中执行的，“归”的过程只需层层返回。</li>
+</ul>
+<p><img src="/iteration_and_recursion.assets/tail_recursion_sum.png" alt="尾递归过程"></p>
+<p>!!! tip</p>
+<pre><code>请注意，许多编译器或解释器并不支持尾递归优化。例如，Python 默认不支持尾递归优化，因此即使函数是尾递归形式，但仍然可能会遇到栈溢出问题。
+</code></pre>
+<h3 id="递归树"><a href="#递归树" class="headerlink" title="递归树"></a>递归树</h3><p>当处理与“分治”相关的算法问题时，递归往往比迭代的思路更加直观、代码更加易读。以“斐波那契数列”为例。</p>
+<p>!!! question</p>
+<pre><code>给定一个斐波那契数列 $0, 1, 1, 2, 3, 5, 8, 13, \dots$ ，求该数列的第 $n$ 个数字。
+</code></pre>
+<p>设斐波那契数列的第 $n$ 个数字为 $f(n)$ ，易得两个结论。</p>
+<ul>
+<li>数列的前两个数字为 $f(1) &#x3D; 0$ 和 $f(2) &#x3D; 1$ 。</li>
+<li>数列中的每个数字是前两个数字的和，即 $f(n) &#x3D; f(n - 1) + f(n - 2)$ 。</li>
+</ul>
+<p>按照递推关系进行递归调用，将前两个数字作为终止条件，便可写出递归代码。调用 <code>fib(n)</code> 即可得到斐波那契数列的第 $n$ 个数字。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;recursion&#125;-[class]&#123;&#125;-[func]&#123;fib&#125;</span><br></pre></td></tr></table></figure>
+
+<p>观察以上代码，我们在函数内递归调用了两个函数，<strong>这意味着从一个调用产生了两个调用分支</strong>。如下图所示，这样不断递归调用下去，最终将产生一个层数为 $n$ 的「递归树 recursion tree」。</p>
+<p><img src="/iteration_and_recursion.assets/recursion_tree.png" alt="斐波那契数列的递归树"></p>
+<p>本质上看，递归体现“将问题分解为更小子问题”的思维范式，这种分治策略是至关重要的。</p>
+<ul>
+<li>从算法角度看，搜索、排序、回溯、分治、动态规划等许多重要算法策略都直接或间接地应用这种思维方式。</li>
+<li>从数据结构角度看，递归天然适合处理链表、树和图的相关问题，因为它们非常适合用分治思想进行分析。</li>
+</ul>
+<h2 id="两者对比"><a href="#两者对比" class="headerlink" title="两者对比"></a>两者对比</h2><p>总结以上内容，如下表所示，迭代和递归在实现、性能和适用性上有所不同。</p>
+<p align="center"> 表 <id> &nbsp; 迭代与递归特点对比 </p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>迭代</th>
+<th>递归</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>实现方式</td>
+<td>循环结构</td>
+<td>函数调用自身</td>
+</tr>
+<tr>
+<td>时间效率</td>
+<td>效率通常较高，无函数调用开销</td>
+<td>每次函数调用都会产生开销</td>
+</tr>
+<tr>
+<td>内存使用</td>
+<td>通常使用固定大小的内存空间</td>
+<td>累积函数调用可能使用大量的栈帧空间</td>
+</tr>
+<tr>
+<td>适用问题</td>
+<td>适用于简单循环任务，代码直观、可读性好</td>
+<td>适用于子问题分解，如树、图、分治、回溯等，代码结构简洁、清晰</td>
+</tr>
+</tbody></table>
+<p>!!! tip</p>
+<pre><code>如果感觉以下内容理解困难，可以在读完“栈”章节后再来复习。
+</code></pre>
+<p>那么，迭代和递归具有什么内在联系呢？以上述的递归函数为例，求和操作在递归的“归”阶段进行。这意味着最初被调用的函数实际上是最后完成其求和操作的，<strong>这种工作机制与栈的“先入后出”原则是异曲同工的</strong>。</p>
+<p>事实上，“调用栈”和“栈帧空间”这类递归术语已经暗示了递归与栈之间的密切关系。</p>
+<ol>
+<li><strong>递</strong>：当函数被调用时，系统会在“调用栈”上为该函数分配新的栈帧，用于存储函数的局部变量、参数、返回地址等数据。</li>
+<li><strong>归</strong>：当函数完成执行并返回时，对应的栈帧会从“调用栈”上被移除，恢复之前函数的执行环境。</li>
+</ol>
+<p>因此，<strong>我们可以使用一个显式的栈来模拟调用栈的行为</strong>，从而将递归转化为迭代形式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;recursion&#125;-[class]&#123;&#125;-[func]&#123;for_loop_recur&#125;</span><br></pre></td></tr></table></figure>
+
+<p>观察以上代码，当递归被转换为迭代后，代码变得更加复杂了。尽管迭代和递归在很多情况下可以互相转换，但也不一定值得这样做，有以下两点原因。</p>
+<ul>
+<li>转化后的代码可能更加难以理解，可读性更差。</li>
+<li>对于某些复杂问题，模拟系统调用栈的行为可能非常困难。</li>
+</ul>
+<p>总之，<strong>选择迭代还是递归取决于特定问题的性质</strong>。在编程实践中，权衡两者的优劣并根据情境选择合适的方法是至关重要的。</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ianwusb</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/10/hello-world/" title="Hello World">Hello World</a><time datetime="2024-07-10T13:22:58.019Z" title="发表于 2024-07-10 21:22:58">2024-07-10</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">1</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">75</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-07-10T15:55:19.176Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Ianwusb</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

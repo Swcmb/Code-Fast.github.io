@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Code-Fast | Code-Fast</title><meta name="author" content="Ianwusb"><meta name="copyright" content="Ianwusb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="字符编码 *在计算机中，所有数据都是以二进制数的形式存储的，字符 char 也不例外。为了表示字符，我们需要建立一套“字符集”，规定每个字符和二进制数之间的一一对应关系。有了字符集之后，计算机就可以通过查表完成二进制数到字符的转换。 ASCII 字符集「ASCII 码」是最早出现的字符集，全称为“美国标准信息交换代码”。它使用 7 位二进制数（即一个字节的低 7 位）表示一个字符，最多能够表示 1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Code-Fast">
+<meta property="og:url" content="http://example.com/chapter_data_structure/character_encoding.html">
+<meta property="og:site_name" content="Code-Fast">
+<meta property="og:description" content="字符编码 *在计算机中，所有数据都是以二进制数的形式存储的，字符 char 也不例外。为了表示字符，我们需要建立一套“字符集”，规定每个字符和二进制数之间的一一对应关系。有了字符集之后，计算机就可以通过查表完成二进制数到字符的转换。 ASCII 字符集「ASCII 码」是最早出现的字符集，全称为“美国标准信息交换代码”。它使用 7 位二进制数（即一个字节的低 7 位）表示一个字符，最多能够表示 1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-07-10T15:24:44.532Z">
+<meta property="article:modified_time" content="2024-07-10T15:24:44.532Z">
+<meta property="article:author" content="Ianwusb">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/chapter_data_structure/character_encoding.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Code-Fast',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-07-10 23:24:44'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_appendix"><span> 附录</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_array_and_linkedlist"><span> 数组和链表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_backtracking"><span> 回溯</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_computational_complexity"><span> 计算复杂性</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_data_structure"><span> 数据结构</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_divide_and_conquer"><span> 分治</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_dynamic_programming"><span> 动态规划</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_graph"><span> 图表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_greedy"><span> 贪心算法</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_hashing"><span> 哈希</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_heap"><span> 堆</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_introduction"><span> 介绍</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_preface"><span> 前言</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_reference"><span> 参考文献</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_searching"><span> 搜索</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_sorting"><span> 排序</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_stack_and_queue"><span> 堆栈和队列</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_tree"><span> 树</span></a></div><div class="menus_item"><a class="site-page" href="/link"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about"><span> 关于</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://github.com/Swcmb/Code-Fast.github.io"><span> Github</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Code-Fast"><span class="site-name">Code-Fast</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_appendix"><span> 附录</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_array_and_linkedlist"><span> 数组和链表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_backtracking"><span> 回溯</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_computational_complexity"><span> 计算复杂性</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_data_structure"><span> 数据结构</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_divide_and_conquer"><span> 分治</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_dynamic_programming"><span> 动态规划</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_graph"><span> 图表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_greedy"><span> 贪心算法</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_hashing"><span> 哈希</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_heap"><span> 堆</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_introduction"><span> 介绍</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_preface"><span> 前言</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_reference"><span> 参考文献</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_searching"><span> 搜索</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_sorting"><span> 排序</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_stack_and_queue"><span> 堆栈和队列</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_tree"><span> 树</span></a></div><div class="menus_item"><a class="site-page" href="/link"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about"><span> 关于</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://github.com/Swcmb/Code-Fast.github.io"><span> Github</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">Code-Fast</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码 *"></a>字符编码 *</h1><p>在计算机中，所有数据都是以二进制数的形式存储的，字符 <code>char</code> 也不例外。为了表示字符，我们需要建立一套“字符集”，规定每个字符和二进制数之间的一一对应关系。有了字符集之后，计算机就可以通过查表完成二进制数到字符的转换。</p>
+<h2 id="ASCII-字符集"><a href="#ASCII-字符集" class="headerlink" title="ASCII 字符集"></a>ASCII 字符集</h2><p>「ASCII 码」是最早出现的字符集，全称为“美国标准信息交换代码”。它使用 7 位二进制数（即一个字节的低 7 位）表示一个字符，最多能够表示 128 个不同的字符。如下图所示，ASCII 码包括英文字母的大小写、数字 0 ~ 9、一些标点符号，以及一些控制字符（如换行符和制表符）。</p>
+<p><img src="/character_encoding.assets/ascii_table.png" alt="ASCII 码"></p>
+<p>然而，<strong>ASCII 码仅能够表示英文</strong>。随着计算机的全球化，诞生了一种能够表示更多语言的字符集「EASCII」。它在 ASCII 的 7 位基础上扩展到 8 位，能够表示 256 个不同的字符。</p>
+<p>在世界范围内，陆续出现了一批适用于不同地区的 EASCII 字符集。这些字符集的前 128 个字符统一为 ASCII 码，后 128 个字符定义不同，以适应不同语言的需求。</p>
+<h2 id="GBK-字符集"><a href="#GBK-字符集" class="headerlink" title="GBK 字符集"></a>GBK 字符集</h2><p>后来人们发现，<strong>EASCII 码仍然无法满足许多语言的字符数量要求</strong>。比如汉字大约有近十万个，光日常使用的就有几千个。中国国家标准总局于 1980 年发布了「GB2312」字符集，其收录了 6763 个汉字，基本满足了汉字的计算机处理需要。</p>
+<p>然而，GB2312 无法处理部分的罕见字和繁体字。「GBK」字符集是在 GB2312 的基础上扩展得到的，它共收录了 21886 个汉字。在 GBK 的编码方案中，ASCII 字符使用一个字节表示，汉字使用两个字节表示。</p>
+<h2 id="Unicode-字符集"><a href="#Unicode-字符集" class="headerlink" title="Unicode 字符集"></a>Unicode 字符集</h2><p>随着计算机的蓬勃发展，字符集与编码标准百花齐放，而这带来了许多问题。一方面，这些字符集一般只定义了特定语言的字符，无法在多语言环境下正常工作。另一方面，同一种语言也存在多种字符集标准，如果两台电脑安装的是不同的编码标准，则在信息传递时就会出现乱码。</p>
+<p>那个时代的研究人员就在想：<strong>如果推出一个足够完整的字符集，将世界范围内的所有语言和符号都收录其中，不就可以解决跨语言环境和乱码问题了吗</strong>？在这种想法的驱动下，一个大而全的字符集 Unicode 应运而生。</p>
+<p>「Unicode」的全称为“统一字符编码”，理论上能容纳一百多万个字符。它致力于将全球范围内的字符纳入到统一的字符集之中，提供一种通用的字符集来处理和显示各种语言文字，减少因为编码标准不同而产生的乱码问题。</p>
+<p>自 1991 年发布以来，Unicode 不断扩充新的语言与字符。截止 2022 年 9 月，Unicode 已经包含 149186 个字符，包括各种语言的字符、符号、甚至是表情符号等。在庞大的 Unicode 字符集中，常用的字符占用 2 字节，有些生僻的字符占 3 字节甚至 4 字节。</p>
+<p>Unicode 是一种字符集标准，本质上是给每个字符分配一个编号（称为“码点”），<strong>但它并没有规定在计算机中如何存储这些字符码点</strong>。我们不禁会问：当多种长度的 Unicode 码点同时出现在同一个文本中时，系统如何解析字符？例如给定一个长度为 2 字节的编码，系统如何确认它是一个 2 字节的字符还是两个 1 字节的字符？</p>
+<p>对于以上问题，<strong>一种直接的解决方案是将所有字符存储为等长的编码</strong>。如下图所示，“Hello”中的每个字符占用 1 字节，“算法”中的每个字符占用 2 字节。我们可以通过高位填 0 ，将“Hello 算法”中的所有字符都编码为 2 字节长度。这样系统就可以每隔 2 字节解析一个字符，恢复出这个短语的内容了。</p>
+<p><img src="/character_encoding.assets/unicode_hello_algo.png" alt="Unicode 编码示例"></p>
+<p>然而 ASCII 码已经向我们证明，编码英文只需要 1 字节。若采用上述方案，英文文本占用空间的大小将会是 ASCII 编码下大小的两倍，非常浪费内存空间。因此，我们需要一种更加高效的 Unicode 编码方法。</p>
+<h2 id="UTF-8-编码"><a href="#UTF-8-编码" class="headerlink" title="UTF-8 编码"></a>UTF-8 编码</h2><p>目前，UTF-8 已成为国际上使用最广泛的 Unicode 编码方法。<strong>它是一种可变长的编码</strong>，使用 1 到 4 个字节来表示一个字符，根据字符的复杂性而变。ASCII 字符只需要 1 个字节，拉丁字母和希腊字母需要 2 个字节，常用的中文字符需要 3 个字节，其他的一些生僻字符需要 4 个字节。</p>
+<p>UTF-8 的编码规则并不复杂，分为以下两种情况。</p>
+<ul>
+<li>对于长度为 1 字节的字符，将最高位设置为 $0$、其余 7 位设置为 Unicode 码点。值得注意的是，ASCII 字符在 Unicode 字符集中占据了前 128 个码点。也就是说，<strong>UTF-8 编码可以向下兼容 ASCII 码</strong>。这意味着我们可以使用 UTF-8 来解析年代久远的 ASCII 码文本。</li>
+<li>对于长度为 $n$ 字节的字符（其中 $n &gt; 1$），将首个字节的高 $n$ 位都设置为 $1$、第 $n + 1$ 位设置为 $0$ ；从第二个字节开始，将每个字节的高 2 位都设置为 $10$ ；其余所有位用于填充字符的 Unicode 码点。</li>
+</ul>
+<p>下图展示了“Hello算法”对应的 UTF-8 编码。观察发现，由于最高 $n$ 位都被设置为 $1$ ，因此系统可以通过读取最高位 $1$ 的个数来解析出字符的长度为 $n$ 。</p>
+<p>但为什么要将其余所有字节的高 2 位都设置为 $10$ 呢？实际上，这个 $10$ 能够起到校验符的作用。假设系统从一个错误的字节开始解析文本，字节头部的 $10$ 能够帮助系统快速的判断出异常。</p>
+<p>之所以将 $10$ 当作校验符，是因为在 UTF-8 编码规则下，不可能有字符的最高两位是 $10$ 。这个结论可以用反证法来证明：假设一个字符的最高两位是 $10$ ，说明该字符的长度为 $1$ ，对应 ASCII 码。而 ASCII 码的最高位应该是 $0$ ，与假设矛盾。</p>
+<p><img src="/character_encoding.assets/utf-8_hello_algo.png" alt="UTF-8 编码示例"></p>
+<p>除了 UTF-8 之外，常见的编码方式还包括以下两种。</p>
+<ul>
+<li><strong>UTF-16 编码</strong>：使用 2 或 4 个字节来表示一个字符。所有的 ASCII 字符和常用的非英文字符，都用 2 个字节表示；少数字符需要用到 4 个字节表示。对于 2 字节的字符，UTF-16 编码与 Unicode 码点相等。</li>
+<li><strong>UTF-32 编码</strong>：每个字符都使用 4 个字节。这意味着 UTF-32 会比 UTF-8 和 UTF-16 更占用空间，特别是对于 ASCII 字符占比较高的文本。</li>
+</ul>
+<p>从存储空间的角度看，使用 UTF-8 表示英文字符非常高效，因为它仅需 1 个字节；使用 UTF-16 编码某些非英文字符（例如中文）会更加高效，因为它只需要 2 个字节，而 UTF-8 可能需要 3 个字节。</p>
+<p>从兼容性的角度看，UTF-8 的通用性最佳，许多工具和库都优先支持 UTF-8 。</p>
+<h2 id="编程语言的字符编码"><a href="#编程语言的字符编码" class="headerlink" title="编程语言的字符编码"></a>编程语言的字符编码</h2><p>对于以往的大多数编程语言，程序运行中的字符串都采用 UTF-16 或 UTF-32 这类等长的编码。在等长编码下，我们可以将字符串看作数组来处理，这种做法具有以下优点。</p>
+<ul>
+<li><strong>随机访问</strong>: UTF-16 编码的字符串可以很容易地进行随机访问。UTF-8 是一种变长编码，要找到第 $i$ 个字符，我们需要从字符串的开始处遍历到第 $i$ 个字符，这需要 $O(n)$ 的时间。</li>
+<li><strong>字符计数</strong>: 与随机访问类似，计算 UTF-16 字符串的长度也是 $O(1)$ 的操作。但是，计算 UTF-8 编码的字符串的长度需要遍历整个字符串。</li>
+<li><strong>字符串操作</strong>: 在 UTF-16 编码的字符串中，很多字符串操作（如分割、连接、插入、删除等）都更容易进行。在 UTF-8 编码的字符串上进行这些操作通常需要额外的计算，以确保不会产生无效的 UTF-8 编码。</li>
+</ul>
+<p>实际上，编程语言的字符编码方案设计是一个很有趣的话题，其涉及到许多因素。</p>
+<ul>
+<li>Java 的 <code>String</code> 类型使用 UTF-16 编码，每个字符占用 2 字节。这是因为 Java 语言设计之初，人们认为 16 位足以表示所有可能的字符。然而，这是一个不正确的判断。后来 Unicode 规范扩展到了超过 16 位，所以 Java 中的字符现在可能由一对 16 位的值（称为“代理对”）表示。</li>
+<li>JavaScript 和 TypeScript 的字符串使用 UTF-16 编码的原因与 Java 类似。当 JavaScript 语言在 1995 年被 Netscape 公司首次引入时，Unicode 还处于相对早期的阶段，那时候使用 16 位的编码就足够表示所有的 Unicode 字符了。</li>
+<li>C# 使用 UTF-16 编码，主要因为 .NET 平台是由 Microsoft 设计的，而 Microsoft 的很多技术，包括 Windows 操作系统，都广泛地使用 UTF-16 编码。</li>
+</ul>
+<p>由于以上编程语言对字符数量的低估，它们不得不采取“代理对”的方式来表示超过 16 位长度的 Unicode 字符。这是一个不得已为之的无奈之举。一方面，包含代理对的字符串中，一个字符可能占用 2 字节或 4 字节，从而丧失了等长编码的优势。另一方面，处理代理对需要增加额外代码，这增加了编程的复杂性和 Debug 难度。</p>
+<p>出于以上原因，部分编程语言提出了一些不同的编码方案。</p>
+<ul>
+<li>Python 中的 <code>str</code> 使用 Unicode 编码，并采用一种灵活的字符串表示，存储的字符长度取决于字符串中最大的 Unicode 码点。若字符串中全部是 ASCII 字符，则每个字符占用 1 个字节；如果有字符超出了 ASCII 范围，但全部在基本多语言平面（BMP）内，则每个字符占用 2 个字节；如果有超出 BMP 的字符，则每个字符占用 4 个字节。</li>
+<li>Go 语言的 <code>string</code> 类型在内部使用 UTF-8 编码。Go 语言还提供了 <code>rune</code> 类型，它用于表示单个 Unicode 码点。</li>
+<li>Rust 语言的 str 和 String 类型在内部使用 UTF-8 编码。Rust 也提供了 <code>char</code> 类型，用于表示单个 Unicode 码点。</li>
+</ul>
+<p>需要注意的是，以上讨论的都是字符串在编程语言中的存储方式，<strong>这和字符串如何在文件中存储或在网络中传输是两个不同的问题</strong>。在文件存储或网络传输中，我们通常会将字符串编码为 UTF-8 格式，以达到最优的兼容性和空间效率。</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ianwusb</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/10/hello-world/" title="Hello World">Hello World</a><time datetime="2024-07-10T13:22:58.019Z" title="发表于 2024-07-10 21:22:58">2024-07-10</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">1</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">75</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-07-10T15:55:19.176Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Ianwusb</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

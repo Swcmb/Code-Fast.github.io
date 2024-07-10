@@ -1,0 +1,279 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Code-Fast | Code-Fast</title><meta name="author" content="Ianwusb"><meta name="copyright" content="Ianwusb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="快速排序「快速排序 quick sort」是一种基于分治策略的排序算法，运行高效，应用广泛。 快速排序的核心操作是“哨兵划分”，其目标是：选择数组中的某个元素作为“基准数”，将所有小于基准数的元素移到其左侧，而大于基准数的元素移到其右侧。具体来说，哨兵划分的流程如下图所示。  选取数组最左端元素作为基准数，初始化两个指针 i 和 j 分别指向数组的两端。 设置一个循环，在每轮中使用 i（j）分别寻">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Code-Fast">
+<meta property="og:url" content="http://example.com/chapter_sorting/quick_sort.html">
+<meta property="og:site_name" content="Code-Fast">
+<meta property="og:description" content="快速排序「快速排序 quick sort」是一种基于分治策略的排序算法，运行高效，应用广泛。 快速排序的核心操作是“哨兵划分”，其目标是：选择数组中的某个元素作为“基准数”，将所有小于基准数的元素移到其左侧，而大于基准数的元素移到其右侧。具体来说，哨兵划分的流程如下图所示。  选取数组最左端元素作为基准数，初始化两个指针 i 和 j 分别指向数组的两端。 设置一个循环，在每轮中使用 i（j）分别寻">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-07-10T15:24:44.660Z">
+<meta property="article:modified_time" content="2024-07-10T15:24:44.660Z">
+<meta property="article:author" content="Ianwusb">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/chapter_sorting/quick_sort.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Code-Fast',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-07-10 23:24:44'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_appendix"><span> 附录</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_array_and_linkedlist"><span> 数组和链表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_backtracking"><span> 回溯</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_computational_complexity"><span> 计算复杂性</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_data_structure"><span> 数据结构</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_divide_and_conquer"><span> 分治</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_dynamic_programming"><span> 动态规划</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_graph"><span> 图表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_greedy"><span> 贪心算法</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_hashing"><span> 哈希</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_heap"><span> 堆</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_introduction"><span> 介绍</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_preface"><span> 前言</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_reference"><span> 参考文献</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_searching"><span> 搜索</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_sorting"><span> 排序</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_stack_and_queue"><span> 堆栈和队列</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_tree"><span> 树</span></a></div><div class="menus_item"><a class="site-page" href="/link"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about"><span> 关于</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://github.com/Swcmb/Code-Fast.github.io"><span> Github</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Code-Fast"><span class="site-name">Code-Fast</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_appendix"><span> 附录</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_array_and_linkedlist"><span> 数组和链表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_backtracking"><span> 回溯</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_computational_complexity"><span> 计算复杂性</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_data_structure"><span> 数据结构</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_divide_and_conquer"><span> 分治</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_dynamic_programming"><span> 动态规划</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_graph"><span> 图表</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_greedy"><span> 贪心算法</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_hashing"><span> 哈希</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_heap"><span> 堆</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_introduction"><span> 介绍</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_preface"><span> 前言</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_reference"><span> 参考文献</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_searching"><span> 搜索</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_sorting"><span> 排序</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_stack_and_queue"><span> 堆栈和队列</span></a></div><div class="menus_item"><a class="site-page" href="/chapter_tree"><span> 树</span></a></div><div class="menus_item"><a class="site-page" href="/link"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about"><span> 关于</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://github.com/Swcmb/Code-Fast.github.io"><span> Github</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">Code-Fast</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>「快速排序 quick sort」是一种基于分治策略的排序算法，运行高效，应用广泛。</p>
+<p>快速排序的核心操作是“哨兵划分”，其目标是：选择数组中的某个元素作为“基准数”，将所有小于基准数的元素移到其左侧，而大于基准数的元素移到其右侧。具体来说，哨兵划分的流程如下图所示。</p>
+<ol>
+<li>选取数组最左端元素作为基准数，初始化两个指针 <code>i</code> 和 <code>j</code> 分别指向数组的两端。</li>
+<li>设置一个循环，在每轮中使用 <code>i</code>（<code>j</code>）分别寻找第一个比基准数大（小）的元素，然后交换这两个元素。</li>
+<li>循环执行步骤 <code>2.</code> ，直到 <code>i</code> 和 <code>j</code> 相遇时停止，最后将基准数交换至两个子数组的分界线。</li>
+</ol>
+<p>&#x3D;&#x3D;&#x3D; “&lt;1&gt;”<br>    <img src="/quick_sort.assets/pivot_division_step1.png" alt="哨兵划分步骤"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;2&gt;”<br>    <img src="/quick_sort.assets/pivot_division_step2.png" alt="pivot_division_step2"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;3&gt;”<br>    <img src="/quick_sort.assets/pivot_division_step3.png" alt="pivot_division_step3"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;4&gt;”<br>    <img src="/quick_sort.assets/pivot_division_step4.png" alt="pivot_division_step4"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;5&gt;”<br>    <img src="/quick_sort.assets/pivot_division_step5.png" alt="pivot_division_step5"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;6&gt;”<br>    <img src="/quick_sort.assets/pivot_division_step6.png" alt="pivot_division_step6"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;7&gt;”<br>    <img src="/quick_sort.assets/pivot_division_step7.png" alt="pivot_division_step7"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;8&gt;”<br>    <img src="/quick_sort.assets/pivot_division_step8.png" alt="pivot_division_step8"></p>
+<p>&#x3D;&#x3D;&#x3D; “&lt;9&gt;”<br>    <img src="/quick_sort.assets/pivot_division_step9.png" alt="pivot_division_step9"></p>
+<p>哨兵划分完成后，原数组被划分成三部分：左子数组、基准数、右子数组，且满足“左子数组任意元素 $\leq$ 基准数 $\leq$ 右子数组任意元素”。因此，我们接下来只需对这两个子数组进行排序。</p>
+<p>!!! note “快速排序的分治策略”</p>
+<pre><code>哨兵划分的实质是将一个较长数组的排序问题简化为两个较短数组的排序问题。
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;quick_sort&#125;-[class]&#123;quick_sort&#125;-[func]&#123;partition&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><p>快速排序的整体流程如下图所示。</p>
+<ol>
+<li>首先，对原数组执行一次“哨兵划分”，得到未排序的左子数组和右子数组。</li>
+<li>然后，对左子数组和右子数组分别递归执行“哨兵划分”。</li>
+<li>持续递归，直至子数组长度为 1 时终止，从而完成整个数组的排序。</li>
+</ol>
+<p><img src="/quick_sort.assets/quick_sort_overview.png" alt="快速排序流程"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;quick_sort&#125;-[class]&#123;quick_sort&#125;-[func]&#123;quick_sort&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="算法特性"><a href="#算法特性" class="headerlink" title="算法特性"></a>算法特性</h2><ul>
+<li><strong>时间复杂度 $O(n \log n)$、自适应排序</strong>：在平均情况下，哨兵划分的递归层数为 $\log n$ ，每层中的总循环数为 $n$ ，总体使用 $O(n \log n)$ 时间。在最差情况下，每轮哨兵划分操作都将长度为 $n$ 的数组划分为长度为 $0$ 和 $n - 1$ 的两个子数组，此时递归层数达到 $n$ 层，每层中的循环数为 $n$ ，总体使用 $O(n^2)$ 时间。</li>
+<li><strong>空间复杂度 $O(n)$、原地排序</strong>：在输入数组完全倒序的情况下，达到最差递归深度 $n$ ，使用 $O(n)$ 栈帧空间。排序操作是在原数组上进行的，未借助额外数组。</li>
+<li><strong>非稳定排序</strong>：在哨兵划分的最后一步，基准数可能会被交换至相等元素的右侧。</li>
+</ul>
+<h2 id="快排为什么快？"><a href="#快排为什么快？" class="headerlink" title="快排为什么快？"></a>快排为什么快？</h2><p>从名称上就能看出，快速排序在效率方面应该具有一定的优势。尽管快速排序的平均时间复杂度与“归并排序”和“堆排序”相同，但通常快速排序的效率更高，主要有以下原因。</p>
+<ul>
+<li><strong>出现最差情况的概率很低</strong>：虽然快速排序的最差时间复杂度为 $O(n^2)$ ，没有归并排序稳定，但在绝大多数情况下，快速排序能在 $O(n \log n)$ 的时间复杂度下运行。</li>
+<li><strong>缓存使用效率高</strong>：在执行哨兵划分操作时，系统可将整个子数组加载到缓存，因此访问元素的效率较高。而像“堆排序”这类算法需要跳跃式访问元素，从而缺乏这一特性。</li>
+<li><strong>复杂度的常数系数低</strong>：在上述三种算法中，快速排序的比较、赋值、交换等操作的总数量最少。这与“插入排序”比“冒泡排序”更快的原因类似。</li>
+</ul>
+<h2 id="基准数优化"><a href="#基准数优化" class="headerlink" title="基准数优化"></a>基准数优化</h2><p><strong>快速排序在某些输入下的时间效率可能降低</strong>。举一个极端例子，假设输入数组是完全倒序的，由于我们选择最左端元素作为基准数，那么在哨兵划分完成后，基准数被交换至数组最右端，导致左子数组长度为 $n - 1$、右子数组长度为 $0$ 。如此递归下去，每轮哨兵划分后的右子数组长度都为 $0$ ，分治策略失效，快速排序退化为“冒泡排序”。</p>
+<p>为了尽量避免这种情况发生，<strong>我们可以优化哨兵划分中的基准数的选取策略</strong>。例如，我们可以随机选取一个元素作为基准数。然而，如果运气不佳，每次都选到不理想的基准数，效率仍然不尽如人意。</p>
+<p>需要注意的是，编程语言通常生成的是“伪随机数”。如果我们针对伪随机数序列构建一个特定的测试样例，那么快速排序的效率仍然可能劣化。</p>
+<p>为了进一步改进，我们可以在数组中选取三个候选元素（通常为数组的首、尾、中点元素），<strong>并将这三个候选元素的中位数作为基准数</strong>。这样一来，基准数“既不太小也不太大”的概率将大幅提升。当然，我们还可以选取更多候选元素，以进一步提高算法的稳健性。采用这种方法后，时间复杂度劣化至 $O(n^2)$ 的概率大大降低。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;quick_sort&#125;-[class]&#123;quick_sort_median&#125;-[func]&#123;partition&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="尾递归优化"><a href="#尾递归优化" class="headerlink" title="尾递归优化"></a>尾递归优化</h2><p><strong>在某些输入下，快速排序可能占用空间较多</strong>。以完全倒序的输入数组为例，由于每轮哨兵划分后右子数组长度为 $0$ ，递归树的高度会达到 $n - 1$ ，此时需要占用 $O(n)$ 大小的栈帧空间。</p>
+<p>为了防止栈帧空间的累积，我们可以在每轮哨兵排序完成后，比较两个子数组的长度，<strong>仅对较短的子数组进行递归</strong>。由于较短子数组的长度不会超过 $n &#x2F; 2$ ，因此这种方法能确保递归深度不超过 $\log n$ ，从而将最差空间复杂度优化至 $O(\log n)$ 。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[file]&#123;quick_sort&#125;-[class]&#123;quick_sort_tail_call&#125;-[func]&#123;quick_sort&#125;</span><br></pre></td></tr></table></figure>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ianwusb</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/10/hello-world/" title="Hello World">Hello World</a><time datetime="2024-07-10T13:22:58.019Z" title="发表于 2024-07-10 21:22:58">2024-07-10</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">1</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">75</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-07-10T15:55:19.176Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Ianwusb</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
