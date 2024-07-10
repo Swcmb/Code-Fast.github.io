@@ -74,6 +74,6 @@ We welcome any form of contribution, including submitting new solutions, improvi
 
 ## License
 
-This project uses the [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. For details, please refer to [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+This project uses the [MIT](https://opensource.org/license/MIT) license. For details, please refer to [MIT](https://opensource.org/license/MIT).
 
 (This applies only to original parts; for content using other open-source projects, follow the original project's license.)
