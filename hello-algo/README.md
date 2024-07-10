@@ -77,6 +77,7 @@
         <img width="550" src="https://contrib.rocks/image?repo=krahets/hello-algo" />
     </a>
 </p>
+
 ## License
 
 The texts, code, images, photos, and videos in this repository are licensed under [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
