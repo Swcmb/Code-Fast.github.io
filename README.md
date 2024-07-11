@@ -74,6 +74,6 @@ Code-Fast项目提供了比传统的leetcode-master和hello-algo方法更多的�
 
 ## 许可证
 
-本项目采用 [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)许可证，详情请参阅  [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)。
+本项目采用 [MIT](https://opensource.org/license/MIT)许可证，详情请参阅  [MIT](https://opensource.org/license/MIT)。
 
 (仅限原创部分，其中使用了其他开源项目的内容，请遵循原项目的协议。)
