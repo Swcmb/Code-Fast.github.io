@@ -7,7 +7,10 @@ hide:
 
 # Code-Fast
 
+# 
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/Swcmb/Code-Fast.github.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 欢迎！
 

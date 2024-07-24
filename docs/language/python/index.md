@@ -7,7 +7,7 @@ hide:
 
 # Python编程入门教程
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/yourusername/python-tutorial)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/Swcmb/Code-Fast.github.io/tree/main/docs/language/python)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 目录
