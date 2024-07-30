@@ -13,21 +13,25 @@
       
       
       
+        <link rel="prev" href="../c/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+        <link rel="next" href="../java/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
     
     
       
-        <title>贪心 - Code-Fast</title>
+        <title>C++ - Code-Fast</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,25 +50,16 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  </head>
   
   
     
@@ -83,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#c-stl" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Code-Fast" class="md-header__button md-logo" aria-label="Code-Fast" data-md-component="logo">
+    <a href="../.." title="Code-Fast" class="md-header__button md-logo" aria-label="Code-Fast" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -119,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              贪心
+              C++
             
           </span>
         </div>
@@ -243,6 +238,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -252,7 +249,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Code-Fast" class="md-nav__button md-logo" aria-label="Code-Fast" data-md-component="logo">
+    <a href="../.." title="Code-Fast" class="md-nav__button md-logo" aria-label="Code-Fast" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -279,17 +276,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -303,7 +302,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             语言基础
@@ -317,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../language/c/" class="md-nav__link">
+      <a href="../c/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -335,10 +334,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../language/cpp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    C++
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -347,6 +366,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      目录
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      目标受众
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      教程结构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何开始
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      贡献指南
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      许可证
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -359,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../language/java/" class="md-nav__link">
+      <a href="../java/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -380,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../language/python/" class="md-nav__link">
+      <a href="../python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -478,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_preface/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_preface/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -499,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_preface/about_the_book/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_preface/about_the_book/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -520,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_preface/suggestions/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_preface/suggestions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_preface/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_preface/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -605,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_introduction/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -626,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_introduction/algorithms_are_everywhere/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_introduction/algorithms_are_everywhere/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -647,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_introduction/what_is_dsa/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_introduction/what_is_dsa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -668,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_introduction/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_introduction/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -732,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_computational_complexity/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_computational_complexity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -753,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_computational_complexity/performance_evaluation/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_computational_complexity/performance_evaluation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -774,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_computational_complexity/iteration_and_recursion/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_computational_complexity/iteration_and_recursion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -795,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_computational_complexity/time_complexity/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_computational_complexity/time_complexity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -816,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_computational_complexity/space_complexity/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_computational_complexity/space_complexity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -837,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_computational_complexity/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_computational_complexity/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -901,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_data_structure/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_data_structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -922,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_data_structure/classification_of_data_structure/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_data_structure/classification_of_data_structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -943,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_data_structure/basic_data_types/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_data_structure/basic_data_types/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_data_structure/number_encoding/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_data_structure/number_encoding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -985,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_data_structure/character_encoding/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_data_structure/character_encoding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1006,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_data_structure/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_data_structure/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1070,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_array_and_linkedlist/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_array_and_linkedlist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1091,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_array_and_linkedlist/array/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_array_and_linkedlist/array/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1112,7 +1214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_array_and_linkedlist/linked_list/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_array_and_linkedlist/linked_list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1133,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_array_and_linkedlist/list/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_array_and_linkedlist/list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1154,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_array_and_linkedlist/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_array_and_linkedlist/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1218,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_stack_and_queue/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_stack_and_queue/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1239,7 +1341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_stack_and_queue/stack/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_stack_and_queue/stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1260,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_stack_and_queue/queue/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_stack_and_queue/queue/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1281,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_stack_and_queue/deque/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_stack_and_queue/deque/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1302,7 +1404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_stack_and_queue/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_stack_and_queue/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1366,7 +1468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_hashing/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_hashing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1387,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_hashing/hash_map/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_hashing/hash_map/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1408,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_hashing/hash_collision/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_hashing/hash_collision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1429,7 +1531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_hashing/hash_algorithm/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_hashing/hash_algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1450,7 +1552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_hashing/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_hashing/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1514,7 +1616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_tree/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1535,7 +1637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_tree/binary_tree/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_tree/binary_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1556,7 +1658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_tree/binary_tree_traversal/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_tree/binary_tree_traversal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1577,7 +1679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_tree/array_representation_of_tree/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_tree/array_representation_of_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1598,7 +1700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_tree/binary_search_tree/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_tree/binary_search_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1619,7 +1721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_tree/avl_tree/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_tree/avl_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1640,7 +1742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_tree/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_tree/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1704,7 +1806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_heap/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1725,7 +1827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_heap/heap/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_heap/heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1746,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_heap/build_heap/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_heap/build_heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1767,7 +1869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_heap/top_k/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_heap/top_k/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1788,7 +1890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_heap/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_heap/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1852,7 +1954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_graph/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_graph/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1873,7 +1975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_graph/graph/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_graph/graph/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1894,7 +1996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_graph/graph_operations/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_graph/graph_operations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1915,7 +2017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_graph/graph_traversal/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_graph/graph_traversal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1936,7 +2038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_graph/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_graph/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2000,7 +2102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_searching/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_searching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2021,7 +2123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_searching/binary_search/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_searching/binary_search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2042,7 +2144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_searching/binary_search_insertion/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_searching/binary_search_insertion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2063,7 +2165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_searching/binary_search_edge/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_searching/binary_search_edge/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2084,7 +2186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_searching/replace_linear_by_hashing/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_searching/replace_linear_by_hashing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2105,7 +2207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_searching/searching_algorithm_revisited/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_searching/searching_algorithm_revisited/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2126,7 +2228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_searching/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_searching/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2190,7 +2292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_sorting/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_sorting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2211,7 +2313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_sorting/sorting_algorithm/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_sorting/sorting_algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2232,7 +2334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_sorting/selection_sort/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_sorting/selection_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2253,7 +2355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_sorting/bubble_sort/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_sorting/bubble_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2274,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_sorting/insertion_sort/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_sorting/insertion_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2295,7 +2397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_sorting/quick_sort/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_sorting/quick_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2316,7 +2418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_sorting/merge_sort/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_sorting/merge_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2337,7 +2439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_sorting/heap_sort/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_sorting/heap_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2358,7 +2460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_sorting/bucket_sort/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_sorting/bucket_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2379,7 +2481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_sorting/counting_sort/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_sorting/counting_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2400,7 +2502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_sorting/radix_sort/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_sorting/radix_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2421,7 +2523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_sorting/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_sorting/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2485,7 +2587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_divide_and_conquer/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_divide_and_conquer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2506,7 +2608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_divide_and_conquer/divide_and_conquer/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_divide_and_conquer/divide_and_conquer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2527,7 +2629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_divide_and_conquer/binary_search_recur/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_divide_and_conquer/binary_search_recur/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2548,7 +2650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_divide_and_conquer/build_binary_tree_problem/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_divide_and_conquer/build_binary_tree_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2569,7 +2671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_divide_and_conquer/hanota_problem/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_divide_and_conquer/hanota_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2590,7 +2692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_divide_and_conquer/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_divide_and_conquer/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2654,7 +2756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_backtracking/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_backtracking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2675,7 +2777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_backtracking/backtracking_algorithm/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_backtracking/backtracking_algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2696,7 +2798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_backtracking/permutations_problem/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_backtracking/permutations_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2717,7 +2819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_backtracking/subset_sum_problem/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_backtracking/subset_sum_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2738,7 +2840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_backtracking/n_queens_problem/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_backtracking/n_queens_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2759,7 +2861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_backtracking/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_backtracking/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2823,7 +2925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_dynamic_programming/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_dynamic_programming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2844,7 +2946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_dynamic_programming/intro_to_dynamic_programming/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_dynamic_programming/intro_to_dynamic_programming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2865,7 +2967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_dynamic_programming/dp_problem_features/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_dynamic_programming/dp_problem_features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2886,7 +2988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_dynamic_programming/dp_solution_pipeline/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_dynamic_programming/dp_solution_pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2907,7 +3009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_dynamic_programming/knapsack_problem/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_dynamic_programming/knapsack_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2928,7 +3030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_dynamic_programming/unbounded_knapsack_problem/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_dynamic_programming/unbounded_knapsack_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2949,7 +3051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_dynamic_programming/edit_distance_problem/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_dynamic_programming/edit_distance_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2970,7 +3072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_dynamic_programming/summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_dynamic_programming/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3034,7 +3136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../chapter_greedy/index.md" class="md-nav__link">
+      <a href="../../chapter_greedy/index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3055,7 +3157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="greedy_algorithm/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_greedy/greedy_algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3076,7 +3178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fractional_knapsack_problem/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_greedy/fractional_knapsack_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3097,7 +3199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="max_capacity_problem/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_greedy/max_capacity_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3118,7 +3220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="max_product_cutting_problem/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_greedy/max_product_cutting_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3139,7 +3241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="summary/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_greedy/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3203,7 +3305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_appendix/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_appendix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3224,7 +3326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_appendix/installation/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_appendix/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3245,7 +3347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_appendix/contribution/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_appendix/contribution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3266,7 +3368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_appendix/terminology/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_appendix/terminology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3330,7 +3432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_reference/" class="md-nav__link">
+      <a href="../../hello-algo/docs/chapter_reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3367,6 +3469,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -3378,6 +3482,77 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      目录
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      目标受众
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      教程结构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何开始
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      贡献指南
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      许可证
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3395,15 +3570,52 @@
   
 
 
-<h1 id="_1">贪心<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class="center-table">
-<p><a class="glightbox" href="../assets/covers/chapter_greedy.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="贪心" src="../assets/covers/chapter_greedy.jpg" width="600" /></a></p>
-</div>
-<div class="admonition abstract">
-<p class="admonition-title">Abstract</p>
-<p>向日葵朝着太阳转动，时刻都在追求自身成长的最大可能。</p>
-<p>贪心策略在一轮轮的简单选择中，逐步导向最佳的答案。</p>
-</div>
+<h1 id="c-stl">C++ &amp; STL 入门教程<a class="headerlink" href="#c-stl" title="Permanent link">&para;</a></h1>
+<p><img alt="GitHub" src="https://img.shields.io/github/license/username/CPP-STL-Tutorial" />
+<a href="https://travis-ci.com/username/CPP-STL-Tutorial"><img alt="Build Status" src="https://travis-ci.com/username/CPP-STL-Tutorial.svg?branch=master" /></a></p>
+<h2 id="_1">目录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#目标受众">目标受众</a></li>
+<li><a href="#教程结构">教程结构</a></li>
+<li><a href="#如何开始">如何开始</a></li>
+<li><a href="#贡献指南">贡献指南</a></li>
+<li><a href="#许可证">许可证</a></li>
+<li><a href="#联系作者">联系作者</a></li>
+</ul>
+<h2 id="_2">简介<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>欢迎来到C++ &amp; STL入门教程！本教程专为希望学习C++及其强大的标准模板库(STL)的初学者设计。我们将从C++的基础语法开始，逐步深入到STL的各种容器、算法和迭代器的使用，使你能够写出更高效、更现代的C++代码。</p>
+<h2 id="_3">目标受众<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>C++新手</li>
+<li>希望提升C++编程技能的软件工程师</li>
+<li>对STL应用感兴趣的学生和专业人员</li>
+</ul>
+<h2 id="_4">教程结构<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>本教程分为以下几部分：</p>
+<ol>
+<li><strong>C++基础</strong> - 包括变量、数据类型、控制结构、函数和类。</li>
+<li><strong>面向对象编程(OOP)</strong> - 学习类、继承、多态和抽象。</li>
+<li><strong>STL入门</strong> - 介绍STL的基本概念和组件。</li>
+<li><strong>容器</strong> - 如vector, list, set, map等。</li>
+<li><strong>算法</strong> - 如sort, find, copy等。</li>
+<li><strong>迭代器和范围</strong> - 探讨如何遍历和操作容器。</li>
+<li><strong>高级主题</strong> - 如智能指针、模板元编程等。</li>
+</ol>
+<p>每个章节均配有理论讲解、代码示例和实践练习，帮助读者巩固所学知识。</p>
+<h2 id="_5">如何开始<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ol>
+<li>克隆或下载本仓库。</li>
+<li>安装C++编译器，如GCC或Clang。</li>
+<li>阅读并理解<code>C++基础</code>部分的内容。</li>
+<li>尝试运行和修改示例代码。</li>
+<li>完成每个章节的练习题，检验学习成果。</li>
+</ol>
+<h2 id="_6">贡献指南<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>我们欢迎任何形式的贡献，包括但不限于提交新的解决方案、改进现有代码、修复 bug、添加新功能等。在提交 PR 之前，请确保你的代码已经通过了所有的测试，并且遵循了项目的编码规范。</p>
+<h2 id="_7">许可证<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>本项目采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA-4.0</a>许可证，详情请参阅  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA-4.0</a>。</p>
+<p>(仅限原创部分，其中使用了其他开源项目的内容，请遵循原项目的协议。)</p>
 
 
 
@@ -3411,8 +3623,13 @@
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
@@ -3445,19 +3662,17 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
-  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
+  </body>
 </html>
