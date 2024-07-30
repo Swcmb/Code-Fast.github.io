@@ -1,0 +1,9381 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="一本开源免费、新手友好的数据结构与算法入门教程">
+      
+      
+        <meta name="author" content="ianwusb">
+      
+      
+      
+        <link rel="prev" href="../6_python3-basic-syntax.html/">
+      
+      
+        <link rel="next" href="../8_python3-type-conversion.html/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+    
+    
+      
+        <title>Python3基本数据类型 - Code-Fast</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Code-Fast" class="md-header__button md-logo" aria-label="Code-Fast" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Code-Fast
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python3基本数据类型
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="zh" class="md-select__link">
+              中文
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Swcmb/Code-Fast.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Swcmb/Code-Fast.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Code-Fast" class="md-nav__button md-logo" aria-label="Code-Fast" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Code-Fast
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Swcmb/Code-Fast.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Swcmb/Code-Fast.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    语言基础
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            语言基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/1_c-tutorial.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 语言教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/2_c-intro.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/3_c-environment-setup.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 环境设置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/4_c-vscode.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C VScode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/5_fitten-code-c.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C AI 编程助手
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/6_c-program-structure.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 程序结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/7_c-basic-syntax.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 基础语法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/8_c-data-types.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 数据类型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/9_c-variables.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 变量
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/10_c-constants.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 常量
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/11_c-storage-classes.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 存储类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/12_c-operators.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 运算符
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/13_c-decision.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 判断
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/14_c-loops.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 循环
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/15_c-functions.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/16_c-scope-rules.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 作用域规则
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/17_c-arrays.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 数组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/18_c-enum.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C enum(枚举)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/19_c-pointers.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 指针
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/20_c-fun-pointer-callback.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数指针
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/21_c-strings.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 字符串
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/22_c-structures.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 结构体
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/23_c-unions.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 共用体
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/24_c-bit-fields.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 位域
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/25_c-typedef.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C typedef
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/26_c-input-output.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 输入 & 输出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/27_c-file-io.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 文件读写
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/28_c-preprocessors.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 预处理器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/29_c-header-files.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 头文件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/30_c-type-casting.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 强制类型转换
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/31_c-error-handling.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 错误处理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/32_c-recursion.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 递归
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/33_c-variable-arguments.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 可变参数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/34_c-memory-management.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 内存管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/35_undefined-behavior.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 未定义行为（Undefined behavior）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/36_c-command-line-arguments.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 命令行参数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/37_c-sort-algorithm.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 排序算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/38_c-examples.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 语言实例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/39_c-100-examples.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 语言经典100例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/40_c-standard-library.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库参考手册
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/41_c-standard-library-assert-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[assert.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/42_c-standard-library-ctype-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[ctype.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/43_c-standard-library-errno-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[errno.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/44_c-standard-library-float-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[float.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/45_c-standard-library-limits-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[limits.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/46_c-standard-library-locale-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[locale.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/47_c-standard-library-math-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[math.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/48_c-standard-library-setjmp-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[setjmp.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/49_c-standard-library-signal-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[signal.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/50_c-standard-library-stdarg-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[stdarg.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/51_c-standard-library-stddef-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[stddef.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/52_c-standard-library-stdio-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[stdio.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/53_c-standard-library-stdlib-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[stdlib.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/54_c-standard-library-string-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[string.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/55_c-standard-library-time-h.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 标准库[time.h]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/56_c-quiz.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C 语言测验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C++
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            C++
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/1_cpp-tutorial.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/2_cpp-intro.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/3_cpp-environment-setup.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 环境设置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/4_fitten-code-cpp.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ AI 编程助手
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/5_cpp-basic-syntax.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 基本语法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/6_cpp-comments.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 注释
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/7_cpp-data-types.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 数据类型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/8_cpp-variable-types.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 变量类型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/9_cpp-variable-scope.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 变量作用域
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/10_cpp-constants-literals.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 常量
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/11_cpp-modifier-types.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 修饰符类型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/12_cpp-storage-classes.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 存储类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/13_cpp-operators.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 运算符
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/14_cpp-loops.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 循环
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/15_cpp-decision.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 判断
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/16_cpp-functions.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/17_cpp-numbers.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 数字
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/18_cpp-arrays.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 数组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/19_cpp-strings.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 字符串
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/20_cpp-pointers.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 指针
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/21_cpp-references.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 引用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/22_cpp-date-time.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 日期 & 时间
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/23_cpp-basic-input-output.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 基本的输入输出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/24_cpp-data-structures.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/25_cpp-vector.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ vector 容器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/26_cpp-classes-objects.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 类 & 对象类 & 对象详解
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/27_cpp-inheritance.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 继承
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/28_cpp-overloading.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 重载运算符和重载函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/29_cpp-polymorphism.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 多态
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/30_cpp-data-abstraction.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 数据抽象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/31_cpp-data-encapsulation.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 数据封装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/32_cpp-interfaces.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 接口（抽象类）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/33_cpp-files-streams.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 文件和流
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/34_cpp-exceptions-handling.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 异常处理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/35_cpp-dynamic-memory.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 动态内存
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/36_cpp-namespaces.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 命名空间
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/37_cpp-templates.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 模板
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/38_cpp-preprocessor.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 预处理器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/39_cpp-signal-handling.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 信号处理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/40_cpp-multithreading.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 多线程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/41_cpp-web-programming.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ Web 编程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/42_cpp-stl-tutorial.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ STL 教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/43_cpp-standard-library.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/44_cpp-useful-resources.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 有用的资源
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/45_cpp-examples.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 实例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/46_cpp-quiz.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 语言测验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/47_cpp-libs-iostream.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准输入输出[iostream]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/48_cpp-libs-fstream.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 文件输入输出库[fstream]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/49_cpp-libs-sstream.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库  [sstream]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/50_cpp-libs-iomanip.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [iomanip]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/51_cpp-libs-array.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 容器类 [array]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/52_cpp-libs-vector.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 容器类 [vector]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/53_cpp-libs-list.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 容器类 [list]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/54_cpp-libs-forward_list.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 容器 [forward_list]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/55_cpp-libs-deque.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [deque]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/56_cpp-libs-stack.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [stack]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/57_cpp-libs-queue.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 容器类 [queue]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/58_cpp-libs-priority_queue.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 容器类 [priority_queue]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/59_cpp-libs-set.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 容器类 [set]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/60_cpp-libs-unordered_set.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 容器类 [unordered_set]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/61_cpp-libs-map.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 容器类 [map]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/62_cpp-libs-unordered_map.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [unordered_map]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/63_cpp-libs-bitset.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [bitset]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/64_cpp-libs-algorithm.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 算法库 [algorithm]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/65_cpp-libs-iterator.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [iterator]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/66_cpp-libs-functional.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [functional]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/67_cpp-libs-numeric.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [numeric]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/68_cpp-libs-complex.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [complex] 入门指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/69_cpp-libs-valarray.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [valarray]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/70_cpp-libs-cmath.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [cmath]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/71_cpp-libs-string.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [string]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/72_cpp-libs-regex.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [regex]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/73_cpp-libs-ctime.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [ctime]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/74_cpp-libs-chrono.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [chrono]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/75_cpp-libs-thread.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 多线程库 [thread]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/76_cpp-libs-mutex.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [mutex]：初学者指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/77_cpp-libs-condition_variable.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [condition_variable]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/78_cpp-libs-future.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [future]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/79_cpp-libs-atomic.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [atomic]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/80_cpp-libs-type_traits.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [type_traits]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/81_cpp-libs-typeinfo.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [typeinfo]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/82_cpp-libs-exception.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [exception]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/83_cpp-libs-stdexcept.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 异常处理库  [stdexcept]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/84_cpp-libs-cstdio.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [cstdio]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/85_cpp-libs-cstdint.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [cstdint]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/86_cpp-libs-memory.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 内存管理库 [memory]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/87_cpp-libs-new.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 内存管理库 [new]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/88_cpp-libs-utility.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [utility]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/89_cpp-libs-random.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [random]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/90_cpp-libs-locale.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [locale]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/91_cpp-libs-codecvt.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [codecvt]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/92_cpp-libs-cassert.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库中的 [cassert]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/93_cpp-libs-cwchar.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [cwchar]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/94_cpp-libs-climits.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [climits]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/95_cpp-libs-cfloat.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库中的 [cfloat] 模块
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/96_cpp-libs-cstdlib.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ 标准库 [cstdlib]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/1_java-tutorial.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/2_java-intro.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/3_java-environment-setup.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开发环境配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/4_fitten-code-java.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI编程助手
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/5_java-basic-syntax.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基础语法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/6_java-comments.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    注释
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/7_java-object-classes.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对象和类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/8_java-basic-datatypes.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基本数据类型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/9_java-variable-types.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    变量类型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/10_java-variable-naming-rules.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    变量命名规则
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/11_java-modifier-types.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    修饰符
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/12_java-operators.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    运算符
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/13_java-loop.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    循环结构-for,while及do...while
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/14_java-if-else-switch.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    条件语句-if...else
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/15_java-switch-case.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    switchcase语句
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/16_java-number.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Number&Math类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/17_java-character.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Character类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/18_java-string.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    String类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/19_java-stringbuffer.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StringBuffer和StringBuilder类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/20_java-array.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/21_java-date-time.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    日期时间
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/22_java-regular-expressions.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    正则表达式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/23_java-methods.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/24_java-files-io.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    流(Stream)、文件(File)和IO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/25_java-scanner-class.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scanner类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/26_java-exceptions.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    异常处理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/27_java-inheritance.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    继承
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/28_java-override-overload.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    重写(Override)与重载(Overload)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/29_java-polymorphism.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多态
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/30_java-abstraction.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    抽象类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/31_java-encapsulation.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    封装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/32_java-interfaces.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    接口
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/33_java-enum.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    枚举(enum)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/34_java-package.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    包(package)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/35_java-data-structures.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/36_java-collections.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    集合框架
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/37_java-arraylist.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ArrayList
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/38_java-linkedlist.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LinkedList
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/39_java-hashset.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HashSet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/40_java-hashmap.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HashMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/41_java-iterator.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Iterator（迭代器）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/42_java-object-class.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/43_java-generics.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    泛型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/44_java-serialization.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    序列化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/45_java-networking.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    网络编程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/46_java-sending-email.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    发送邮件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/47_java-multithreading.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多线程编程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/48_java-applet-basics.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Applet基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/49_java-documentation.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文档注释
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/50_java-examples.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/51_java8-new-features.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8新特性
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/52_java-mysql-connect.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MySQL连接
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/53_java9-new-features.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9新特性
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/54_java-quiz.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    测验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_python3-tutorial.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_python3-intro.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_python3-install.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_python-vscode-setup.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PythonVScode配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_fitten-code.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PythonAI编程助手
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_python3-basic-syntax.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3基础语法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Python3基本数据类型
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8_python3-type-conversion.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3数据类型转换
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9_python3-interpreter.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3解释器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_python3-comment.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3注释
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_python3-basic-operators.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_python3-number.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3数字(Number)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_python3-string.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_python3-list.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_python3-tuple.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16_python3-dictionary.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17_python3-set.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3集合
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18_python3-conditional-statements.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3条件控制
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19_python3-loop.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3循环语句
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20_python3-step1.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3编程第一步
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21_python-comprehensions.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python推导式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22_python3-iterator-generator.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3迭代器与生成器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23_python3-function.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24_python-lambda.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pythonlambda（匿名函数）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25_python-decorators.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python装饰器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26_python3-data-structure.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27_python3-module.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3模块
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28_python3-inputoutput.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3输入和输出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29_python3-file-methods.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3File(文件)方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30_python3-os-file-methods.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3OS文件/目录方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31_python3-errors-execptions.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3错误和异常
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32_python3-class.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3面向对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33_python3-namespace-scope.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3命名空间和作用域
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34_python3-stdlib.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3标准库概览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35_python3-examples.html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python3实例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数据结构与算法入门
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            数据结构与算法入门
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 0 章 &nbsp; 前言
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            第 0 章 &nbsp; 前言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_preface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    前言
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_preface/about_the_book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0.1 &nbsp; 关于本书
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_preface/suggestions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0.2 &nbsp; 如何使用本书
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_preface/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0.3 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 1 章 &nbsp; 初识算法
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            第 1 章 &nbsp; 初识算法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    初识算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_introduction/algorithms_are_everywhere/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 &nbsp; 算法无处不在
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_introduction/what_is_dsa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 &nbsp; 算法是什么
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_introduction/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 2 章 &nbsp; 复杂度分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            第 2 章 &nbsp; 复杂度分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_computational_complexity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复杂度分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_computational_complexity/performance_evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 &nbsp; 算法效率评估
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_computational_complexity/iteration_and_recursion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 &nbsp; 迭代与递归
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_computational_complexity/time_complexity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 &nbsp; 时间复杂度
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_computational_complexity/space_complexity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 &nbsp; 空间复杂度
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_computational_complexity/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 3 章 &nbsp; 数据结构
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            第 3 章 &nbsp; 数据结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_data_structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_data_structure/classification_of_data_structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 &nbsp; 数据结构分类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_data_structure/basic_data_types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 &nbsp; 基本数据类型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_data_structure/number_encoding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 &nbsp; 数字编码 *
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_data_structure/character_encoding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 &nbsp; 字符编码 *
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_data_structure/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 4 章 &nbsp; 数组与链表
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            第 4 章 &nbsp; 数组与链表
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_array_and_linkedlist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数组与链表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_array_and_linkedlist/array/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 &nbsp; 数组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_array_and_linkedlist/linked_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 &nbsp; 链表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_array_and_linkedlist/list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 &nbsp; 列表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_array_and_linkedlist/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 5 章 &nbsp; 栈与队列
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            第 5 章 &nbsp; 栈与队列
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_stack_and_queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    栈与队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_stack_and_queue/stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1 &nbsp; 栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_stack_and_queue/queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.2 &nbsp; 队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_stack_and_queue/deque/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3 &nbsp; 双向队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_stack_and_queue/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.4 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 6 章 &nbsp; 哈希表
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            第 6 章 &nbsp; 哈希表
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_hashing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    哈希表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_hashing/hash_map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1 &nbsp; 哈希表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_hashing/hash_collision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.2 &nbsp; 哈希冲突
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_hashing/hash_algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.3 &nbsp; 哈希算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_hashing/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.4 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 7 章 &nbsp; 树
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            第 7 章 &nbsp; 树
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_tree/binary_tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1 &nbsp; 二叉树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_tree/binary_tree_traversal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.2 &nbsp; 二叉树遍历
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_tree/array_representation_of_tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3 &nbsp; 二叉树数组表示
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_tree/binary_search_tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.4 &nbsp; 二叉搜索树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_tree/avl_tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5 &nbsp; AVL 树 *
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_tree/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 8 章 &nbsp; 堆
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            第 8 章 &nbsp; 堆
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_heap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    堆
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_heap/heap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1 &nbsp; 堆
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_heap/build_heap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2 &nbsp; 建堆操作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_heap/top_k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.3 &nbsp; Top-K 问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_heap/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.4 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 9 章 &nbsp; 图
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            第 9 章 &nbsp; 图
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    图
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_graph/graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.1 &nbsp; 图
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_graph/graph_operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.2 &nbsp; 图基础操作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_graph/graph_traversal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.3 &nbsp; 图的遍历
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_graph/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.4 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 10 章 &nbsp; 搜索
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            第 10 章 &nbsp; 搜索
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_searching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    搜索
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_searching/binary_search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.1 &nbsp; 二分查找
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_searching/binary_search_insertion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2 &nbsp; 二分查找插入点
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_searching/binary_search_edge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.3 &nbsp; 二分查找边界
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_searching/replace_linear_by_hashing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.4 &nbsp; 哈希优化策略
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_searching/searching_algorithm_revisited/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.5 &nbsp; 重识搜索算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_searching/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.6 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 11 章 &nbsp; 排序
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            第 11 章 &nbsp; 排序
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_sorting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_sorting/sorting_algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.1 &nbsp; 排序算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_sorting/selection_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.2 &nbsp; 选择排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_sorting/bubble_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.3 &nbsp; 冒泡排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_sorting/insertion_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.4 &nbsp; 插入排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_sorting/quick_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.5 &nbsp; 快速排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_sorting/merge_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.6 &nbsp; 归并排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_sorting/heap_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.7 &nbsp; 堆排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_sorting/bucket_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.8 &nbsp; 桶排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_sorting/counting_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.9 &nbsp; 计数排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_sorting/radix_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.10 &nbsp; 基数排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_sorting/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.11 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 12 章 &nbsp; 分治
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            第 12 章 &nbsp; 分治
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_divide_and_conquer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分治
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_divide_and_conquer/divide_and_conquer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.1 &nbsp; 分治算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_divide_and_conquer/binary_search_recur/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.2 &nbsp; 分治搜索策略
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_divide_and_conquer/build_binary_tree_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.3 &nbsp; 构建树问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_divide_and_conquer/hanota_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.4 &nbsp; 汉诺塔问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_divide_and_conquer/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.5 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 13 章 &nbsp; 回溯
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            第 13 章 &nbsp; 回溯
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_backtracking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    回溯
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_backtracking/backtracking_algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.1 &nbsp; 回溯算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_backtracking/permutations_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.2 &nbsp; 全排列问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_backtracking/subset_sum_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.3 &nbsp; 子集和问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_backtracking/n_queens_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.4 &nbsp; N 皇后问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_backtracking/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.5 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 14 章 &nbsp; 动态规划
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_15">
+            <span class="md-nav__icon md-icon"></span>
+            第 14 章 &nbsp; 动态规划
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_dynamic_programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    动态规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_dynamic_programming/intro_to_dynamic_programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.1 &nbsp; 初探动态规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_dynamic_programming/dp_problem_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.2 &nbsp; DP 问题特性
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_dynamic_programming/dp_solution_pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.3 &nbsp; DP 解题思路
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_dynamic_programming/knapsack_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.4 &nbsp; 0-1 背包问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_dynamic_programming/unbounded_knapsack_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.5 &nbsp; 完全背包问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_dynamic_programming/edit_distance_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.6 &nbsp; 编辑距离问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_dynamic_programming/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.7 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_16" id="__nav_2_16_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 15 章 &nbsp; 贪心
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_16">
+            <span class="md-nav__icon md-icon"></span>
+            第 15 章 &nbsp; 贪心
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chapter_greedy/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_greedy/greedy_algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.1 &nbsp; 贪心算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_greedy/fractional_knapsack_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.2 &nbsp; 分数背包问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_greedy/max_capacity_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.3 &nbsp; 最大容量问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_greedy/max_product_cutting_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.4 &nbsp; 最大切分乘积问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_greedy/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.5 &nbsp; 小结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_17" id="__nav_2_17_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第 16 章 &nbsp; 附录
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_17">
+            <span class="md-nav__icon md-icon"></span>
+            第 16 章 &nbsp; 附录
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_appendix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    附录
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_appendix/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16.1 &nbsp; 编程环境安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_appendix/contribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16.2 &nbsp; 一起参与创作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_appendix/terminology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16.3 &nbsp; 术语表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_18" id="__nav_2_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    参考文献
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_18">
+            <span class="md-nav__icon md-icon"></span>
+            参考文献
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hello-algo/docs/chapter_reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参考文献
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Python3 基本数据类型</title>
+ <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+<body>
+<div class="article-intro" id="content">
+
+            <h1>Python3 基本数据类型</h1>&#13;
+<p>&#13;
+Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。</p>&#13;
+<p>在 Python 中，变量就是变量，它没有类型，我们所说的"类型"是变量所指的内存中对象的类型。</p>&#13;
+<p>等号（=）用来给变量赋值。</p><p>&#13;
+等号（=）运算符左边是一个变量名,等号（=）运算符右边是存储在变量中的值。例如：</p>&#13;
+<div class="example"> &#13;
+<h2 class="example">实例(Python 3.0+)</h2> &#13;
+<div class="example_code">&#13;
+
+<span style="color: #a50">#!/usr/bin/python3</span><br/>
+<br/>
+counter <span style="color: Gray;">=</span> <span style="color: Maroon;">100</span>          <span style="color: #a50"># 整型变量</span><br/>
+miles   <span style="color: Gray;">=</span> <span style="color: Maroon;">1000.0</span>       <span style="color: #a50"># 浮点型变量</span><br/>
+name    <span style="color: Gray;">=</span> <span style="color: #a11;">"runoob"</span>     <span style="color: #a50"># 字符串</span><br/>
+<br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span>counter<span style="color: Olive;">)</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span>miles<span style="color: Olive;">)</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span>name<span style="color: Olive;">)</span><br/>
+&#13;
+</div><br/>&#13;
+<a target="_blank" href="/try/runcode.php?filename=basic_data_type1&amp;type=python3" class="showbtn" rel="noopener noreferrer">运行实例 »</a>&#13;
+</div>&#13;
+<p>执行以上程序会输出如下结果：</p>&#13;
+<pre>&#13;
+100&#13;
+1000.0&#13;
+runoob&#13;
+</pre>&#13;
+<h3>多个变量赋值</h3>&#13;
+<p>&#13;
+Python允许你同时为多个变量赋值。例如：</p>&#13;
+<pre>&#13;
+a = b = c = 1&#13;
+</pre>&#13;
+<p>&#13;
+以上实例，创建一个整型对象，值为 1，从后向前赋值，三个变量被赋予相同的数值。&#13;
+</p><p>&#13;
+您也可以为多个对象指定多个变量。例如：</p><pre>&#13;
+a, b, c = 1, 2, "runoob"</pre><p>&#13;
+以上实例，两个整型对象 1 和 2 的分配给变量 a 和 b，字符串对象 "runoob" 分配给变量 c。</p>&#13;
+<hr/>&#13;
+<h2>标准数据类型</h2>&#13;
+<p>Python3 中常见的数据类型有：&#13;
+</p>&#13;
+<ul>&#13;
+<li>Number（数字）</li>&#13;
+<li>String（字符串）</li>&#13;
+<li> bool（布尔类型）</li>&#13;
+&#13;
+<li>List（列表）</li>&#13;
+<li>Tuple（元组）</li>&#13;
+<li>Set（集合）</li>&#13;
+<li>Dictionary（字典）</li>&#13;
+</ul>&#13;
+<p>Python3 的六个标准数据类型中：</p><ul><li>&#13;
+<strong>不可变数据（3 个）：</strong>Number（数字）、String（字符串）、Tuple（元组）；</li><li>&#13;
+<strong>可变数据（3 个）：</strong>List（列表）、Dictionary（字典）、Set（集合）。&#13;
+</li></ul>&#13;
+<p>此外还有一些高级的数据类型，如: 字节数组类型(bytes)。</p>&#13;
+&#13;
+<hr/>&#13;
+<h2>Number（数字）</h2>&#13;
+<p>Python3 支持 <b>int、float、bool、complex（复数）</b>。&#13;
+</p>&#13;
+<p>在Python 3里，只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。</p>&#13;
+<p>像大多数语言一样，数值类型的赋值和计算都是很直观的。</p>&#13;
+<p>内置的 type() 函数可以用来查询变量所指的对象类型。</p>&#13;
+<pre>&#13;
+&gt;&gt;&gt; a, b, c, d = 20, 5.5, True, 4+3j&#13;
+&gt;&gt;&gt; print(type(a), type(b), type(c), type(d))&#13;
+&lt;class 'int'&gt; &lt;class 'float'&gt; &lt;class 'bool'&gt; &lt;class 'complex'&gt;&#13;
+</pre>&#13;
+&#13;
+<p>此外还可以用 isinstance 来判断：</p>&#13;
+<div class="example">&#13;
+<h2 class="example">实例</h2>&#13;
+<div class="example_code">&#13;
+
+<span style="color: Gray;">&gt;&gt;&gt;</span> a <span style="color: Gray;">=</span> <span style="color: Maroon;">111</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Teal;">isinstance</span><span style="color: Olive;">(</span>a<span style="color: Gray;">,</span> <span style="color: Teal;">int</span><span style="color: Olive;">)</span><br/>
+<span style="color: Teal;">True</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <br/>
+&#13;
+</div>&#13;
+</div>&#13;
+<p>&#13;
+isinstance 和 type 的区别在于：</p>&#13;
+<ul><li>&#13;
+type()不会认为子类是一种父类类型。</li><li>&#13;
+isinstance()会认为子类是一种父类类型。</li></ul>&#13;
+<pre>&#13;
+&gt;&gt;&gt; class A:&#13;
+...     pass&#13;
+... &#13;
+&gt;&gt;&gt; class B(A):&#13;
+...     pass&#13;
+... &#13;
+&gt;&gt;&gt; isinstance(A(), A)&#13;
+True&#13;
+&gt;&gt;&gt; type(A()) == A &#13;
+True&#13;
+&gt;&gt;&gt; isinstance(B(), A)&#13;
+True&#13;
+&gt;&gt;&gt; type(B()) == A&#13;
+False&#13;
+</pre>&#13;
+&#13;
+&#13;
+<blockquote>&#13;
+<p><b>注意：</b>Python3 中，bool 是 int 的子类，True 和 False 可以和数字相加， <span class="marked">True==1、False==0</span> 会返回 <strong>True</strong>，但可以通过 <span class="marked">is</span> 来判断类型。</p>&#13;
+<pre>&#13;
+&gt;&gt;&gt; issubclass(bool, int) &#13;
+True&#13;
+&gt;&gt;&gt; True==1&#13;
+True&#13;
+&gt;&gt;&gt; False==0&#13;
+True&#13;
+&gt;&gt;&gt; True+1&#13;
+2&#13;
+&gt;&gt;&gt; False+1&#13;
+1&#13;
+&gt;&gt;&gt; 1 is True&#13;
+False&#13;
+&gt;&gt;&gt; 0 is False&#13;
+False&#13;
+</pre>&#13;
+<p>在 Python2 中是没有布尔型的，它用数字 0 表示 False，用 1 表示 True。</p>&#13;
+</blockquote>&#13;
+<p>当你指定一个值时，Number 对象就会被创建：</p>&#13;
+<pre>&#13;
+var1 = 1&#13;
+var2 = 10&#13;
+</pre><p>&#13;
+您也可以使用del语句删除一些对象引用。</p><p>&#13;
+del语句的语法是：</p>&#13;
+<pre>&#13;
+del var1[,var2[,var3[....,varN]]]&#13;
+</pre>&#13;
+<p>您可以通过使用del语句删除单个或多个对象。例如：</p>&#13;
+<pre>&#13;
+del var&#13;
+del var_a, var_b</pre>&#13;
+<h3>数值运算</h3>&#13;
+<div class="example">&#13;
+<h2 class="example">实例</h2>&#13;
+<div class="example_code">&#13;
+
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Maroon;">5</span> + <span style="color: Maroon;">4</span>  <span style="color: #a50"># 加法</span><br/>
+<span style="color: Maroon;">9</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Maroon;">4.3</span> - <span style="color: Maroon;">2</span> <span style="color: #a50"># 减法</span><br/>
+<span style="color: Maroon;">2.3</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Maroon;">3</span> * <span style="color: Maroon;">7</span>  <span style="color: #a50"># 乘法</span><br/>
+<span style="color: Maroon;">21</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Maroon;">2</span> / <span style="color: Maroon;">4</span>  <span style="color: #a50"># 除法，得到一个浮点数</span><br/>
+<span style="color: Maroon;">0.5</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Maroon;">2</span> // <span style="color: Maroon;">4</span> <span style="color: #a50"># 除法，得到一个整数</span><br/>
+<span style="color: Maroon;">0</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Maroon;">17</span> % <span style="color: Maroon;">3</span> <span style="color: #a50"># 取余 </span><br/>
+<span style="color: Maroon;">2</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Maroon;">2</span> ** <span style="color: Maroon;">5</span> <span style="color: #a50"># 乘方</span><br/>
+<span style="color: Maroon;">32</span><br/>
+&#13;
+</div>&#13;
+</div>&#13;
+<p><b>注意：</b></p>&#13;
+<ul>&#13;
+<li>1、Python可以同时为多个变量赋值，如a, b = 1, 2。</li><li>&#13;
+2、一个变量可以通过赋值指向不同类型的对象。</li><li>&#13;
+3、数值的除法包含两个运算符：<span class="marked">/</span> 返回一个浮点数，<span class="marked">//</span> 返回一个整数。</li><li>&#13;
+4、在混合计算时，Python会把整型转换成为浮点数。&#13;
+</li>&#13;
+</ul>&#13;
+<h3>数值类型实例</h3>&#13;
+<table class="reference">&#13;
+<tbody><tr><th>int</th><th>float</th><th>complex</th></tr>&#13;
+<tr><td>10</td><td>0.0</td><td>3.14j</td></tr>&#13;
+<tr><td>100</td><td>15.20</td><td>45.j</td></tr>&#13;
+<tr><td>-786</td><td>-21.9</td><td>9.322e-36j</td></tr>&#13;
+<tr><td>080</td><td>32.3e+18</td><td>.876j</td></tr>&#13;
+<tr><td>-0490</td><td>-90.</td><td>-.6545+0J</td></tr>&#13;
+<tr><td>-0x260</td><td>-32.54e100</td><td>3e+26J</td></tr>&#13;
+<tr><td>0x69</td><td>70.2E-12</td><td>4.53e-7j</td></tr>&#13;
+</tbody></table>&#13;
+<p>Python 还支持复数，复数由实数部分和虚数部分构成，可以用 <span class="marked">a + bj</span>，或者 <span class="marked">complex(a,b)</span> 表示， 复数的实部 <strong>a</strong> 和虚部 <strong>b</strong> 都是浮点型。</p>&#13;
+<hr/>&#13;
+<h2>String（字符串）</h2>&#13;
+<p>Python中的字符串用单引号 <span class="marked">'</span> 或双引号 <span class="marked">"</span> 括起来，同时使用反斜杠 <span class="marked">\</span> 转义特殊字符。</p>&#13;
+<p>字符串的截取的语法格式如下：</p> <pre>变量[头下标:尾下标]</pre><p>索引值以 0 为开始值，-1 为从末尾的开始位置。</p>&#13;
+<p><a class="glightbox" href="https://static.jyshare.com/wp-content/uploads/123456-20200923-1.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img decoding="async" src="https://static.jyshare.com/wp-content/uploads/123456-20200923-1.svg"/></a></p>&#13;
+<p>加号  <span class="marked">+</span>  是字符串的连接符， 星号  <span class="marked">*</span>  表示复制当前字符串，与之结合的数字为复制的次数。实例如下：</p>&#13;
+<div class="example">&#13;
+<h2 class="example">实例</h2>&#13;
+<div class="example_code">&#13;
+
+<span style="color: #a50">#!/usr/bin/python3</span><br/>
+<br/>
+<span style="color: Teal;">str</span> <span style="color: Gray;">=</span> <span style="color: #a11;">'Runoob'</span>  <span style="color: #a50"># 定义一个字符串变量</span><br/>
+<br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">str</span><span style="color: Olive;">)</span>           <span style="color: #a50"># 打印整个字符串</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">str</span><span style="color: Olive;">[</span><span style="color: Maroon;">0</span>:-<span style="color: Maroon;">1</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span>     <span style="color: #a50"># 打印字符串第一个到倒数第二个字符（不包含倒数第一个字符）</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">str</span><span style="color: Olive;">[</span><span style="color: Maroon;">0</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span>        <span style="color: #a50"># 打印字符串的第一个字符</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">str</span><span style="color: Olive;">[</span><span style="color: Maroon;">2</span>:<span style="color: Maroon;">5</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span>      <span style="color: #a50"># 打印字符串第三到第五个字符（包含第五个字符）</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">str</span><span style="color: Olive;">[</span><span style="color: Maroon;">2</span>:<span style="color: Olive;">]</span><span style="color: Olive;">)</span>       <span style="color: #a50"># 打印字符串从第三个字符开始到末尾</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">str</span> * <span style="color: Maroon;">2</span><span style="color: Olive;">)</span>       <span style="color: #a50"># 打印字符串两次</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">str</span> + <span style="color: #a11;">"TEST"</span><span style="color: Olive;">)</span>  <span style="color: #a50"># 打印字符串和"TEST"拼接在一起</span><br/>
+&#13;
+</div>&#13;
+</div>&#13;
+<p>执行以上程序会输出如下结果：</p>&#13;
+<pre>&#13;
+Runoob&#13;
+Runoo&#13;
+R&#13;
+noo&#13;
+noob&#13;
+RunoobRunoob&#13;
+RunoobTEST&#13;
+</pre>&#13;
+<p>Python 使用反斜杠 <span class="marked">\</span> 转义特殊字符，如果你不想让反斜杠发生转义，可以在字符串前面添加一个 <span class="marked">r</span>，表示原始字符串：</p>&#13;
+<div class="example"><h2 class="example">实例</h2> <div class="example_code">
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: #a11;">'Ru<span style="color: #000099; font-weight: bold;">\n</span>oob'</span><span style="color: Olive;">)</span><br/>
+Ru<br/>
+oob<br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span>r<span style="color: #a11;">'Ru<span style="color: #000099; font-weight: bold;">\n</span>oob'</span><span style="color: Olive;">)</span><br/>
+Ru\noob<br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <br/>
+</div></div>&#13;
+&#13;
+<p>&#13;
+另外，反斜杠(\)可以作为续行符，表示下一行是上一行的延续。也可以使用 <b>"""..."""</b> 或者 <b>'''...'''</b> 跨越多行。&#13;
+</p>&#13;
+&#13;
+&#13;
+<p>注意，Python 没有单独的字符类型，一个字符就是长度为1的字符串。&#13;
+</p>&#13;
+<div class="example">&#13;
+<h2 class="example">实例</h2>&#13;
+<div class="example_code">&#13;
+
+<span style="color: Gray;">&gt;&gt;&gt;</span> word <span style="color: Gray;">=</span> <span style="color: #a11;">'Python'</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span>word<span style="color: Olive;">[</span><span style="color: Maroon;">0</span><span style="color: Olive;">]</span><span style="color: Gray;">,</span> word<span style="color: Olive;">[</span><span style="color: Maroon;">5</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span><br/>
+P n<br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span>word<span style="color: Olive;">[</span>-<span style="color: Maroon;">1</span><span style="color: Olive;">]</span><span style="color: Gray;">,</span> word<span style="color: Olive;">[</span>-<span style="color: Maroon;">6</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span><br/>
+n P<br/>
+&#13;
+</div>&#13;
+</div>&#13;
+&#13;
+&#13;
+<p>与 C 字符串不同的是，Python 字符串不能被改变。向一个索引位置赋值，比如 <span class="marked">word[0] = 'm'</span> 会导致错误。&#13;
+</p>&#13;
+<p>&#13;
+<b>注意：</b></p>&#13;
+<ul>&#13;
+<li>&#13;
+1、反斜杠可以用来转义，使用r可以让反斜杠不发生转义。</li><li>&#13;
+2、字符串可以用+运算符连接在一起，用*运算符重复。</li><li>&#13;
+3、Python中的字符串有两种索引方式，从左往右以0开始，从右往左以-1开始。</li><li>&#13;
+4、Python中的字符串不能改变。</li></ul><hr/>&#13;
+<h2>bool（布尔类型）</h2>&#13;
+<p>布尔类型即 True 或 False。</p><p>在 Python 中，True 和 False 都是关键字，表示布尔值。</p>&#13;
+<p>布尔类型可以用来控制程序的流程，比如判断某个条件是否成立，或者在某个条件满足时执行某段代码。</p>&#13;
+<p>布尔类型特点：</p>&#13;
+<ul><li><p>布尔类型只有两个值：True 和 False。</p></li>&#13;
+<li><p>bool 是 int 的子类，因此布尔值可以被看作整数来使用，其中 True 等价于 1。</p></li>&#13;
+<li><p>布尔类型可以和其他数据类型进行比较，比如数字、字符串等。在比较时，Python 会将 True 视为 1，False 视为 0。</p></li><li><p>布尔类型可以和逻辑运算符一起使用，包括 and、or 和 not。这些运算符可以用来组合多个布尔表达式，生成一个新的布尔值。</p></li><li><p>布尔类型也可以被转换成其他数据类型，比如整数、浮点数和字符串。在转换时，True 会被转换成 1，False 会被转换成 0。</p></li>&#13;
+<li>可以使用 <code>bool()</code> 函数将其他类型的值转换为布尔值。以下值在转换为布尔值时为 <code>False</code>：<code>None</code>、<code>False</code>、零 (<code>0</code>、<code>0.0</code>、<code>0j</code>)、空序列（如 <code>''</code>、<code>()</code>、<code>[]</code>）和空映射（如 <code>{}</code>）。其他所有值转换为布尔值时均为 <code>True</code>。</li>&#13;
+</ul>&#13;
+&#13;
+<div class="example"><h2 class="example">实例</h2> <div class="example_code">
+<span style="color: #a50"># 布尔类型的值和类型</span><br/>
+a <span style="color: Gray;">=</span> <span style="color: Teal;">True</span><br/>
+b <span style="color: Gray;">=</span> <span style="color: Teal;">False</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">type</span><span style="color: Olive;">(</span>a<span style="color: Olive;">)</span><span style="color: Olive;">)</span>  <span style="color: #a50"># &lt;class 'bool'&gt;</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">type</span><span style="color: Olive;">(</span>b<span style="color: Olive;">)</span><span style="color: Olive;">)</span>  <span style="color: #a50"># &lt;class 'bool'&gt;</span><br/>
+<br/>
+<span style="color: #a50"># 布尔类型的整数表现</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">int</span><span style="color: Olive;">(</span><span style="color: Teal;">True</span><span style="color: Olive;">)</span><span style="color: Olive;">)</span>   <span style="color: #a50"># 1</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">int</span><span style="color: Olive;">(</span><span style="color: Teal;">False</span><span style="color: Olive;">)</span><span style="color: Olive;">)</span>  <span style="color: #a50"># 0</span><br/>
+<br/>
+<span style="color: #a50"># 使用 bool() 函数进行转换</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">bool</span><span style="color: Olive;">(</span><span style="color: Maroon;">0</span><span style="color: Olive;">)</span><span style="color: Olive;">)</span>         <span style="color: #a50"># False</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">bool</span><span style="color: Olive;">(</span><span style="color: Maroon;">42</span><span style="color: Olive;">)</span><span style="color: Olive;">)</span>        <span style="color: #a50"># True</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">bool</span><span style="color: Olive;">(</span><span style="color: #a11;">''</span><span style="color: Olive;">)</span><span style="color: Olive;">)</span>        <span style="color: #a50"># False</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">bool</span><span style="color: Olive;">(</span><span style="color: #a11;">'Python'</span><span style="color: Olive;">)</span><span style="color: Olive;">)</span>  <span style="color: #a50"># True</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">bool</span><span style="color: Olive;">(</span><span style="color: Olive;">[</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span><span style="color: Olive;">)</span>        <span style="color: #a50"># False</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">bool</span><span style="color: Olive;">(</span><span style="color: Olive;">[</span><span style="color: Maroon;">1</span><span style="color: Gray;">,</span> <span style="color: Maroon;">2</span><span style="color: Gray;">,</span> <span style="color: Maroon;">3</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span><span style="color: Olive;">)</span> <span style="color: #a50"># True</span><br/>
+<br/>
+<span style="color: #a50"># 布尔逻辑运算</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">True</span> <span style="color: Green;font-weight:bold;">and</span> <span style="color: Teal;">False</span><span style="color: Olive;">)</span>  <span style="color: #a50"># False</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Teal;">True</span> <span style="color: Green;font-weight:bold;">or</span> <span style="color: Teal;">False</span><span style="color: Olive;">)</span>   <span style="color: #a50"># True</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Green;font-weight:bold;">not</span> <span style="color: Teal;">True</span><span style="color: Olive;">)</span>        <span style="color: #a50"># False</span><br/>
+<br/>
+<span style="color: #a50"># 布尔比较运算</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Maroon;">5</span> <span style="color: Gray;">&gt;</span> <span style="color: Maroon;">3</span><span style="color: Olive;">)</span>  <span style="color: #a50"># True</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Maroon;">2</span> <span style="color: Gray;">==</span> <span style="color: Maroon;">2</span><span style="color: Olive;">)</span> <span style="color: #a50"># True</span><br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: Maroon;">7</span> <span style="color: Gray;">&lt;</span> <span style="color: Maroon;">4</span><span style="color: Olive;">)</span>  <span style="color: #a50"># False</span><br/>
+<br/>
+<span style="color: #a50"># 布尔值在控制流中的应用</span><br/>
+<span style="color: Green;font-weight:bold;">if</span> <span style="color: Teal;">True</span>:<br/>
+    <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: #a11;">"This will always print"</span><span style="color: Olive;">)</span><br/>
+    <br/>
+<span style="color: Green;font-weight:bold;">if</span> <span style="color: Green;font-weight:bold;">not</span> <span style="color: Teal;">False</span>:<br/>
+    <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: #a11;">"This will also always print"</span><span style="color: Olive;">)</span><br/>
+    <br/>
+x <span style="color: Gray;">=</span> <span style="color: Maroon;">10</span><br/>
+<span style="color: Green;font-weight:bold;">if</span> x:<br/>
+    <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: #a11;">"x is non-zero and thus True in a boolean context"</span><span style="color: Olive;">)</span><br/>
+</div></div>&#13;
+<p><strong>注意:</strong> 在 Python 中，所有非零的数字和非空的字符串、列表、元组等数据类型都被视为 True，只有 <strong>0、空字符串、空列表、空元组</strong>等被视为 False。因此，在进行布尔类型转换时，需要注意数据类型的真假性。</p>&#13;
+<hr/>&#13;
+<h2>List（列表）</h2>&#13;
+<p>List（列表） 是 Python 中使用最频繁的数据类型。</p>&#13;
+<p>列表可以完成大多数集合类的数据结构实现。列表中元素的类型可以不相同，它支持数字，字符串甚至可以包含列表（所谓嵌套）。</p>&#13;
+<p>列表是写在方括号 <span class="marked">[]</span> 之间、用逗号分隔开的元素列表。</p>&#13;
+<p>&#13;
+和字符串一样，列表同样可以被索引和截取，列表被截取后返回一个包含所需元素的新列表。&#13;
+</p>&#13;
+<p>列表截取的语法格式如下：</p> <pre>变量[头下标:尾下标]</pre><p>索引值以 <span class="marked">0</span> 为开始值，<span class="marked">-1</span> 为从末尾的开始位置。</p>&#13;
+<p><a class="glightbox" href="https://www.runoob.com/wp-content/uploads/2014/08/list_slicing1_new1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img decoding="async" src="https://www.runoob.com/wp-content/uploads/2014/08/list_slicing1_new1.png"/></a></p>&#13;
+<p>加号 <span class="marked">+</span> 是列表连接运算符，星号 <span class="marked">*</span> 是重复操作。如下实例：&#13;
+</p>&#13;
+<div class="example">&#13;
+<h2 class="example">实例</h2>&#13;
+<div class="example_code">&#13;
+
+<span style="color: #a50">#!/usr/bin/python3</span><br/>
+<br/>
+<span style="color: Teal;">list</span> <span style="color: Gray;">=</span> <span style="color: Olive;">[</span> <span style="color: #a11;">'abcd'</span><span style="color: Gray;">,</span> <span style="color: Maroon;">786</span> <span style="color: Gray;">,</span> <span style="color: Maroon;">2.23</span><span style="color: Gray;">,</span> <span style="color: #a11;">'runoob'</span><span style="color: Gray;">,</span> <span style="color: Maroon;">70.2</span> <span style="color: Olive;">]</span>  <span style="color: #a50"># 定义一个列表</span><br/>
+tinylist <span style="color: Gray;">=</span> <span style="color: Olive;">[</span><span style="color: Maroon;">123</span><span style="color: Gray;">,</span> <span style="color: #a11;">'runoob'</span><span style="color: Olive;">]</span><br/>
+<br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span><span style="color: Teal;">list</span><span style="color: Olive;">)</span>            <span style="color: #a50"># 打印整个列表</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span><span style="color: Teal;">list</span><span style="color: Olive;">[</span><span style="color: Maroon;">0</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span>         <span style="color: #a50"># 打印列表的第一个元素</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span><span style="color: Teal;">list</span><span style="color: Olive;">[</span><span style="color: Maroon;">1</span>:<span style="color: Maroon;">3</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span>       <span style="color: #a50"># 打印列表第二到第四个元素（不包含第四个元素）</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span><span style="color: Teal;">list</span><span style="color: Olive;">[</span><span style="color: Maroon;">2</span>:<span style="color: Olive;">]</span><span style="color: Olive;">)</span>        <span style="color: #a50"># 打印列表从第三个元素开始到末尾</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span>tinylist * <span style="color: Maroon;">2</span><span style="color: Olive;">)</span>    <span style="color: #a50"># 打印tinylist列表两次</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span><span style="color: Teal;">list</span> + tinylist<span style="color: Olive;">)</span>  <span style="color: #a50"># 打印两个列表拼接在一起的结果</span><br/>
+&#13;
+</div>&#13;
+</div>&#13;
+<p>以上实例输出结果：</p>&#13;
+<pre>&#13;
+['abcd', 786, 2.23, 'runoob', 70.2]&#13;
+abcd&#13;
+[786, 2.23]&#13;
+[2.23, 'runoob', 70.2]&#13;
+[123, 'runoob', 123, 'runoob']&#13;
+['abcd', 786, 2.23, 'runoob', 70.2, 123, 'runoob']&#13;
+</pre>&#13;
+&#13;
+<p>与Python字符串不一样的是，列表中的元素是可以改变的：</p>&#13;
+<div class="example">&#13;
+<h2 class="example">实例</h2>&#13;
+<div class="example_code">&#13;
+
+<span style="color: Gray;">&gt;&gt;&gt;</span> a <span style="color: Gray;">=</span> <span style="color: Olive;">[</span><span style="color: Maroon;">1</span><span style="color: Gray;">,</span> <span style="color: Maroon;">2</span><span style="color: Gray;">,</span> <span style="color: Maroon;">3</span><span style="color: Gray;">,</span> <span style="color: Maroon;">4</span><span style="color: Gray;">,</span> <span style="color: Maroon;">5</span><span style="color: Gray;">,</span> <span style="color: Maroon;">6</span><span style="color: Olive;">]</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> a<span style="color: Olive;">[</span><span style="color: Maroon;">0</span><span style="color: Olive;">]</span> <span style="color: Gray;">=</span> <span style="color: Maroon;">9</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> a<span style="color: Olive;">[</span><span style="color: Maroon;">2</span>:<span style="color: Maroon;">5</span><span style="color: Olive;">]</span> <span style="color: Gray;">=</span> <span style="color: Olive;">[</span><span style="color: Maroon;">13</span><span style="color: Gray;">,</span> <span style="color: Maroon;">14</span><span style="color: Gray;">,</span> <span style="color: Maroon;">15</span><span style="color: Olive;">]</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> a<br/>
+<span style="color: Olive;">[</span><span style="color: Maroon;">9</span><span style="color: Gray;">,</span> <span style="color: Maroon;">2</span><span style="color: Gray;">,</span> <span style="color: Maroon;">13</span><span style="color: Gray;">,</span> <span style="color: Maroon;">14</span><span style="color: Gray;">,</span> <span style="color: Maroon;">15</span><span style="color: Gray;">,</span> <span style="color: Maroon;">6</span><span style="color: Olive;">]</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> a<span style="color: Olive;">[</span><span style="color: Maroon;">2</span>:<span style="color: Maroon;">5</span><span style="color: Olive;">]</span> <span style="color: Gray;">=</span> <span style="color: Olive;">[</span><span style="color: Olive;">]</span>   <span style="color: #a50"># 将对应的元素值设置为 [] </span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> a<br/>
+<span style="color: Olive;">[</span><span style="color: Maroon;">9</span><span style="color: Gray;">,</span> <span style="color: Maroon;">2</span><span style="color: Gray;">,</span> <span style="color: Maroon;">6</span><span style="color: Olive;">]</span><br/>
+&#13;
+</div>&#13;
+</div>&#13;
+<p>List 内置了有很多方法，例如 append()、pop() 等等，这在后面会讲到。</p>&#13;
+<p><b>注意：</b></p>&#13;
+<ul><li>&#13;
+1、列表写在方括号之间，元素用逗号隔开。</li><li>&#13;
+2、和字符串一样，列表可以被索引和切片。</li><li>&#13;
+3、列表可以使用 <span class="marked">+</span> 操作符进行拼接。</li><li>&#13;
+4、列表中的元素是可以改变的。</li>&#13;
+</ul>&#13;
+<p>Python 列表截取可以接收第三个参数，参数作用是截取的步长，以下实例在索引 1 到索引 4 的位置并设置为步长为 2（间隔一个位置）来截取字符串：</p>&#13;
+<p><a class="glightbox" href="https://www.runoob.com/wp-content/uploads/2014/08/py-dict-1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img decoding="async" src="https://www.runoob.com/wp-content/uploads/2014/08/py-dict-1.png"/></a></p>&#13;
+&#13;
+<p>如果第三个参数为负数表示逆向读取，以下实例用于翻转字符串：</p>&#13;
+<div class="example"><h2 class="example">实例</h2> <div class="example_code">
+<span style="color: Green;font-weight:bold;">def</span> reverseWords<span style="color: Olive;">(</span><span style="color: Teal;">input</span><span style="color: Olive;">)</span>: <br/>
+      <br/>
+    <span style="color: #a50"># 通过空格将字符串分隔符，把各个单词分隔为列表</span><br/>
+    inputWords <span style="color: Gray;">=</span> <span style="color: Teal;">input</span>.<span style="color: #05a;">split</span><span style="color: Olive;">(</span><span style="color: #a11;">" "</span><span style="color: Olive;">)</span> <br/>
+  <br/>
+    <span style="color: #a50"># 翻转字符串</span><br/>
+    <span style="color: #a50"># 假设列表 list = [1,2,3,4],  </span><br/>
+    <span style="color: #a50"># list[0]=1, list[1]=2 ，而 -1 表示最后一个元素 list[-1]=4 ( 与 list[3]=4 一样) </span><br/>
+    <span style="color: #a50"># inputWords[-1::-1] 有三个参数</span><br/>
+    <span style="color: #a50"># 第一个参数 -1 表示最后一个元素</span><br/>
+    <span style="color: #a50"># 第二个参数为空，表示移动到列表末尾</span><br/>
+    <span style="color: #a50"># 第三个参数为步长，-1 表示逆向</span><br/>
+    inputWords<span style="color: Gray;">=</span>inputWords<span style="color: Olive;">[</span>-<span style="color: Maroon;">1</span>::-<span style="color: Maroon;">1</span><span style="color: Olive;">]</span> <br/>
+  <br/>
+    <span style="color: #a50"># 重新组合字符串</span><br/>
+    output <span style="color: Gray;">=</span> <span style="color: #a11;">' '</span>.<span style="color: #05a;">join</span><span style="color: Olive;">(</span>inputWords<span style="color: Olive;">)</span> <br/>
+      <br/>
+    <span style="color: Green;font-weight:bold;">return</span> output <br/>
+  <br/>
+<span style="color: Green;font-weight:bold;">if</span> __name__ <span style="color: Gray;">==</span> <span style="color: #a11;">"__main__"</span>: <br/>
+    <span style="color: Teal;">input</span> <span style="color: Gray;">=</span> <span style="color: #a11;">'I like runoob'</span><br/>
+    rw <span style="color: Gray;">=</span> reverseWords<span style="color: Olive;">(</span><span style="color: Teal;">input</span><span style="color: Olive;">)</span> <br/>
+    <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span>rw<span style="color: Olive;">)</span><br/>
+</div></div>&#13;
+<p>输出结果为：</p>&#13;
+<pre>runoob like I</pre>&#13;
+<hr/><h2>Tuple（元组）</h2>&#13;
+<p>元组（tuple）与列表类似，不同之处在于元组的元素不能修改。元组写在小括号 <span class="marked">()</span> 里，元素之间用逗号隔开。&#13;
+</p><p>元组中的元素类型也可以不相同：&#13;
+</p>&#13;
+<div class="example">&#13;
+<h2 class="example">实例</h2>&#13;
+<div class="example_code">&#13;
+
+<span style="color: #a50">#!/usr/bin/python3</span><br/>
+<br/>
+<span style="color: Teal;">tuple</span> <span style="color: Gray;">=</span> <span style="color: Olive;">(</span> <span style="color: #a11;">'abcd'</span><span style="color: Gray;">,</span> <span style="color: Maroon;">786</span> <span style="color: Gray;">,</span> <span style="color: Maroon;">2.23</span><span style="color: Gray;">,</span> <span style="color: #a11;">'runoob'</span><span style="color: Gray;">,</span> <span style="color: Maroon;">70.2</span>  <span style="color: Olive;">)</span><br/>
+tinytuple <span style="color: Gray;">=</span> <span style="color: Olive;">(</span><span style="color: Maroon;">123</span><span style="color: Gray;">,</span> <span style="color: #a11;">'runoob'</span><span style="color: Olive;">)</span><br/>
+<br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span><span style="color: Teal;">tuple</span><span style="color: Olive;">)</span>             <span style="color: #a50"># 输出完整元组</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span><span style="color: Teal;">tuple</span><span style="color: Olive;">[</span><span style="color: Maroon;">0</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span>          <span style="color: #a50"># 输出元组的第一个元素</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span><span style="color: Teal;">tuple</span><span style="color: Olive;">[</span><span style="color: Maroon;">1</span>:<span style="color: Maroon;">3</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span>        <span style="color: #a50"># 输出从第二个元素开始到第三个元素</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span><span style="color: Teal;">tuple</span><span style="color: Olive;">[</span><span style="color: Maroon;">2</span>:<span style="color: Olive;">]</span><span style="color: Olive;">)</span>         <span style="color: #a50"># 输出从第三个元素开始的所有元素</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span>tinytuple * <span style="color: Maroon;">2</span><span style="color: Olive;">)</span>     <span style="color: #a50"># 输出两次元组</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span><span style="color: Teal;">tuple</span> + tinytuple<span style="color: Olive;">)</span> <span style="color: #a50"># 连接元组</span><br/>
+&#13;
+</div>&#13;
+</div>&#13;
+<p>以上实例输出结果：</p>&#13;
+<pre>&#13;
+('abcd', 786, 2.23, 'runoob', 70.2)&#13;
+abcd&#13;
+(786, 2.23)&#13;
+(2.23, 'runoob', 70.2)&#13;
+(123, 'runoob', 123, 'runoob')&#13;
+('abcd', 786, 2.23, 'runoob', 70.2, 123, 'runoob')&#13;
+</pre>&#13;
+<p>元组与字符串类似，可以被索引且下标索引从0开始，-1 为从末尾开始的位置。也可以进行截取（看上面，这里不再赘述）。</p>&#13;
+<p>其实，可以把字符串看作一种特殊的元组。&#13;
+</p>&#13;
+<div class="example">&#13;
+<h2 class="example">实例</h2>&#13;
+<div class="example_code">&#13;
+
+<span style="color: Gray;">&gt;&gt;&gt;</span> tup <span style="color: Gray;">=</span> <span style="color: Olive;">(</span><span style="color: Maroon;">1</span><span style="color: Gray;">,</span> <span style="color: Maroon;">2</span><span style="color: Gray;">,</span> <span style="color: Maroon;">3</span><span style="color: Gray;">,</span> <span style="color: Maroon;">4</span><span style="color: Gray;">,</span> <span style="color: Maroon;">5</span><span style="color: Gray;">,</span> <span style="color: Maroon;">6</span><span style="color: Olive;">)</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span>tup<span style="color: Olive;">[</span><span style="color: Maroon;">0</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span><br/>
+<span style="color: Maroon;">1</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span>tup<span style="color: Olive;">[</span><span style="color: Maroon;">1</span>:<span style="color: Maroon;">5</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span><br/>
+<span style="color: Olive;">(</span><span style="color: Maroon;">2</span><span style="color: Gray;">,</span> <span style="color: Maroon;">3</span><span style="color: Gray;">,</span> <span style="color: Maroon;">4</span><span style="color: Gray;">,</span> <span style="color: Maroon;">5</span><span style="color: Olive;">)</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> tup<span style="color: Olive;">[</span><span style="color: Maroon;">0</span><span style="color: Olive;">]</span> <span style="color: Gray;">=</span> <span style="color: Maroon;">11</span>  <span style="color: #a50"># 修改元组元素的操作是非法的</span><br/>
+Traceback <span style="color: Olive;">(</span>most recent call last<span style="color: Olive;">)</span>:<br/>
+  File <span style="color: #a11;">"&lt;stdin&gt;"</span><span style="color: Gray;">,</span> line <span style="color: Maroon;">1</span><span style="color: Gray;">,</span> <span style="color: Green;font-weight:bold;">in</span> <span style="color: Gray;">&lt;</span>module<span style="color: Gray;">&gt;</span><br/>
+<span style="color: Teal;">TypeError</span>: <span style="color: #a11;">'tuple'</span> <span style="color: Teal;">object</span> does <span style="color: Green;font-weight:bold;">not</span> support item assignment<br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <br/>
+&#13;
+</div>&#13;
+</div>&#13;
+<p>虽然tuple的元素不可改变，但它可以包含可变的对象，比如list列表。&#13;
+</p><p>&#13;
+构造包含 0 个或 1 个元素的元组比较特殊，所以有一些额外的语法规则：&#13;
+</p>&#13;
+<pre>&#13;
+tup1 = ()    # 空元组&#13;
+tup2 = (20,) # 一个元素，需要在元素后添加逗号&#13;
+</pre>&#13;
+<p>如果你想创建只有一个元素的元组，需要注意在元素后面添加一个逗号，以区分它是一个元组而不是一个普通的值，这是因为在没有逗号的情况下，Python会将括号解释为数学运算中的括号，而不是元组的表示。</p>&#13;
+<p>如果不添加逗号，如下所示，它将被解释为一个普通的值而不是元组：</p>&#13;
+<pre>not_a_tuple = (42)</pre><p>这样的话，not_a_tuple 将是整数类型而不是元组类型。</p>&#13;
+<p>string、list 和 tuple 都属于 sequence（序列）。</p>&#13;
+<p><b>注意：</b></p>&#13;
+<ul><li>&#13;
+1、与字符串一样，元组的元素不能修改。</li><li>&#13;
+2、元组也可以被索引和切片，方法一样。</li><li>&#13;
+3、注意构造包含 0 或 1 个元素的元组的特殊语法规则。</li><li>&#13;
+4、元组也可以使用 <span class="marked">+</span> 操作符进行拼接。</li></ul>&#13;
+<hr/><h2>Set（集合）</h2>&#13;
+<p>&#13;
+Python 中的集合（Set）是一种无序、可变的数据类型，用于存储唯一的元素。</p>&#13;
+<p>集合中的元素不会重复，并且可以进行交集、并集、差集等常见的集合操作。</p>&#13;
+<p>&#13;
+在 Python 中，集合使用大括号 <span class="marked">{}</span> 表示，元素之间用逗号 <span class="marked">,</span> 分隔。</p>&#13;
+<p>另外，也可以使用 <span class="marked">set()</span> 函数创建集合。</p><p><strong>注意：</strong>创建一个空集合必须用<span class="marked"> set()</span> 而不是 <span class="marked">{ }</span>，因为 <span class="marked">{ }</span> 是用来创建一个空字典。&#13;
+</p>&#13;
+<p>创建格式：</p>&#13;
+<pre>parame = {value01,value02,...}&#13;
+或者&#13;
+set(value)</pre>&#13;
+<div class="example">&#13;
+<h2 class="example">实例</h2>&#13;
+<div class="example_code">&#13;
+
+<span style="color: #a50">#!/usr/bin/python3</span><br/>
+<br/>
+sites <span style="color: Gray;">=</span> <span style="color: Olive;">{</span><span style="color: #a11;">'Google'</span><span style="color: Gray;">,</span> <span style="color: #a11;">'Taobao'</span><span style="color: Gray;">,</span> <span style="color: #a11;">'Runoob'</span><span style="color: Gray;">,</span> <span style="color: #a11;">'Facebook'</span><span style="color: Gray;">,</span> <span style="color: #a11;">'Zhihu'</span><span style="color: Gray;">,</span> <span style="color: #a11;">'Baidu'</span><span style="color: Olive;">}</span><br/>
+<br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span>sites<span style="color: Olive;">)</span>   <span style="color: #a50"># 输出集合，重复的元素被自动去掉</span><br/>
+<br/>
+<span style="color: #a50"># 成员测试</span><br/>
+<span style="color: Green;font-weight:bold;">if</span> <span style="color: #a11;">'Runoob'</span> <span style="color: Green;font-weight:bold;">in</span> sites :<br/>
+    <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: #a11;">'Runoob 在集合中'</span><span style="color: Olive;">)</span><br/>
+<span style="color: Green;font-weight:bold;">else</span> :<br/>
+    <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: #a11;">'Runoob 不在集合中'</span><span style="color: Olive;">)</span><br/>
+<br/>
+<br/>
+<span style="color: #a50"># set可以进行集合运算</span><br/>
+a <span style="color: Gray;">=</span> <span style="color: Teal;">set</span><span style="color: Olive;">(</span><span style="color: #a11;">'abracadabra'</span><span style="color: Olive;">)</span><br/>
+b <span style="color: Gray;">=</span> <span style="color: Teal;">set</span><span style="color: Olive;">(</span><span style="color: #a11;">'alacazam'</span><span style="color: Olive;">)</span><br/>
+<br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span>a<span style="color: Olive;">)</span><br/>
+<br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span>a - b<span style="color: Olive;">)</span>     <span style="color: #a50"># a 和 b 的差集</span><br/>
+<br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span>a | b<span style="color: Olive;">)</span>     <span style="color: #a50"># a 和 b 的并集</span><br/>
+<br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span>a &amp; b<span style="color: Olive;">)</span>     <span style="color: #a50"># a 和 b 的交集</span><br/>
+<br/>
+<span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span>a ^ b<span style="color: Olive;">)</span>     <span style="color: #a50"># a 和 b 中不同时存在的元素</span><br/>
+&#13;
+</div>&#13;
+</div>&#13;
+<p>以上实例输出结果：</p>&#13;
+<pre>&#13;
+{'Zhihu', 'Baidu', 'Taobao', 'Runoob', 'Google', 'Facebook'}&#13;
+Runoob 在集合中&#13;
+{'b', 'c', 'a', 'r', 'd'}&#13;
+{'r', 'b', 'd'}&#13;
+{'b', 'c', 'a', 'z', 'm', 'r', 'l', 'd'}&#13;
+{'c', 'a'}&#13;
+{'z', 'b', 'm', 'r', 'l', 'd'}&#13;
+</pre>&#13;
+<hr/><h2>Dictionary（字典）</h2>&#13;
+<p>&#13;
+字典（dictionary）是Python中另一个非常有用的内置数据类型。</p>&#13;
+<p>列表是有序的对象集合，字典是无序的对象集合。两者之间的区别在于：字典当中的元素是通过键来存取的，而不是通过偏移存取。</p>&#13;
+<p>字典是一种映射类型，字典用 <span class="marked">{ }</span> 标识，它是一个无序的 <b>键(key) : 值(value)</b> 的集合。</p>&#13;
+<p>键(key)必须使用不可变类型。</p>&#13;
+<p>在同一个字典中，键(key)必须是唯一的。&#13;
+</p>&#13;
+<div class="example">&#13;
+<h2 class="example">实例</h2>&#13;
+<div class="example_code">&#13;
+
+<span style="color: #a50">#!/usr/bin/python3</span><br/>
+<br/>
+<span style="color: Teal;">dict</span> <span style="color: Gray;">=</span> <span style="color: Olive;">{</span><span style="color: Olive;">}</span><br/>
+<span style="color: Teal;">dict</span><span style="color: Olive;">[</span><span style="color: #a11;">'one'</span><span style="color: Olive;">]</span> <span style="color: Gray;">=</span> <span style="color: #a11;">"1 - 菜鸟教程"</span><br/>
+<span style="color: Teal;">dict</span><span style="color: Olive;">[</span><span style="color: Maroon;">2</span><span style="color: Olive;">]</span>     <span style="color: Gray;">=</span> <span style="color: #a11;">"2 - 菜鸟工具"</span><br/>
+<br/>
+tinydict <span style="color: Gray;">=</span> <span style="color: Olive;">{</span><span style="color: #a11;">'name'</span>: <span style="color: #a11;">'runoob'</span><span style="color: Gray;">,</span><span style="color: #a11;">'code'</span>:<span style="color: Maroon;">1</span><span style="color: Gray;">,</span> <span style="color: #a11;">'site'</span>: <span style="color: #a11;">'www.runoob.com'</span><span style="color: Olive;">}</span><br/>
+<br/>
+<br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span><span style="color: Teal;">dict</span><span style="color: Olive;">[</span><span style="color: #a11;">'one'</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span>       <span style="color: #a50"># 输出键为 'one' 的值</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span><span style="color: Teal;">dict</span><span style="color: Olive;">[</span><span style="color: Maroon;">2</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span>           <span style="color: #a50"># 输出键为 2 的值</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span>tinydict<span style="color: Olive;">)</span>          <span style="color: #a50"># 输出完整的字典</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span>tinydict.<span style="color: #05a;">keys</span><span style="color: Olive;">(</span><span style="color: Olive;">)</span><span style="color: Olive;">)</span>   <span style="color: #a50"># 输出所有键</span><br/>
+<span style="color: Green;font-weight:bold;">print</span> <span style="color: Olive;">(</span>tinydict.<span style="color: #05a;">values</span><span style="color: Olive;">(</span><span style="color: Olive;">)</span><span style="color: Olive;">)</span> <span style="color: #a50"># 输出所有值</span><br/>
+&#13;
+</div>&#13;
+</div>&#13;
+<p>以上实例输出结果：</p>&#13;
+<pre>&#13;
+1 - 菜鸟教程&#13;
+2 - 菜鸟工具&#13;
+{'name': 'runoob', 'code': 1, 'site': 'www.runoob.com'}&#13;
+dict_keys(['name', 'code', 'site'])&#13;
+dict_values(['runoob', 1, 'www.runoob.com'])&#13;
+</pre>&#13;
+<p>构造函数 dict() 可以直接从键值对序列中构建字典如下：</p>&#13;
+<div class="example">&#13;
+<h2 class="example">实例</h2>&#13;
+<div class="example_code">&#13;
+
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Teal;">dict</span><span style="color: Olive;">(</span><span style="color: Olive;">[</span><span style="color: Olive;">(</span><span style="color: #a11;">'Runoob'</span><span style="color: Gray;">,</span> <span style="color: Maroon;">1</span><span style="color: Olive;">)</span><span style="color: Gray;">,</span> <span style="color: Olive;">(</span><span style="color: #a11;">'Google'</span><span style="color: Gray;">,</span> <span style="color: Maroon;">2</span><span style="color: Olive;">)</span><span style="color: Gray;">,</span> <span style="color: Olive;">(</span><span style="color: #a11;">'Taobao'</span><span style="color: Gray;">,</span> <span style="color: Maroon;">3</span><span style="color: Olive;">)</span><span style="color: Olive;">]</span><span style="color: Olive;">)</span><br/>
+<span style="color: Olive;">{</span><span style="color: #a11;">'Runoob'</span>: <span style="color: Maroon;">1</span><span style="color: Gray;">,</span> <span style="color: #a11;">'Google'</span>: <span style="color: Maroon;">2</span><span style="color: Gray;">,</span> <span style="color: #a11;">'Taobao'</span>: <span style="color: Maroon;">3</span><span style="color: Olive;">}</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Olive;">{</span>x: x**<span style="color: Maroon;">2</span> <span style="color: Green;font-weight:bold;">for</span> x <span style="color: Green;font-weight:bold;">in</span> <span style="color: Olive;">(</span><span style="color: Maroon;">2</span><span style="color: Gray;">,</span> <span style="color: Maroon;">4</span><span style="color: Gray;">,</span> <span style="color: Maroon;">6</span><span style="color: Olive;">)</span><span style="color: Olive;">}</span><br/>
+<span style="color: Olive;">{</span><span style="color: Maroon;">2</span>: <span style="color: Maroon;">4</span><span style="color: Gray;">,</span> <span style="color: Maroon;">4</span>: <span style="color: Maroon;">16</span><span style="color: Gray;">,</span> <span style="color: Maroon;">6</span>: <span style="color: Maroon;">36</span><span style="color: Olive;">}</span><br/>
+<span style="color: Gray;">&gt;&gt;&gt;</span> <span style="color: Teal;">dict</span><span style="color: Olive;">(</span>Runoob<span style="color: Gray;">=</span><span style="color: Maroon;">1</span><span style="color: Gray;">,</span> Google<span style="color: Gray;">=</span><span style="color: Maroon;">2</span><span style="color: Gray;">,</span> Taobao<span style="color: Gray;">=</span><span style="color: Maroon;">3</span><span style="color: Olive;">)</span><br/>
+<span style="color: Olive;">{</span><span style="color: #a11;">'Runoob'</span>: <span style="color: Maroon;">1</span><span style="color: Gray;">,</span> <span style="color: #a11;">'Google'</span>: <span style="color: Maroon;">2</span><span style="color: Gray;">,</span> <span style="color: #a11;">'Taobao'</span>: <span style="color: Maroon;">3</span><span style="color: Olive;">}</span><br/>
+&#13;
+</div>&#13;
+</div>&#13;
+&#13;
+<p><span class="marked">{x: x**2 for x in (2, 4, 6)}</span> 该代码使用的是字典推导式，更多推导式内容可以参考：<a href="https://www.runoob.com/python3/python-comprehensions.html" rel="noopener" target="_blank">Python 推导式</a>。</p>&#13;
+<p>另外，字典类型也有一些内置的函数，例如 clear()、keys()、values() 等。</p>&#13;
+<p><b>注意：</b></p>&#13;
+<ul><li>&#13;
+1、字典是一种映射类型，它的元素是键值对。</li><li>&#13;
+2、字典的关键字必须为不可变类型，且不能重复。</li><li>&#13;
+3、创建空字典使用 <b>{ }</b>。</li></ul><hr/>&#13;
+<h2>bytes 类型</h2>&#13;
+&#13;
+<p>在 Python3 中，bytes 类型表示的是不可变的二进制序列（byte sequence）。</p><p>与字符串类型不同的是，bytes 类型中的元素是整数值（0 到 255 之间的整数），而不是 Unicode 字符。</p>&#13;
+<p>&#13;
+bytes 类型通常用于处理二进制数据，比如图像文件、音频文件、视频文件等等。在网络编程中，也经常使用 bytes 类型来传输二进制数据。</p>&#13;
+<p>&#13;
+创建 bytes 对象的方式有多种，最常见的方式是使用 b 前缀：</p>&#13;
+<p>&#13;
+此外，也可以使用 bytes() 函数将其他类型的对象转换为 bytes 类型。bytes() 函数的第一个参数是要转换的对象，第二个参数是编码方式，如果省略第二个参数，则默认使用 UTF-8 编码：</p>&#13;
+<pre>x = bytes("hello", encoding="utf-8")</pre><p>&#13;
+与字符串类型类似，bytes 类型也支持许多操作和方法，如切片、拼接、查找、替换等等。同时，由于 bytes 类型是不可变的，因此在进行修改操作时需要创建一个新的 bytes 对象。例如：</p>&#13;
+<div class="example"><h2 class="example">实例</h2> <div class="example_code">
+<br/>
+x <span style="color: Gray;">=</span> b<span style="color: #a11;">"hello"</span><br/>
+y <span style="color: Gray;">=</span> x<span style="color: Olive;">[</span><span style="color: Maroon;">1</span>:<span style="color: Maroon;">3</span><span style="color: Olive;">]</span>  <span style="color: #a50"># 切片操作，得到 b"el"</span><br/>
+z <span style="color: Gray;">=</span> x + b<span style="color: #a11;">"world"</span>  <span style="color: #a50"># 拼接操作，得到 b"helloworld"</span><br/>
+</div></div>&#13;
+<p>需要注意的是，bytes 类型中的元素是整数值，因此在进行比较操作时需要使用相应的整数值。例如：</p>&#13;
+<div class="example"><h2 class="example">实例</h2> <div class="example_code">
+x <span style="color: Gray;">=</span> b<span style="color: #a11;">"hello"</span><br/>
+<span style="color: Green;font-weight:bold;">if</span> x<span style="color: Olive;">[</span><span style="color: Maroon;">0</span><span style="color: Olive;">]</span> <span style="color: Gray;">==</span> <span style="color: Teal;">ord</span><span style="color: Olive;">(</span><span style="color: #a11;">"h"</span><span style="color: Olive;">)</span>:<br/>
+    <span style="color: Green;font-weight:bold;">print</span><span style="color: Olive;">(</span><span style="color: #a11;">"The first element is 'h'"</span><span style="color: Olive;">)</span><br/>
+</div></div>&#13;
+<p>其中 ord() 函数用于将字符转换为相应的整数值。</p>&#13;
+<hr/>&#13;
+<h2>Python数据类型转换</h2>&#13;
+<p>&#13;
+有时候，我们需要对数据内置的类型进行转换，数据类型的转换，你只需要将数据类型作为函数名即可，在下一章节 <a href="https://www.runoob.com/python3/python3-type-conversion.html" rel="noopener" target="_blank">Python3 数据类型转换</a> 会具体介绍。</p>&#13;
+<p>&#13;
+以下几个内置的函数可以执行数据类型之间的转换。这些函数返回一个新的对象，表示转换的值。</p>&#13;
+<table class="reference">&#13;
+<tbody><tr><th>函数</th><th>描述</th></tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-int.html" target="_blank" rel="noopener noreferrer">int(x [,base])</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>将x转换为一个整数</p>&#13;
+</td>&#13;
+</tr>&#13;
+&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-float.html" target="_blank" rel="noopener noreferrer">float(x)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>将x转换到一个浮点数</p>&#13;
+</td>&#13;
+</tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-complex.html" target="_blank" rel="noopener noreferrer">complex(real [,imag])</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>创建一个复数</p>&#13;
+</td>&#13;
+</tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-str.html" target="_blank" rel="noopener noreferrer">str(x)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>将对象 x 转换为字符串</p>&#13;
+</td>&#13;
+</tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-repr.html" target="_blank" rel="noopener noreferrer">repr(x)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>将对象 x 转换为表达式字符串</p>&#13;
+</td>&#13;
+</tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-eval.html" target="_blank" rel="noopener noreferrer">eval(str)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>用来计算在字符串中的有效Python表达式,并返回一个对象</p>&#13;
+</td>&#13;
+</tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="/python3/python3-func-tuple.html" target="_blank" rel="noopener noreferrer">tuple(s)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>将序列 s 转换为一个元组</p>&#13;
+&#13;
+</td>&#13;
+</tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python3-att-list-list.html" target="_blank" rel="noopener noreferrer">list(s)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>将序列 s 转换为一个列表</p>&#13;
+</td>&#13;
+</tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-set.html" target="_blank" rel="noopener noreferrer">set(s)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>转换为可变集合</p>&#13;
+</td>&#13;
+</tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-dict.html" target="_blank" rel="noopener noreferrer">dict(d)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>创建一个字典。d 必须是一个 (key, value)元组序列。</p>&#13;
+</td>&#13;
+</tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-frozenset.html" target="_blank" rel="noopener noreferrer">frozenset(s)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>转换为不可变集合</p>&#13;
+</td>&#13;
+</tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-chr.html" target="_blank" rel="noopener noreferrer">chr(x)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>  将一个整数转换为一个字符</p>&#13;
+</td>&#13;
+</tr>&#13;
+&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-ord.html" target="_blank" rel="noopener noreferrer">ord(x)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p> 将一个字符转换为它的整数值</p>&#13;
+</td>&#13;
+</tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-hex.html" target="_blank" rel="noopener noreferrer">hex(x)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p>  将一个整数转换为一个十六进制字符串</p>&#13;
+</td>&#13;
+</tr>&#13;
+<tr valign="top">&#13;
+<td>&#13;
+<p><a href="python-func-oct.html" target="_blank" rel="noopener noreferrer">oct(x)</a></p>&#13;
+</td>&#13;
+<td>&#13;
+<p> 将一个整数转换为一个八进制字符串</p>&#13;
+</td>&#13;
+</tr>&#13;
+</tbody></table>            <!-- 其他扩展 -->
+
+            </div>
+
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
