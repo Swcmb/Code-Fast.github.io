@@ -13,25 +13,25 @@
       
       
       
-        <link rel="prev" href="../../cpp/96_cpp-libs-cstdlib.html/">
+        <link rel="prev" href="../../language/python/35_python3-examples.html/">
       
       
-        <link rel="next" href="../2_java-intro.html/">
+        <link rel="next" href="../docs/chapter_preface/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
     
     
       
-        <title>教程 - Code-Fast</title>
+        <title>第一章 - Code-Fast</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,16 +50,16 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -68,7 +68,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -98,7 +103,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Code-Fast" class="md-header__button md-logo" aria-label="Code-Fast" data-md-component="logo">
+    <a href="../.." title="Code-Fast" class="md-header__button md-logo" aria-label="Code-Fast" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -118,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              教程
+              第一章
             
           </span>
         </div>
@@ -251,7 +256,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Code-Fast" class="md-nav__button md-logo" aria-label="Code-Fast" data-md-component="logo">
+    <a href="../.." title="Code-Fast" class="md-nav__button md-logo" aria-label="Code-Fast" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -278,19 +283,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -304,7 +307,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             语言基础
@@ -353,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/1_c-tutorial.html/" class="md-nav__link">
+      <a href="../../language/c/1_c-tutorial.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -374,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/2_c-intro.html/" class="md-nav__link">
+      <a href="../../language/c/2_c-intro.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -395,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/3_c-environment-setup.html/" class="md-nav__link">
+      <a href="../../language/c/3_c-environment-setup.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -416,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/4_c-vscode.html/" class="md-nav__link">
+      <a href="../../language/c/4_c-vscode.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -437,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/5_fitten-code-c.html/" class="md-nav__link">
+      <a href="../../language/c/5_fitten-code-c.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -458,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/6_c-program-structure.html/" class="md-nav__link">
+      <a href="../../language/c/6_c-program-structure.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -479,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/7_c-basic-syntax.html/" class="md-nav__link">
+      <a href="../../language/c/7_c-basic-syntax.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -500,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/8_c-data-types.html/" class="md-nav__link">
+      <a href="../../language/c/8_c-data-types.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -521,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/9_c-variables.html/" class="md-nav__link">
+      <a href="../../language/c/9_c-variables.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -542,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/10_c-constants.html/" class="md-nav__link">
+      <a href="../../language/c/10_c-constants.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -563,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/11_c-storage-classes.html/" class="md-nav__link">
+      <a href="../../language/c/11_c-storage-classes.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -584,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/12_c-operators.html/" class="md-nav__link">
+      <a href="../../language/c/12_c-operators.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -605,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/13_c-decision.html/" class="md-nav__link">
+      <a href="../../language/c/13_c-decision.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -626,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/14_c-loops.html/" class="md-nav__link">
+      <a href="../../language/c/14_c-loops.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -647,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/15_c-functions.html/" class="md-nav__link">
+      <a href="../../language/c/15_c-functions.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -668,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/16_c-scope-rules.html/" class="md-nav__link">
+      <a href="../../language/c/16_c-scope-rules.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -689,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/17_c-arrays.html/" class="md-nav__link">
+      <a href="../../language/c/17_c-arrays.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -710,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/18_c-enum.html/" class="md-nav__link">
+      <a href="../../language/c/18_c-enum.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -731,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/19_c-pointers.html/" class="md-nav__link">
+      <a href="../../language/c/19_c-pointers.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -752,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/20_c-fun-pointer-callback.html/" class="md-nav__link">
+      <a href="../../language/c/20_c-fun-pointer-callback.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -773,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/21_c-strings.html/" class="md-nav__link">
+      <a href="../../language/c/21_c-strings.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -794,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/22_c-structures.html/" class="md-nav__link">
+      <a href="../../language/c/22_c-structures.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -815,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/23_c-unions.html/" class="md-nav__link">
+      <a href="../../language/c/23_c-unions.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -836,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/24_c-bit-fields.html/" class="md-nav__link">
+      <a href="../../language/c/24_c-bit-fields.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -857,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/25_c-typedef.html/" class="md-nav__link">
+      <a href="../../language/c/25_c-typedef.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -878,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/26_c-input-output.html/" class="md-nav__link">
+      <a href="../../language/c/26_c-input-output.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -899,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/27_c-file-io.html/" class="md-nav__link">
+      <a href="../../language/c/27_c-file-io.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -920,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/28_c-preprocessors.html/" class="md-nav__link">
+      <a href="../../language/c/28_c-preprocessors.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -941,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/29_c-header-files.html/" class="md-nav__link">
+      <a href="../../language/c/29_c-header-files.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -962,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/30_c-type-casting.html/" class="md-nav__link">
+      <a href="../../language/c/30_c-type-casting.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -983,7 +986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/31_c-error-handling.html/" class="md-nav__link">
+      <a href="../../language/c/31_c-error-handling.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1004,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/32_c-recursion.html/" class="md-nav__link">
+      <a href="../../language/c/32_c-recursion.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1025,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/33_c-variable-arguments.html/" class="md-nav__link">
+      <a href="../../language/c/33_c-variable-arguments.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1046,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/34_c-memory-management.html/" class="md-nav__link">
+      <a href="../../language/c/34_c-memory-management.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1067,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/35_undefined-behavior.html/" class="md-nav__link">
+      <a href="../../language/c/35_undefined-behavior.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1088,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/36_c-command-line-arguments.html/" class="md-nav__link">
+      <a href="../../language/c/36_c-command-line-arguments.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1109,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/37_c-sort-algorithm.html/" class="md-nav__link">
+      <a href="../../language/c/37_c-sort-algorithm.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1130,7 +1133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/38_c-examples.html/" class="md-nav__link">
+      <a href="../../language/c/38_c-examples.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1151,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/39_c-100-examples.html/" class="md-nav__link">
+      <a href="../../language/c/39_c-100-examples.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1172,7 +1175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/40_c-standard-library.html/" class="md-nav__link">
+      <a href="../../language/c/40_c-standard-library.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1193,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/41_c-standard-library-assert-h.html/" class="md-nav__link">
+      <a href="../../language/c/41_c-standard-library-assert-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1214,7 +1217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/42_c-standard-library-ctype-h.html/" class="md-nav__link">
+      <a href="../../language/c/42_c-standard-library-ctype-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1235,7 +1238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/43_c-standard-library-errno-h.html/" class="md-nav__link">
+      <a href="../../language/c/43_c-standard-library-errno-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1256,7 +1259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/44_c-standard-library-float-h.html/" class="md-nav__link">
+      <a href="../../language/c/44_c-standard-library-float-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1277,7 +1280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/45_c-standard-library-limits-h.html/" class="md-nav__link">
+      <a href="../../language/c/45_c-standard-library-limits-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1298,7 +1301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/46_c-standard-library-locale-h.html/" class="md-nav__link">
+      <a href="../../language/c/46_c-standard-library-locale-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1319,7 +1322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/47_c-standard-library-math-h.html/" class="md-nav__link">
+      <a href="../../language/c/47_c-standard-library-math-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1340,7 +1343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/48_c-standard-library-setjmp-h.html/" class="md-nav__link">
+      <a href="../../language/c/48_c-standard-library-setjmp-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1361,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/49_c-standard-library-signal-h.html/" class="md-nav__link">
+      <a href="../../language/c/49_c-standard-library-signal-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1382,7 +1385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/50_c-standard-library-stdarg-h.html/" class="md-nav__link">
+      <a href="../../language/c/50_c-standard-library-stdarg-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1403,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/51_c-standard-library-stddef-h.html/" class="md-nav__link">
+      <a href="../../language/c/51_c-standard-library-stddef-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1424,7 +1427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/52_c-standard-library-stdio-h.html/" class="md-nav__link">
+      <a href="../../language/c/52_c-standard-library-stdio-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1445,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/53_c-standard-library-stdlib-h.html/" class="md-nav__link">
+      <a href="../../language/c/53_c-standard-library-stdlib-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1466,7 +1469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/54_c-standard-library-string-h.html/" class="md-nav__link">
+      <a href="../../language/c/54_c-standard-library-string-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1487,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/55_c-standard-library-time-h.html/" class="md-nav__link">
+      <a href="../../language/c/55_c-standard-library-time-h.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1508,7 +1511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/56_c-quiz.html/" class="md-nav__link">
+      <a href="../../language/c/56_c-quiz.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1572,7 +1575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/1_cpp-tutorial.html/" class="md-nav__link">
+      <a href="../../language/cpp/1_cpp-tutorial.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1593,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/2_cpp-intro.html/" class="md-nav__link">
+      <a href="../../language/cpp/2_cpp-intro.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1614,7 +1617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/3_cpp-environment-setup.html/" class="md-nav__link">
+      <a href="../../language/cpp/3_cpp-environment-setup.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1635,7 +1638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/4_fitten-code-cpp.html/" class="md-nav__link">
+      <a href="../../language/cpp/4_fitten-code-cpp.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1656,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/5_cpp-basic-syntax.html/" class="md-nav__link">
+      <a href="../../language/cpp/5_cpp-basic-syntax.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1677,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/6_cpp-comments.html/" class="md-nav__link">
+      <a href="../../language/cpp/6_cpp-comments.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1698,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/7_cpp-data-types.html/" class="md-nav__link">
+      <a href="../../language/cpp/7_cpp-data-types.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1719,7 +1722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/8_cpp-variable-types.html/" class="md-nav__link">
+      <a href="../../language/cpp/8_cpp-variable-types.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1740,7 +1743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/9_cpp-variable-scope.html/" class="md-nav__link">
+      <a href="../../language/cpp/9_cpp-variable-scope.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1761,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/10_cpp-constants-literals.html/" class="md-nav__link">
+      <a href="../../language/cpp/10_cpp-constants-literals.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1782,7 +1785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/11_cpp-modifier-types.html/" class="md-nav__link">
+      <a href="../../language/cpp/11_cpp-modifier-types.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1803,7 +1806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/12_cpp-storage-classes.html/" class="md-nav__link">
+      <a href="../../language/cpp/12_cpp-storage-classes.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1824,7 +1827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/13_cpp-operators.html/" class="md-nav__link">
+      <a href="../../language/cpp/13_cpp-operators.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1845,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/14_cpp-loops.html/" class="md-nav__link">
+      <a href="../../language/cpp/14_cpp-loops.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1866,7 +1869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/15_cpp-decision.html/" class="md-nav__link">
+      <a href="../../language/cpp/15_cpp-decision.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1887,7 +1890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/16_cpp-functions.html/" class="md-nav__link">
+      <a href="../../language/cpp/16_cpp-functions.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1908,7 +1911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/17_cpp-numbers.html/" class="md-nav__link">
+      <a href="../../language/cpp/17_cpp-numbers.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1929,7 +1932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/18_cpp-arrays.html/" class="md-nav__link">
+      <a href="../../language/cpp/18_cpp-arrays.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1950,7 +1953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/19_cpp-strings.html/" class="md-nav__link">
+      <a href="../../language/cpp/19_cpp-strings.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1971,7 +1974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/20_cpp-pointers.html/" class="md-nav__link">
+      <a href="../../language/cpp/20_cpp-pointers.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1992,7 +1995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/21_cpp-references.html/" class="md-nav__link">
+      <a href="../../language/cpp/21_cpp-references.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2013,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/22_cpp-date-time.html/" class="md-nav__link">
+      <a href="../../language/cpp/22_cpp-date-time.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2034,7 +2037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/23_cpp-basic-input-output.html/" class="md-nav__link">
+      <a href="../../language/cpp/23_cpp-basic-input-output.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2055,7 +2058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/24_cpp-data-structures.html/" class="md-nav__link">
+      <a href="../../language/cpp/24_cpp-data-structures.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2076,7 +2079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/25_cpp-vector.html/" class="md-nav__link">
+      <a href="../../language/cpp/25_cpp-vector.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2097,7 +2100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/26_cpp-classes-objects.html/" class="md-nav__link">
+      <a href="../../language/cpp/26_cpp-classes-objects.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2118,7 +2121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/27_cpp-inheritance.html/" class="md-nav__link">
+      <a href="../../language/cpp/27_cpp-inheritance.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2139,7 +2142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/28_cpp-overloading.html/" class="md-nav__link">
+      <a href="../../language/cpp/28_cpp-overloading.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2160,7 +2163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/29_cpp-polymorphism.html/" class="md-nav__link">
+      <a href="../../language/cpp/29_cpp-polymorphism.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2181,7 +2184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/30_cpp-data-abstraction.html/" class="md-nav__link">
+      <a href="../../language/cpp/30_cpp-data-abstraction.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2202,7 +2205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/31_cpp-data-encapsulation.html/" class="md-nav__link">
+      <a href="../../language/cpp/31_cpp-data-encapsulation.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2223,7 +2226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/32_cpp-interfaces.html/" class="md-nav__link">
+      <a href="../../language/cpp/32_cpp-interfaces.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2244,7 +2247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/33_cpp-files-streams.html/" class="md-nav__link">
+      <a href="../../language/cpp/33_cpp-files-streams.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2265,7 +2268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/34_cpp-exceptions-handling.html/" class="md-nav__link">
+      <a href="../../language/cpp/34_cpp-exceptions-handling.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2286,7 +2289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/35_cpp-dynamic-memory.html/" class="md-nav__link">
+      <a href="../../language/cpp/35_cpp-dynamic-memory.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2307,7 +2310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/36_cpp-namespaces.html/" class="md-nav__link">
+      <a href="../../language/cpp/36_cpp-namespaces.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2328,7 +2331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/37_cpp-templates.html/" class="md-nav__link">
+      <a href="../../language/cpp/37_cpp-templates.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2349,7 +2352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/38_cpp-preprocessor.html/" class="md-nav__link">
+      <a href="../../language/cpp/38_cpp-preprocessor.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2370,7 +2373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/39_cpp-signal-handling.html/" class="md-nav__link">
+      <a href="../../language/cpp/39_cpp-signal-handling.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2391,7 +2394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/40_cpp-multithreading.html/" class="md-nav__link">
+      <a href="../../language/cpp/40_cpp-multithreading.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2412,7 +2415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/41_cpp-web-programming.html/" class="md-nav__link">
+      <a href="../../language/cpp/41_cpp-web-programming.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2433,7 +2436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/42_cpp-stl-tutorial.html/" class="md-nav__link">
+      <a href="../../language/cpp/42_cpp-stl-tutorial.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2454,7 +2457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/43_cpp-standard-library.html/" class="md-nav__link">
+      <a href="../../language/cpp/43_cpp-standard-library.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2475,7 +2478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/44_cpp-useful-resources.html/" class="md-nav__link">
+      <a href="../../language/cpp/44_cpp-useful-resources.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2496,7 +2499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/45_cpp-examples.html/" class="md-nav__link">
+      <a href="../../language/cpp/45_cpp-examples.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2517,7 +2520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/46_cpp-quiz.html/" class="md-nav__link">
+      <a href="../../language/cpp/46_cpp-quiz.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2538,7 +2541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/47_cpp-libs-iostream.html/" class="md-nav__link">
+      <a href="../../language/cpp/47_cpp-libs-iostream.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2559,7 +2562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/48_cpp-libs-fstream.html/" class="md-nav__link">
+      <a href="../../language/cpp/48_cpp-libs-fstream.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2580,7 +2583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/49_cpp-libs-sstream.html/" class="md-nav__link">
+      <a href="../../language/cpp/49_cpp-libs-sstream.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2601,7 +2604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/50_cpp-libs-iomanip.html/" class="md-nav__link">
+      <a href="../../language/cpp/50_cpp-libs-iomanip.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2622,7 +2625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/51_cpp-libs-array.html/" class="md-nav__link">
+      <a href="../../language/cpp/51_cpp-libs-array.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2643,7 +2646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/52_cpp-libs-vector.html/" class="md-nav__link">
+      <a href="../../language/cpp/52_cpp-libs-vector.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2664,7 +2667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/53_cpp-libs-list.html/" class="md-nav__link">
+      <a href="../../language/cpp/53_cpp-libs-list.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2685,7 +2688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/54_cpp-libs-forward_list.html/" class="md-nav__link">
+      <a href="../../language/cpp/54_cpp-libs-forward_list.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2706,7 +2709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/55_cpp-libs-deque.html/" class="md-nav__link">
+      <a href="../../language/cpp/55_cpp-libs-deque.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2727,7 +2730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/56_cpp-libs-stack.html/" class="md-nav__link">
+      <a href="../../language/cpp/56_cpp-libs-stack.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2748,7 +2751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/57_cpp-libs-queue.html/" class="md-nav__link">
+      <a href="../../language/cpp/57_cpp-libs-queue.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2769,7 +2772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/58_cpp-libs-priority_queue.html/" class="md-nav__link">
+      <a href="../../language/cpp/58_cpp-libs-priority_queue.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2790,7 +2793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/59_cpp-libs-set.html/" class="md-nav__link">
+      <a href="../../language/cpp/59_cpp-libs-set.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2811,7 +2814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/60_cpp-libs-unordered_set.html/" class="md-nav__link">
+      <a href="../../language/cpp/60_cpp-libs-unordered_set.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2832,7 +2835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/61_cpp-libs-map.html/" class="md-nav__link">
+      <a href="../../language/cpp/61_cpp-libs-map.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2853,7 +2856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/62_cpp-libs-unordered_map.html/" class="md-nav__link">
+      <a href="../../language/cpp/62_cpp-libs-unordered_map.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2874,7 +2877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/63_cpp-libs-bitset.html/" class="md-nav__link">
+      <a href="../../language/cpp/63_cpp-libs-bitset.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2895,7 +2898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/64_cpp-libs-algorithm.html/" class="md-nav__link">
+      <a href="../../language/cpp/64_cpp-libs-algorithm.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2916,7 +2919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/65_cpp-libs-iterator.html/" class="md-nav__link">
+      <a href="../../language/cpp/65_cpp-libs-iterator.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2937,7 +2940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/66_cpp-libs-functional.html/" class="md-nav__link">
+      <a href="../../language/cpp/66_cpp-libs-functional.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2958,7 +2961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/67_cpp-libs-numeric.html/" class="md-nav__link">
+      <a href="../../language/cpp/67_cpp-libs-numeric.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2979,7 +2982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/68_cpp-libs-complex.html/" class="md-nav__link">
+      <a href="../../language/cpp/68_cpp-libs-complex.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3000,7 +3003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/69_cpp-libs-valarray.html/" class="md-nav__link">
+      <a href="../../language/cpp/69_cpp-libs-valarray.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3021,7 +3024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/70_cpp-libs-cmath.html/" class="md-nav__link">
+      <a href="../../language/cpp/70_cpp-libs-cmath.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3042,7 +3045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/71_cpp-libs-string.html/" class="md-nav__link">
+      <a href="../../language/cpp/71_cpp-libs-string.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3063,7 +3066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/72_cpp-libs-regex.html/" class="md-nav__link">
+      <a href="../../language/cpp/72_cpp-libs-regex.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3084,7 +3087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/73_cpp-libs-ctime.html/" class="md-nav__link">
+      <a href="../../language/cpp/73_cpp-libs-ctime.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3105,7 +3108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/74_cpp-libs-chrono.html/" class="md-nav__link">
+      <a href="../../language/cpp/74_cpp-libs-chrono.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3126,7 +3129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/75_cpp-libs-thread.html/" class="md-nav__link">
+      <a href="../../language/cpp/75_cpp-libs-thread.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3147,7 +3150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/76_cpp-libs-mutex.html/" class="md-nav__link">
+      <a href="../../language/cpp/76_cpp-libs-mutex.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3168,7 +3171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/77_cpp-libs-condition_variable.html/" class="md-nav__link">
+      <a href="../../language/cpp/77_cpp-libs-condition_variable.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3189,7 +3192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/78_cpp-libs-future.html/" class="md-nav__link">
+      <a href="../../language/cpp/78_cpp-libs-future.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3210,7 +3213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/79_cpp-libs-atomic.html/" class="md-nav__link">
+      <a href="../../language/cpp/79_cpp-libs-atomic.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3231,7 +3234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/80_cpp-libs-type_traits.html/" class="md-nav__link">
+      <a href="../../language/cpp/80_cpp-libs-type_traits.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3252,7 +3255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/81_cpp-libs-typeinfo.html/" class="md-nav__link">
+      <a href="../../language/cpp/81_cpp-libs-typeinfo.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3273,7 +3276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/82_cpp-libs-exception.html/" class="md-nav__link">
+      <a href="../../language/cpp/82_cpp-libs-exception.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3294,7 +3297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/83_cpp-libs-stdexcept.html/" class="md-nav__link">
+      <a href="../../language/cpp/83_cpp-libs-stdexcept.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3315,7 +3318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/84_cpp-libs-cstdio.html/" class="md-nav__link">
+      <a href="../../language/cpp/84_cpp-libs-cstdio.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3336,7 +3339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/85_cpp-libs-cstdint.html/" class="md-nav__link">
+      <a href="../../language/cpp/85_cpp-libs-cstdint.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3357,7 +3360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/86_cpp-libs-memory.html/" class="md-nav__link">
+      <a href="../../language/cpp/86_cpp-libs-memory.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3378,7 +3381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/87_cpp-libs-new.html/" class="md-nav__link">
+      <a href="../../language/cpp/87_cpp-libs-new.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3399,7 +3402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/88_cpp-libs-utility.html/" class="md-nav__link">
+      <a href="../../language/cpp/88_cpp-libs-utility.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3420,7 +3423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/89_cpp-libs-random.html/" class="md-nav__link">
+      <a href="../../language/cpp/89_cpp-libs-random.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3441,7 +3444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/90_cpp-libs-locale.html/" class="md-nav__link">
+      <a href="../../language/cpp/90_cpp-libs-locale.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3462,7 +3465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/91_cpp-libs-codecvt.html/" class="md-nav__link">
+      <a href="../../language/cpp/91_cpp-libs-codecvt.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3483,7 +3486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/92_cpp-libs-cassert.html/" class="md-nav__link">
+      <a href="../../language/cpp/92_cpp-libs-cassert.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3504,7 +3507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/93_cpp-libs-cwchar.html/" class="md-nav__link">
+      <a href="../../language/cpp/93_cpp-libs-cwchar.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3525,7 +3528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/94_cpp-libs-climits.html/" class="md-nav__link">
+      <a href="../../language/cpp/94_cpp-libs-climits.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3546,7 +3549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/95_cpp-libs-cfloat.html/" class="md-nav__link">
+      <a href="../../language/cpp/95_cpp-libs-cfloat.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3567,7 +3570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/96_cpp-libs-cstdlib.html/" class="md-nav__link">
+      <a href="../../language/cpp/96_cpp-libs-cstdlib.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3593,19 +3596,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
         
           
           <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
@@ -3619,7 +3620,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             Java
@@ -3630,17 +3631,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../language/java/1_java-tutorial.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3649,7 +3643,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -3662,7 +3655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2_java-intro.html/" class="md-nav__link">
+      <a href="../../language/java/2_java-intro.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3683,7 +3676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3_java-environment-setup.html/" class="md-nav__link">
+      <a href="../../language/java/3_java-environment-setup.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3704,7 +3697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4_fitten-code-java.html/" class="md-nav__link">
+      <a href="../../language/java/4_fitten-code-java.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3725,7 +3718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5_java-basic-syntax.html/" class="md-nav__link">
+      <a href="../../language/java/5_java-basic-syntax.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3746,7 +3739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../6_java-comments.html/" class="md-nav__link">
+      <a href="../../language/java/6_java-comments.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3767,7 +3760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../7_java-object-classes.html/" class="md-nav__link">
+      <a href="../../language/java/7_java-object-classes.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3788,7 +3781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../8_java-basic-datatypes.html/" class="md-nav__link">
+      <a href="../../language/java/8_java-basic-datatypes.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3809,7 +3802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../9_java-variable-types.html/" class="md-nav__link">
+      <a href="../../language/java/9_java-variable-types.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3830,7 +3823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_java-variable-naming-rules.html/" class="md-nav__link">
+      <a href="../../language/java/10_java-variable-naming-rules.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3851,7 +3844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../11_java-modifier-types.html/" class="md-nav__link">
+      <a href="../../language/java/11_java-modifier-types.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3872,7 +3865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../12_java-operators.html/" class="md-nav__link">
+      <a href="../../language/java/12_java-operators.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3893,7 +3886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../13_java-loop.html/" class="md-nav__link">
+      <a href="../../language/java/13_java-loop.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3914,7 +3907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../14_java-if-else-switch.html/" class="md-nav__link">
+      <a href="../../language/java/14_java-if-else-switch.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3935,7 +3928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../15_java-switch-case.html/" class="md-nav__link">
+      <a href="../../language/java/15_java-switch-case.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3956,7 +3949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../16_java-number.html/" class="md-nav__link">
+      <a href="../../language/java/16_java-number.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3977,7 +3970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../17_java-character.html/" class="md-nav__link">
+      <a href="../../language/java/17_java-character.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3998,7 +3991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../18_java-string.html/" class="md-nav__link">
+      <a href="../../language/java/18_java-string.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4019,7 +4012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../19_java-stringbuffer.html/" class="md-nav__link">
+      <a href="../../language/java/19_java-stringbuffer.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4040,7 +4033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../20_java-array.html/" class="md-nav__link">
+      <a href="../../language/java/20_java-array.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4061,7 +4054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../21_java-date-time.html/" class="md-nav__link">
+      <a href="../../language/java/21_java-date-time.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4082,7 +4075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../22_java-regular-expressions.html/" class="md-nav__link">
+      <a href="../../language/java/22_java-regular-expressions.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4103,7 +4096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../23_java-methods.html/" class="md-nav__link">
+      <a href="../../language/java/23_java-methods.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4124,7 +4117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../24_java-files-io.html/" class="md-nav__link">
+      <a href="../../language/java/24_java-files-io.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4145,7 +4138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../25_java-scanner-class.html/" class="md-nav__link">
+      <a href="../../language/java/25_java-scanner-class.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4166,7 +4159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../26_java-exceptions.html/" class="md-nav__link">
+      <a href="../../language/java/26_java-exceptions.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4187,7 +4180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../27_java-inheritance.html/" class="md-nav__link">
+      <a href="../../language/java/27_java-inheritance.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4208,7 +4201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../28_java-override-overload.html/" class="md-nav__link">
+      <a href="../../language/java/28_java-override-overload.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4229,7 +4222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../29_java-polymorphism.html/" class="md-nav__link">
+      <a href="../../language/java/29_java-polymorphism.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4250,7 +4243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../30_java-abstraction.html/" class="md-nav__link">
+      <a href="../../language/java/30_java-abstraction.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4271,7 +4264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../31_java-encapsulation.html/" class="md-nav__link">
+      <a href="../../language/java/31_java-encapsulation.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4292,7 +4285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../32_java-interfaces.html/" class="md-nav__link">
+      <a href="../../language/java/32_java-interfaces.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4313,7 +4306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../33_java-enum.html/" class="md-nav__link">
+      <a href="../../language/java/33_java-enum.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4334,7 +4327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../34_java-package.html/" class="md-nav__link">
+      <a href="../../language/java/34_java-package.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4355,7 +4348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../35_java-data-structures.html/" class="md-nav__link">
+      <a href="../../language/java/35_java-data-structures.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4376,7 +4369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../36_java-collections.html/" class="md-nav__link">
+      <a href="../../language/java/36_java-collections.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4397,7 +4390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../37_java-arraylist.html/" class="md-nav__link">
+      <a href="../../language/java/37_java-arraylist.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4418,7 +4411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../38_java-linkedlist.html/" class="md-nav__link">
+      <a href="../../language/java/38_java-linkedlist.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4439,7 +4432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../39_java-hashset.html/" class="md-nav__link">
+      <a href="../../language/java/39_java-hashset.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4460,7 +4453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../40_java-hashmap.html/" class="md-nav__link">
+      <a href="../../language/java/40_java-hashmap.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4481,7 +4474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../41_java-iterator.html/" class="md-nav__link">
+      <a href="../../language/java/41_java-iterator.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4502,7 +4495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../42_java-object-class.html/" class="md-nav__link">
+      <a href="../../language/java/42_java-object-class.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4523,7 +4516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../43_java-generics.html/" class="md-nav__link">
+      <a href="../../language/java/43_java-generics.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4544,7 +4537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../44_java-serialization.html/" class="md-nav__link">
+      <a href="../../language/java/44_java-serialization.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4565,7 +4558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../45_java-networking.html/" class="md-nav__link">
+      <a href="../../language/java/45_java-networking.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4586,7 +4579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../46_java-sending-email.html/" class="md-nav__link">
+      <a href="../../language/java/46_java-sending-email.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4607,7 +4600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../47_java-multithreading.html/" class="md-nav__link">
+      <a href="../../language/java/47_java-multithreading.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4628,7 +4621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../48_java-applet-basics.html/" class="md-nav__link">
+      <a href="../../language/java/48_java-applet-basics.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4649,7 +4642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../49_java-documentation.html/" class="md-nav__link">
+      <a href="../../language/java/49_java-documentation.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4670,7 +4663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../50_java-examples.html/" class="md-nav__link">
+      <a href="../../language/java/50_java-examples.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4691,7 +4684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../51_java8-new-features.html/" class="md-nav__link">
+      <a href="../../language/java/51_java8-new-features.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4712,7 +4705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../52_java-mysql-connect.html/" class="md-nav__link">
+      <a href="../../language/java/52_java-mysql-connect.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4733,7 +4726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../53_java9-new-features.html/" class="md-nav__link">
+      <a href="../../language/java/53_java9-new-features.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4754,7 +4747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../54_java-quiz.html/" class="md-nav__link">
+      <a href="../../language/java/54_java-quiz.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4818,7 +4811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/1_python3-tutorial.md" class="md-nav__link">
+      <a href="../../language/python/1_python3-tutorial.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4839,7 +4832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/2_python3-intro.html/" class="md-nav__link">
+      <a href="../../language/python/2_python3-intro.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4860,7 +4853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/3_python3-install.html/" class="md-nav__link">
+      <a href="../../language/python/3_python3-install.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4881,7 +4874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/4_python-vscode-setup.html/" class="md-nav__link">
+      <a href="../../language/python/4_python-vscode-setup.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4902,7 +4895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/5_fitten-code.html/" class="md-nav__link">
+      <a href="../../language/python/5_fitten-code.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4923,7 +4916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/6_python3-basic-syntax.html/" class="md-nav__link">
+      <a href="../../language/python/6_python3-basic-syntax.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4944,7 +4937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/7_python3-data-type.html/" class="md-nav__link">
+      <a href="../../language/python/7_python3-data-type.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4965,7 +4958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/8_python3-type-conversion.html/" class="md-nav__link">
+      <a href="../../language/python/8_python3-type-conversion.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4986,7 +4979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/9_python3-interpreter.html/" class="md-nav__link">
+      <a href="../../language/python/9_python3-interpreter.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5007,7 +5000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/10_python3-comment.html/" class="md-nav__link">
+      <a href="../../language/python/10_python3-comment.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5028,7 +5021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/11_python3-basic-operators.html/" class="md-nav__link">
+      <a href="../../language/python/11_python3-basic-operators.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5049,7 +5042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/12_python3-number.html/" class="md-nav__link">
+      <a href="../../language/python/12_python3-number.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5070,7 +5063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/13_python3-string.html/" class="md-nav__link">
+      <a href="../../language/python/13_python3-string.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5091,7 +5084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/14_python3-list.html/" class="md-nav__link">
+      <a href="../../language/python/14_python3-list.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5112,7 +5105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/15_python3-tuple.html/" class="md-nav__link">
+      <a href="../../language/python/15_python3-tuple.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5133,7 +5126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/16_python3-dictionary.html/" class="md-nav__link">
+      <a href="../../language/python/16_python3-dictionary.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5154,7 +5147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/17_python3-set.html/" class="md-nav__link">
+      <a href="../../language/python/17_python3-set.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5175,7 +5168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/18_python3-conditional-statements.html/" class="md-nav__link">
+      <a href="../../language/python/18_python3-conditional-statements.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5196,7 +5189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/19_python3-loop.html/" class="md-nav__link">
+      <a href="../../language/python/19_python3-loop.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5217,7 +5210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/20_python3-step1.html/" class="md-nav__link">
+      <a href="../../language/python/20_python3-step1.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5238,7 +5231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/21_python-comprehensions.html/" class="md-nav__link">
+      <a href="../../language/python/21_python-comprehensions.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5259,7 +5252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/22_python3-iterator-generator.html/" class="md-nav__link">
+      <a href="../../language/python/22_python3-iterator-generator.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5280,7 +5273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/23_python3-function.html/" class="md-nav__link">
+      <a href="../../language/python/23_python3-function.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5301,7 +5294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/24_python-lambda.html/" class="md-nav__link">
+      <a href="../../language/python/24_python-lambda.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5322,7 +5315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/25_python-decorators.html/" class="md-nav__link">
+      <a href="../../language/python/25_python-decorators.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5343,7 +5336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/26_python3-data-structure.html/" class="md-nav__link">
+      <a href="../../language/python/26_python3-data-structure.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5364,7 +5357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/27_python3-module.html/" class="md-nav__link">
+      <a href="../../language/python/27_python3-module.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5385,7 +5378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/28_python3-inputoutput.html/" class="md-nav__link">
+      <a href="../../language/python/28_python3-inputoutput.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5406,7 +5399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/29_python3-file-methods.html/" class="md-nav__link">
+      <a href="../../language/python/29_python3-file-methods.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5427,7 +5420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/30_python3-os-file-methods.html/" class="md-nav__link">
+      <a href="../../language/python/30_python3-os-file-methods.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5448,7 +5441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/31_python3-errors-execptions.html/" class="md-nav__link">
+      <a href="../../language/python/31_python3-errors-execptions.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5469,7 +5462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/32_python3-class.html/" class="md-nav__link">
+      <a href="../../language/python/32_python3-class.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5490,7 +5483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/33_python3-namespace-scope.html/" class="md-nav__link">
+      <a href="../../language/python/33_python3-namespace-scope.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5511,7 +5504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/34_python3-stdlib.html/" class="md-nav__link">
+      <a href="../../language/python/34_python3-stdlib.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5532,7 +5525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/35_python3-examples.html/" class="md-nav__link">
+      <a href="../../language/python/35_python3-examples.html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5565,17 +5558,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -5589,7 +5584,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             数据结构与算法入门
@@ -5600,34 +5595,36 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    第 0 章 &nbsp; 前言
+    数据结构[从概念到C++实现]
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
-            第 0 章 &nbsp; 前言
+            数据结构[从概念到C++实现]
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5635,81 +5632,76 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_preface/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    第一章
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    前言
+    第一章
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_preface/about_the_book/" class="md-nav__link">
+      
         
-  
-  <span class="md-ellipsis">
-    0.1 &nbsp; 关于本书
-  </span>
-  
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_preface/suggestions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    0.2 &nbsp; 如何使用本书
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
+    
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      七桥问题
+    </span>
+  </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧几里得算法
+    </span>
+  </a>
   
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_preface/summary/" class="md-nav__link">
-        
+</li>
+      
+    </ul>
   
-  <span class="md-ellipsis">
-    0.3 &nbsp; 小结
-  </span>
-  
-
-      </a>
+</nav>
+      
     </li>
   
 
@@ -5744,7 +5736,7 @@
             
   
   <span class="md-ellipsis">
-    第 1 章 &nbsp; 初识算法
+    第 0 章 &nbsp; 前言
   </span>
   
 
@@ -5754,7 +5746,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
-            第 1 章 &nbsp; 初识算法
+            第 0 章 &nbsp; 前言
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5765,11 +5757,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_introduction/" class="md-nav__link">
+      <a href="../docs/chapter_preface/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    初识算法
+    前言
   </span>
   
 
@@ -5786,11 +5778,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_introduction/algorithms_are_everywhere/" class="md-nav__link">
+      <a href="../docs/chapter_preface/about_the_book/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1.1 &nbsp; 算法无处不在
+    0.1 &nbsp; 关于本书
   </span>
   
 
@@ -5807,11 +5799,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_introduction/what_is_dsa/" class="md-nav__link">
+      <a href="../docs/chapter_preface/suggestions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1.2 &nbsp; 算法是什么
+    0.2 &nbsp; 如何使用本书
   </span>
   
 
@@ -5828,11 +5820,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_introduction/summary/" class="md-nav__link">
+      <a href="../docs/chapter_preface/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1.3 &nbsp; 小结
+    0.3 &nbsp; 小结
   </span>
   
 
@@ -5871,7 +5863,7 @@
             
   
   <span class="md-ellipsis">
-    第 2 章 &nbsp; 复杂度分析
+    第 1 章 &nbsp; 初识算法
   </span>
   
 
@@ -5881,7 +5873,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
-            第 2 章 &nbsp; 复杂度分析
+            第 1 章 &nbsp; 初识算法
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5892,11 +5884,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_computational_complexity/" class="md-nav__link">
+      <a href="../docs/chapter_introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    复杂度分析
+    初识算法
   </span>
   
 
@@ -5913,11 +5905,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_computational_complexity/performance_evaluation/" class="md-nav__link">
+      <a href="../docs/chapter_introduction/algorithms_are_everywhere/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2.1 &nbsp; 算法效率评估
+    1.1 &nbsp; 算法无处不在
   </span>
   
 
@@ -5934,11 +5926,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_computational_complexity/iteration_and_recursion/" class="md-nav__link">
+      <a href="../docs/chapter_introduction/what_is_dsa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2.2 &nbsp; 迭代与递归
+    1.2 &nbsp; 算法是什么
   </span>
   
 
@@ -5955,53 +5947,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_computational_complexity/time_complexity/" class="md-nav__link">
+      <a href="../docs/chapter_introduction/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2.3 &nbsp; 时间复杂度
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_computational_complexity/space_complexity/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2.4 &nbsp; 空间复杂度
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_computational_complexity/summary/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2.5 &nbsp; 小结
+    1.3 &nbsp; 小结
   </span>
   
 
@@ -6040,7 +5990,7 @@
             
   
   <span class="md-ellipsis">
-    第 3 章 &nbsp; 数据结构
+    第 2 章 &nbsp; 复杂度分析
   </span>
   
 
@@ -6050,7 +6000,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
-            第 3 章 &nbsp; 数据结构
+            第 2 章 &nbsp; 复杂度分析
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6061,11 +6011,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_data_structure/" class="md-nav__link">
+      <a href="../docs/chapter_computational_complexity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    数据结构
+    复杂度分析
   </span>
   
 
@@ -6082,11 +6032,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_data_structure/classification_of_data_structure/" class="md-nav__link">
+      <a href="../docs/chapter_computational_complexity/performance_evaluation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.1 &nbsp; 数据结构分类
+    2.1 &nbsp; 算法效率评估
   </span>
   
 
@@ -6103,11 +6053,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_data_structure/basic_data_types/" class="md-nav__link">
+      <a href="../docs/chapter_computational_complexity/iteration_and_recursion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.2 &nbsp; 基本数据类型
+    2.2 &nbsp; 迭代与递归
   </span>
   
 
@@ -6124,11 +6074,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_data_structure/number_encoding/" class="md-nav__link">
+      <a href="../docs/chapter_computational_complexity/time_complexity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.3 &nbsp; 数字编码 *
+    2.3 &nbsp; 时间复杂度
   </span>
   
 
@@ -6145,11 +6095,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_data_structure/character_encoding/" class="md-nav__link">
+      <a href="../docs/chapter_computational_complexity/space_complexity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.4 &nbsp; 字符编码 *
+    2.4 &nbsp; 空间复杂度
   </span>
   
 
@@ -6166,11 +6116,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_data_structure/summary/" class="md-nav__link">
+      <a href="../docs/chapter_computational_complexity/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.5 &nbsp; 小结
+    2.5 &nbsp; 小结
   </span>
   
 
@@ -6209,7 +6159,7 @@
             
   
   <span class="md-ellipsis">
-    第 4 章 &nbsp; 数组与链表
+    第 3 章 &nbsp; 数据结构
   </span>
   
 
@@ -6219,7 +6169,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
-            第 4 章 &nbsp; 数组与链表
+            第 3 章 &nbsp; 数据结构
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6230,11 +6180,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_array_and_linkedlist/" class="md-nav__link">
+      <a href="../docs/chapter_data_structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    数组与链表
+    数据结构
   </span>
   
 
@@ -6251,11 +6201,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_array_and_linkedlist/array/" class="md-nav__link">
+      <a href="../docs/chapter_data_structure/classification_of_data_structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4.1 &nbsp; 数组
+    3.1 &nbsp; 数据结构分类
   </span>
   
 
@@ -6272,11 +6222,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_array_and_linkedlist/linked_list/" class="md-nav__link">
+      <a href="../docs/chapter_data_structure/basic_data_types/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4.2 &nbsp; 链表
+    3.2 &nbsp; 基本数据类型
   </span>
   
 
@@ -6293,11 +6243,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_array_and_linkedlist/list/" class="md-nav__link">
+      <a href="../docs/chapter_data_structure/number_encoding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4.3 &nbsp; 列表
+    3.3 &nbsp; 数字编码 *
   </span>
   
 
@@ -6314,11 +6264,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_array_and_linkedlist/summary/" class="md-nav__link">
+      <a href="../docs/chapter_data_structure/character_encoding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4.4 &nbsp; 小结
+    3.4 &nbsp; 字符编码 *
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_data_structure/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 &nbsp; 小结
   </span>
   
 
@@ -6357,7 +6328,7 @@
             
   
   <span class="md-ellipsis">
-    第 5 章 &nbsp; 栈与队列
+    第 4 章 &nbsp; 数组与链表
   </span>
   
 
@@ -6367,7 +6338,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
-            第 5 章 &nbsp; 栈与队列
+            第 4 章 &nbsp; 数组与链表
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6378,11 +6349,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_stack_and_queue/" class="md-nav__link">
+      <a href="../docs/chapter_array_and_linkedlist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    栈与队列
+    数组与链表
   </span>
   
 
@@ -6399,11 +6370,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_stack_and_queue/stack/" class="md-nav__link">
+      <a href="../docs/chapter_array_and_linkedlist/array/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    5.1 &nbsp; 栈
+    4.1 &nbsp; 数组
   </span>
   
 
@@ -6420,11 +6391,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_stack_and_queue/queue/" class="md-nav__link">
+      <a href="../docs/chapter_array_and_linkedlist/linked_list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    5.2 &nbsp; 队列
+    4.2 &nbsp; 链表
   </span>
   
 
@@ -6441,11 +6412,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_stack_and_queue/deque/" class="md-nav__link">
+      <a href="../docs/chapter_array_and_linkedlist/list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    5.3 &nbsp; 双向队列
+    4.3 &nbsp; 列表
   </span>
   
 
@@ -6462,11 +6433,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_stack_and_queue/summary/" class="md-nav__link">
+      <a href="../docs/chapter_array_and_linkedlist/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    5.4 &nbsp; 小结
+    4.4 &nbsp; 小结
   </span>
   
 
@@ -6505,7 +6476,7 @@
             
   
   <span class="md-ellipsis">
-    第 6 章 &nbsp; 哈希表
+    第 5 章 &nbsp; 栈与队列
   </span>
   
 
@@ -6515,7 +6486,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
-            第 6 章 &nbsp; 哈希表
+            第 5 章 &nbsp; 栈与队列
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6526,11 +6497,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_hashing/" class="md-nav__link">
+      <a href="../docs/chapter_stack_and_queue/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    哈希表
+    栈与队列
   </span>
   
 
@@ -6547,11 +6518,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_hashing/hash_map/" class="md-nav__link">
+      <a href="../docs/chapter_stack_and_queue/stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6.1 &nbsp; 哈希表
+    5.1 &nbsp; 栈
   </span>
   
 
@@ -6568,11 +6539,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_hashing/hash_collision/" class="md-nav__link">
+      <a href="../docs/chapter_stack_and_queue/queue/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6.2 &nbsp; 哈希冲突
+    5.2 &nbsp; 队列
   </span>
   
 
@@ -6589,11 +6560,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_hashing/hash_algorithm/" class="md-nav__link">
+      <a href="../docs/chapter_stack_and_queue/deque/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6.3 &nbsp; 哈希算法
+    5.3 &nbsp; 双向队列
   </span>
   
 
@@ -6610,11 +6581,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_hashing/summary/" class="md-nav__link">
+      <a href="../docs/chapter_stack_and_queue/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6.4 &nbsp; 小结
+    5.4 &nbsp; 小结
   </span>
   
 
@@ -6653,7 +6624,7 @@
             
   
   <span class="md-ellipsis">
-    第 7 章 &nbsp; 树
+    第 6 章 &nbsp; 哈希表
   </span>
   
 
@@ -6663,7 +6634,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
-            第 7 章 &nbsp; 树
+            第 6 章 &nbsp; 哈希表
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6674,11 +6645,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_tree/" class="md-nav__link">
+      <a href="../docs/chapter_hashing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    树
+    哈希表
   </span>
   
 
@@ -6695,11 +6666,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_tree/binary_tree/" class="md-nav__link">
+      <a href="../docs/chapter_hashing/hash_map/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.1 &nbsp; 二叉树
+    6.1 &nbsp; 哈希表
   </span>
   
 
@@ -6716,11 +6687,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_tree/binary_tree_traversal/" class="md-nav__link">
+      <a href="../docs/chapter_hashing/hash_collision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.2 &nbsp; 二叉树遍历
+    6.2 &nbsp; 哈希冲突
   </span>
   
 
@@ -6737,11 +6708,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_tree/array_representation_of_tree/" class="md-nav__link">
+      <a href="../docs/chapter_hashing/hash_algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.3 &nbsp; 二叉树数组表示
+    6.3 &nbsp; 哈希算法
   </span>
   
 
@@ -6758,53 +6729,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_tree/binary_search_tree/" class="md-nav__link">
+      <a href="../docs/chapter_hashing/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.4 &nbsp; 二叉搜索树
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_tree/avl_tree/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    7.5 &nbsp; AVL 树 *
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_tree/summary/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    7.6 &nbsp; 小结
+    6.4 &nbsp; 小结
   </span>
   
 
@@ -6843,7 +6772,7 @@
             
   
   <span class="md-ellipsis">
-    第 8 章 &nbsp; 堆
+    第 7 章 &nbsp; 树
   </span>
   
 
@@ -6853,7 +6782,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
-            第 8 章 &nbsp; 堆
+            第 7 章 &nbsp; 树
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6864,11 +6793,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_heap/" class="md-nav__link">
+      <a href="../docs/chapter_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    堆
+    树
   </span>
   
 
@@ -6885,11 +6814,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_heap/heap/" class="md-nav__link">
+      <a href="../docs/chapter_tree/binary_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    8.1 &nbsp; 堆
+    7.1 &nbsp; 二叉树
   </span>
   
 
@@ -6906,11 +6835,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_heap/build_heap/" class="md-nav__link">
+      <a href="../docs/chapter_tree/binary_tree_traversal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    8.2 &nbsp; 建堆操作
+    7.2 &nbsp; 二叉树遍历
   </span>
   
 
@@ -6927,11 +6856,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_heap/top_k/" class="md-nav__link">
+      <a href="../docs/chapter_tree/array_representation_of_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    8.3 &nbsp; Top-K 问题
+    7.3 &nbsp; 二叉树数组表示
   </span>
   
 
@@ -6948,11 +6877,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_heap/summary/" class="md-nav__link">
+      <a href="../docs/chapter_tree/binary_search_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    8.4 &nbsp; 小结
+    7.4 &nbsp; 二叉搜索树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_tree/avl_tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5 &nbsp; AVL 树 *
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_tree/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6 &nbsp; 小结
   </span>
   
 
@@ -6991,7 +6962,7 @@
             
   
   <span class="md-ellipsis">
-    第 9 章 &nbsp; 图
+    第 8 章 &nbsp; 堆
   </span>
   
 
@@ -7001,7 +6972,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
-            第 9 章 &nbsp; 图
+            第 8 章 &nbsp; 堆
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -7012,11 +6983,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_graph/" class="md-nav__link">
+      <a href="../docs/chapter_heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    图
+    堆
   </span>
   
 
@@ -7033,11 +7004,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_graph/graph/" class="md-nav__link">
+      <a href="../docs/chapter_heap/heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9.1 &nbsp; 图
+    8.1 &nbsp; 堆
   </span>
   
 
@@ -7054,11 +7025,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_graph/graph_operations/" class="md-nav__link">
+      <a href="../docs/chapter_heap/build_heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9.2 &nbsp; 图基础操作
+    8.2 &nbsp; 建堆操作
   </span>
   
 
@@ -7075,11 +7046,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_graph/graph_traversal/" class="md-nav__link">
+      <a href="../docs/chapter_heap/top_k/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9.3 &nbsp; 图的遍历
+    8.3 &nbsp; Top-K 问题
   </span>
   
 
@@ -7096,11 +7067,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_graph/summary/" class="md-nav__link">
+      <a href="../docs/chapter_heap/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9.4 &nbsp; 小结
+    8.4 &nbsp; 小结
   </span>
   
 
@@ -7139,7 +7110,7 @@
             
   
   <span class="md-ellipsis">
-    第 10 章 &nbsp; 搜索
+    第 9 章 &nbsp; 图
   </span>
   
 
@@ -7149,7 +7120,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_11">
             <span class="md-nav__icon md-icon"></span>
-            第 10 章 &nbsp; 搜索
+            第 9 章 &nbsp; 图
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -7160,11 +7131,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_searching/" class="md-nav__link">
+      <a href="../docs/chapter_graph/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    搜索
+    图
   </span>
   
 
@@ -7181,11 +7152,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_searching/binary_search/" class="md-nav__link">
+      <a href="../docs/chapter_graph/graph/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.1 &nbsp; 二分查找
+    9.1 &nbsp; 图
   </span>
   
 
@@ -7202,11 +7173,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_searching/binary_search_insertion/" class="md-nav__link">
+      <a href="../docs/chapter_graph/graph_operations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.2 &nbsp; 二分查找插入点
+    9.2 &nbsp; 图基础操作
   </span>
   
 
@@ -7223,11 +7194,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_searching/binary_search_edge/" class="md-nav__link">
+      <a href="../docs/chapter_graph/graph_traversal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.3 &nbsp; 二分查找边界
+    9.3 &nbsp; 图的遍历
   </span>
   
 
@@ -7244,53 +7215,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_searching/replace_linear_by_hashing/" class="md-nav__link">
+      <a href="../docs/chapter_graph/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.4 &nbsp; 哈希优化策略
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_searching/searching_algorithm_revisited/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    10.5 &nbsp; 重识搜索算法
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_searching/summary/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    10.6 &nbsp; 小结
+    9.4 &nbsp; 小结
   </span>
   
 
@@ -7329,7 +7258,7 @@
             
   
   <span class="md-ellipsis">
-    第 11 章 &nbsp; 排序
+    第 10 章 &nbsp; 搜索
   </span>
   
 
@@ -7339,7 +7268,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_12">
             <span class="md-nav__icon md-icon"></span>
-            第 11 章 &nbsp; 排序
+            第 10 章 &nbsp; 搜索
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -7350,11 +7279,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_sorting/" class="md-nav__link">
+      <a href="../docs/chapter_searching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    排序
+    搜索
   </span>
   
 
@@ -7371,11 +7300,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_sorting/sorting_algorithm/" class="md-nav__link">
+      <a href="../docs/chapter_searching/binary_search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    11.1 &nbsp; 排序算法
+    10.1 &nbsp; 二分查找
   </span>
   
 
@@ -7392,11 +7321,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_sorting/selection_sort/" class="md-nav__link">
+      <a href="../docs/chapter_searching/binary_search_insertion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    11.2 &nbsp; 选择排序
+    10.2 &nbsp; 二分查找插入点
   </span>
   
 
@@ -7413,11 +7342,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_sorting/bubble_sort/" class="md-nav__link">
+      <a href="../docs/chapter_searching/binary_search_edge/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    11.3 &nbsp; 冒泡排序
+    10.3 &nbsp; 二分查找边界
   </span>
   
 
@@ -7434,11 +7363,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_sorting/insertion_sort/" class="md-nav__link">
+      <a href="../docs/chapter_searching/replace_linear_by_hashing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    11.4 &nbsp; 插入排序
+    10.4 &nbsp; 哈希优化策略
   </span>
   
 
@@ -7455,11 +7384,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_sorting/quick_sort/" class="md-nav__link">
+      <a href="../docs/chapter_searching/searching_algorithm_revisited/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    11.5 &nbsp; 快速排序
+    10.5 &nbsp; 重识搜索算法
   </span>
   
 
@@ -7476,116 +7405,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_sorting/merge_sort/" class="md-nav__link">
+      <a href="../docs/chapter_searching/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    11.6 &nbsp; 归并排序
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_sorting/heap_sort/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    11.7 &nbsp; 堆排序
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_sorting/bucket_sort/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    11.8 &nbsp; 桶排序
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_sorting/counting_sort/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    11.9 &nbsp; 计数排序
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_sorting/radix_sort/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    11.10 &nbsp; 基数排序
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_sorting/summary/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    11.11 &nbsp; 小结
+    10.6 &nbsp; 小结
   </span>
   
 
@@ -7624,7 +7448,7 @@
             
   
   <span class="md-ellipsis">
-    第 12 章 &nbsp; 分治
+    第 11 章 &nbsp; 排序
   </span>
   
 
@@ -7634,7 +7458,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_13">
             <span class="md-nav__icon md-icon"></span>
-            第 12 章 &nbsp; 分治
+            第 11 章 &nbsp; 排序
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -7645,11 +7469,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_divide_and_conquer/" class="md-nav__link">
+      <a href="../docs/chapter_sorting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    分治
+    排序
   </span>
   
 
@@ -7666,11 +7490,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_divide_and_conquer/divide_and_conquer/" class="md-nav__link">
+      <a href="../docs/chapter_sorting/sorting_algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    12.1 &nbsp; 分治算法
+    11.1 &nbsp; 排序算法
   </span>
   
 
@@ -7687,11 +7511,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_divide_and_conquer/binary_search_recur/" class="md-nav__link">
+      <a href="../docs/chapter_sorting/selection_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    12.2 &nbsp; 分治搜索策略
+    11.2 &nbsp; 选择排序
   </span>
   
 
@@ -7708,11 +7532,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_divide_and_conquer/build_binary_tree_problem/" class="md-nav__link">
+      <a href="../docs/chapter_sorting/bubble_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    12.3 &nbsp; 构建树问题
+    11.3 &nbsp; 冒泡排序
   </span>
   
 
@@ -7729,11 +7553,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_divide_and_conquer/hanota_problem/" class="md-nav__link">
+      <a href="../docs/chapter_sorting/insertion_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    12.4 &nbsp; 汉诺塔问题
+    11.4 &nbsp; 插入排序
   </span>
   
 
@@ -7750,11 +7574,137 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_divide_and_conquer/summary/" class="md-nav__link">
+      <a href="../docs/chapter_sorting/quick_sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    12.5 &nbsp; 小结
+    11.5 &nbsp; 快速排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_sorting/merge_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.6 &nbsp; 归并排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_sorting/heap_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.7 &nbsp; 堆排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_sorting/bucket_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.8 &nbsp; 桶排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_sorting/counting_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.9 &nbsp; 计数排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_sorting/radix_sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.10 &nbsp; 基数排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_sorting/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.11 &nbsp; 小结
   </span>
   
 
@@ -7793,7 +7743,7 @@
             
   
   <span class="md-ellipsis">
-    第 13 章 &nbsp; 回溯
+    第 12 章 &nbsp; 分治
   </span>
   
 
@@ -7803,7 +7753,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_14">
             <span class="md-nav__icon md-icon"></span>
-            第 13 章 &nbsp; 回溯
+            第 12 章 &nbsp; 分治
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -7814,11 +7764,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_backtracking/" class="md-nav__link">
+      <a href="../docs/chapter_divide_and_conquer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    回溯
+    分治
   </span>
   
 
@@ -7835,11 +7785,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_backtracking/backtracking_algorithm/" class="md-nav__link">
+      <a href="../docs/chapter_divide_and_conquer/divide_and_conquer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    13.1 &nbsp; 回溯算法
+    12.1 &nbsp; 分治算法
   </span>
   
 
@@ -7856,11 +7806,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_backtracking/permutations_problem/" class="md-nav__link">
+      <a href="../docs/chapter_divide_and_conquer/binary_search_recur/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    13.2 &nbsp; 全排列问题
+    12.2 &nbsp; 分治搜索策略
   </span>
   
 
@@ -7877,11 +7827,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_backtracking/subset_sum_problem/" class="md-nav__link">
+      <a href="../docs/chapter_divide_and_conquer/build_binary_tree_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    13.3 &nbsp; 子集和问题
+    12.3 &nbsp; 构建树问题
   </span>
   
 
@@ -7898,11 +7848,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_backtracking/n_queens_problem/" class="md-nav__link">
+      <a href="../docs/chapter_divide_and_conquer/hanota_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    13.4 &nbsp; N 皇后问题
+    12.4 &nbsp; 汉诺塔问题
   </span>
   
 
@@ -7919,11 +7869,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_backtracking/summary/" class="md-nav__link">
+      <a href="../docs/chapter_divide_and_conquer/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    13.5 &nbsp; 小结
+    12.5 &nbsp; 小结
   </span>
   
 
@@ -7962,7 +7912,7 @@
             
   
   <span class="md-ellipsis">
-    第 14 章 &nbsp; 动态规划
+    第 13 章 &nbsp; 回溯
   </span>
   
 
@@ -7972,7 +7922,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_15">
             <span class="md-nav__icon md-icon"></span>
-            第 14 章 &nbsp; 动态规划
+            第 13 章 &nbsp; 回溯
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -7983,11 +7933,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_dynamic_programming/" class="md-nav__link">
+      <a href="../docs/chapter_backtracking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    动态规划
+    回溯
   </span>
   
 
@@ -8004,11 +7954,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_dynamic_programming/intro_to_dynamic_programming/" class="md-nav__link">
+      <a href="../docs/chapter_backtracking/backtracking_algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    14.1 &nbsp; 初探动态规划
+    13.1 &nbsp; 回溯算法
   </span>
   
 
@@ -8025,11 +7975,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_dynamic_programming/dp_problem_features/" class="md-nav__link">
+      <a href="../docs/chapter_backtracking/permutations_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    14.2 &nbsp; DP 问题特性
+    13.2 &nbsp; 全排列问题
   </span>
   
 
@@ -8046,11 +7996,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_dynamic_programming/dp_solution_pipeline/" class="md-nav__link">
+      <a href="../docs/chapter_backtracking/subset_sum_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    14.3 &nbsp; DP 解题思路
+    13.3 &nbsp; 子集和问题
   </span>
   
 
@@ -8067,11 +8017,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_dynamic_programming/knapsack_problem/" class="md-nav__link">
+      <a href="../docs/chapter_backtracking/n_queens_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    14.4 &nbsp; 0-1 背包问题
+    13.4 &nbsp; N 皇后问题
   </span>
   
 
@@ -8088,53 +8038,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_dynamic_programming/unbounded_knapsack_problem/" class="md-nav__link">
+      <a href="../docs/chapter_backtracking/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    14.5 &nbsp; 完全背包问题
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_dynamic_programming/edit_distance_problem/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    14.6 &nbsp; 编辑距离问题
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_dynamic_programming/summary/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    14.7 &nbsp; 小结
+    13.5 &nbsp; 小结
   </span>
   
 
@@ -8173,7 +8081,7 @@
             
   
   <span class="md-ellipsis">
-    第 15 章 &nbsp; 贪心
+    第 14 章 &nbsp; 动态规划
   </span>
   
 
@@ -8183,7 +8091,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_16_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_16">
             <span class="md-nav__icon md-icon"></span>
-            第 15 章 &nbsp; 贪心
+            第 14 章 &nbsp; 动态规划
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -8194,11 +8102,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../chapter_greedy/index.md" class="md-nav__link">
+      <a href="../docs/chapter_dynamic_programming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    None
+    动态规划
   </span>
   
 
@@ -8215,11 +8123,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_greedy/greedy_algorithm/" class="md-nav__link">
+      <a href="../docs/chapter_dynamic_programming/intro_to_dynamic_programming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    15.1 &nbsp; 贪心算法
+    14.1 &nbsp; 初探动态规划
   </span>
   
 
@@ -8236,11 +8144,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_greedy/fractional_knapsack_problem/" class="md-nav__link">
+      <a href="../docs/chapter_dynamic_programming/dp_problem_features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    15.2 &nbsp; 分数背包问题
+    14.2 &nbsp; DP 问题特性
   </span>
   
 
@@ -8257,11 +8165,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_greedy/max_capacity_problem/" class="md-nav__link">
+      <a href="../docs/chapter_dynamic_programming/dp_solution_pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    15.3 &nbsp; 最大容量问题
+    14.3 &nbsp; DP 解题思路
   </span>
   
 
@@ -8278,11 +8186,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_greedy/max_product_cutting_problem/" class="md-nav__link">
+      <a href="../docs/chapter_dynamic_programming/knapsack_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    15.4 &nbsp; 最大切分乘积问题
+    14.4 &nbsp; 0-1 背包问题
   </span>
   
 
@@ -8299,11 +8207,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_greedy/summary/" class="md-nav__link">
+      <a href="../docs/chapter_dynamic_programming/unbounded_knapsack_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    15.5 &nbsp; 小结
+    14.5 &nbsp; 完全背包问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_dynamic_programming/edit_distance_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.6 &nbsp; 编辑距离问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_dynamic_programming/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.7 &nbsp; 小结
   </span>
   
 
@@ -8342,7 +8292,7 @@
             
   
   <span class="md-ellipsis">
-    第 16 章 &nbsp; 附录
+    第 15 章 &nbsp; 贪心
   </span>
   
 
@@ -8352,7 +8302,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_17_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_17">
             <span class="md-nav__icon md-icon"></span>
-            第 16 章 &nbsp; 附录
+            第 15 章 &nbsp; 贪心
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -8363,11 +8313,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_appendix/" class="md-nav__link">
+      <a href="../../chapter_greedy/index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    附录
+    None
   </span>
   
 
@@ -8384,11 +8334,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_appendix/installation/" class="md-nav__link">
+      <a href="../docs/chapter_greedy/greedy_algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    16.1 &nbsp; 编程环境安装
+    15.1 &nbsp; 贪心算法
   </span>
   
 
@@ -8405,11 +8355,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_appendix/contribution/" class="md-nav__link">
+      <a href="../docs/chapter_greedy/fractional_knapsack_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    16.2 &nbsp; 一起参与创作
+    15.2 &nbsp; 分数背包问题
   </span>
   
 
@@ -8426,11 +8376,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_appendix/terminology/" class="md-nav__link">
+      <a href="../docs/chapter_greedy/max_capacity_problem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    16.3 &nbsp; 术语表
+    15.3 &nbsp; 最大容量问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_greedy/max_product_cutting_problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.4 &nbsp; 最大切分乘积问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_greedy/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.5 &nbsp; 小结
   </span>
   
 
@@ -8469,7 +8461,7 @@
             
   
   <span class="md-ellipsis">
-    参考文献
+    第 16 章 &nbsp; 附录
   </span>
   
 
@@ -8478,6 +8470,133 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_18">
+            <span class="md-nav__icon md-icon"></span>
+            第 16 章 &nbsp; 附录
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_appendix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    附录
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_appendix/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16.1 &nbsp; 编程环境安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_appendix/contribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16.2 &nbsp; 一起参与创作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/chapter_appendix/terminology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16.3 &nbsp; 术语表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_19" id="__nav_2_19_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    参考文献
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_19">
             <span class="md-nav__icon md-icon"></span>
             参考文献
           </label>
@@ -8490,7 +8609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hello-algo/docs/chapter_reference/" class="md-nav__link">
+      <a href="../docs/chapter_reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -8515,26 +8634,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../a/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    数据结构-从概念到C++实现
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -8556,6 +8655,34 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      七桥问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧几里得算法
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -8573,90 +8700,250 @@
   
 
 
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<title>Java 教程</title>
- <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
-<body>
-<div class="article-intro" id="content">
-
-            <h1>Java 教程</h1>&#13;
-&#13;
-<div class="tutintro">&#13;
-<a class="glightbox" href="//www.runoob.com/wp-content/uploads/2013/12/java.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img decoding="async" src="//www.runoob.com/wp-content/uploads/2013/12/java.jpg"/></a>&#13;
-<p>Java 是由 Sun Microsystems 公司于 1995 年 5 月推出的高级程序设计语言。</p>&#13;
-&#13;
-<p>Java 可运行于多个平台，如 Windows, Mac OS 及其他多种 UNIX 版本的系统。</p>&#13;
-<p>本教程通过简单的实例将让大家更好的了解 Java 编程语言。</p>&#13;
-<p>移动操作系统 Android 大部分的代码采用 Java 编程语言编程。</p>&#13;
-<p><a href="//www.runoob.com/try/showjava.php?filename=HelloWorld" target="_blank" rel="noopener noreferrer"><strong>Java 在线工具</strong></a></p>&#13;
-<p><a href="https://www.runoob.com/manual/jdk11api/index.html" target="_blank" rel="noopener noreferrer"><strong>JDK 11 在线中文手册</strong></a></p>&#13;
-&#13;
-&#13;
-</div>&#13;
-<hr/>&#13;
-<h2>&#13;
-我的第一个 JAVA 程序</h2>&#13;
-<p>&#13;
-以下我们通过一个简单的实例来展示 Java 编程，创建文件 <strong>HelloWorld.java(文件名需与类名一致)</strong>, 代码如下：</p>&#13;
-<div class="example"> &#13;
-<h2 class="example">实例</h2> &#13;
-<div class="example_code">&#13;
-
-<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">class</span> HelloWorld <span style="color: #009900;">{</span><br/>
-    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> main<span style="color: #009900;">(</span><span style="color: #003399;">String</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span> args<span style="color: #009900;">)</span> <span style="color: #009900;">{</span><br/>
-        <span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"Hello World"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span><br/>
-    <span style="color: #009900;">}</span><br/>
-<span style="color: #009900;">}</span><br/>
-&#13;
-</div><br/>&#13;
-<a target="_blank" href="/try/runcode.php?filename=HelloWorld&amp;type=java" class="showbtn" rel="noopener noreferrer">运行实例 »</a>&#13;
-</div>&#13;
-&#13;
-&#13;
-<blockquote><p><strong>注：</strong><span class="marked">String args[]</span> 与 <span class="marked">String[] args</span> 都可以执行，但推荐使用 <span class="marked">String[] args</span>，这样可以避免歧义和误读。</p></blockquote>&#13;
-&#13;
-&#13;
-<p>运行以上实例，输出结果如下：</p>&#13;
-<pre>&#13;
-$ javac HelloWorld.java&#13;
-$ java HelloWorld&#13;
-Hello World&#13;
-</pre>&#13;
-<h3>执行命令解析：</h3>&#13;
-<p>以上我们使用了两个命令 <strong>javac</strong> 和 <strong>java</strong>。</p>&#13;
-<p><strong>javac</strong> 后面跟着的是java文件的文件名，例如 HelloWorld.java。&#13;
-该命令用于将 java 源文件编译为 class 字节码文件，如： <strong>javac HelloWorld.java</strong>。</p>&#13;
-&#13;
-<p>&#13;
-运行javac命令后，如果成功编译没有错误的话，会出现一个 HelloWorld.class 的文件。</p>&#13;
-<p>&#13;
-<strong>java</strong> 后面跟着的是java文件中的类名,例如 HelloWorld 就是类名，如: java HelloWorld。</p>&#13;
-&#13;
-<p><strong>注意</strong>：java命令后面不要加.class。</p>&#13;
-<p>Gif 图演示：</p>&#13;
-<p>&#13;
-<a class="glightbox" href="//www.runoob.com/wp-content/uploads/2013/12/java-HelloWorld.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img decoding="async" src="//www.runoob.com/wp-content/uploads/2013/12/java-HelloWorld.gif"/></a></p>&#13;
-            <!-- 其他扩展 -->
-
-            </div>
-
-
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
-</html>
+<h1 id="_1">第一章<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">七桥问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>七桥问题是一个经典的图论问题，它是由数学家欧拉在18世纪提出的。问题的背景是哥尼斯堡（今俄罗斯的加里宁格勒）的一个地区，该地区被普雷格尔河分成四个区域，并由七座桥连接。问题是：是否有可能从某个区域出发，不重复地走过所有七座桥，并且回到起点。
+我们可以这样求解七桥问题：</p>
+<ol>
+<li>首先，我们需要确定每个顶点（即每个城区）相关联的边数（即桥的数量）。</li>
+<li>然后，我们根据以下规则进行判定：</li>
+<li>如果所有顶点相关联的边数都是偶数，则存在欧拉回路。</li>
+<li>如果有超过两个顶点相关联的边数是奇数，则不存在欧拉回路。</li>
+<li>如果恰好有两个顶点相关联的边数是奇数，则不存在欧拉回路，但存在一条从这两个顶点之一出发的欧拉路径（不会回到起点）。
+   对于七桥问题，我们可以将四个区域视为四个顶点，七座桥视为连接这些顶点的边。通过计算每个顶点相关联的边数，我们可以得到以下结果：</li>
+<li>两个区域（顶点）各有三座桥相连，因此这两个区域相关联的边数是奇数。</li>
+<li>另外两个区域（顶点）各有两座桥相连，因此这两个区域相关联的边数是偶数。
+根据判定规则，因为有超过两个顶点相关联的边数是奇数（具体来说，有两个顶点），所以七桥问题中不存在欧拉回路。同时，也不存在从这两个顶点之一出发的欧拉路径，因为路径要求不重复地走过所有边，而这是不可能的。
+因此，结论是：在七桥问题中，不可能找到一条不重复地走过所有七座桥的路径，并且返回起点。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MaxSize</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">EulerCircuit</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">EulerCircuit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[][</span><span class="n">MaxSize</span><span class="p">],</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">oddVertexNum</span><span class="p">();</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="n">MaxSize</span><span class="p">][</span><span class="n">MaxSize</span><span class="p">];</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">vertexNum</span><span class="p">;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">};</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">EulerCircuit</span><span class="o">::</span><span class="n">EulerCircuit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[][</span><span class="n">MaxSize</span><span class="p">],</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="n">vertexNum</span><span class="o">=</span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">}</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="kt">int</span><span class="w"> </span><span class="n">EulerCircuit</span><span class="o">::</span><span class="n">oddVertexNum</span><span class="p">(){</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">degree</span><span class="p">;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">vertexNum</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="n">degree</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">vertexNum</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="w"> </span><span class="c1">// 这里应该是 j++ 而不是 i++</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">            </span><span class="n">degree</span><span class="o">=</span><span class="n">degree</span><span class="o">+</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">degree</span><span class="o">%</span><span class="mi">2</span><span class="o">!=</span><span class="mi">0</span><span class="p">){</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">            </span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="p">}</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(){</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="n">MaxSize</span><span class="p">]</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">        </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">        </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span><span class="n">EulerCircuit</span><span class="w"> </span><span class="n">G</span><span class="p">{</span><span class="n">a</span><span class="p">,</span><span class="mi">4</span><span class="p">};</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">oddVertexNum</span><span class="p">();</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">num</span><span class="o">&gt;=</span><span class="mi">2</span><span class="p">){</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">num</span><span class="o">&lt;&lt;</span><span class="s">&quot;个地方通奇数桥，不存在欧拉回路&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">    </span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;存在欧拉回路&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="_3">欧几里得算法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>欧几里得算法用自然语言描述如下：</p>
+<p>步骤1：将m除以n得到余数r</p>
+<p>步骤2：若r等于0，则n为最大公约数，算法结束；否则执行步骤3</p>
+<p>步骤3：将n的值放在m中，将r的值放在n中，重新执行步骤1</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">ComFactor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="n">m</span><span class="o">%</span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="n">m</span><span class="o">=</span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="n">n</span><span class="o">=</span><span class="n">r</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="n">r</span><span class="o">=</span><span class="n">m</span><span class="o">%</span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;最大公约数是&quot;</span><span class="o">&lt;&lt;</span><span class="n">ComFactor</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span>
+</code></pre></div>
+<h1 id="_4">第二章<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<h2 id="_5">线性表的定义<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>线性表简称表，是n个数据元素的有限序列，线性表中数据元素的个数称为线性表的长度，长度等于零的线性表称为空表，一个非空表通常记为：
+$$
+L=(a1,a2,...,an)
+$$
+其中，ai称为数据元素，下角标i表示该元素在线性表中的位置或序号，称元素ai位于表的第i个位置，或称是ai是表中的第i的元素。a1称为表头元素，an称为表尾元素，任意一对相邻的数据元素a（i-1）和ai（1&lt;i&lt;=n）之间存在序偶关系<a(i-1),ai>，且a(i-1)称为ai的前驱，ai称为a(i-1)的后继。在这个序列中，元素a1无前驱，元素an无后继，其他每个元素有且仅有一个前驱和一个后继</p>
+<p>线性表的基本操作包括：</p>
+<ol>
+<li><strong>初始化</strong>：创建一个空的线性表。</li>
+<li><strong>销毁</strong>：销毁线性表，释放其占用的内存空间。</li>
+<li><strong>插入</strong>：在指定位置插入一个元素。</li>
+<li><strong>删除</strong>：删除指定位置的元素。</li>
+<li><strong>查找</strong>：查找并返回指定元素的位置。</li>
+<li><strong>取值</strong>：获取指定位置的元素。</li>
+<li><strong>修改</strong>：修改指定位置的元素。</li>
+<li><strong>长度</strong>：返回线性表的长度（元素个数）。</li>
+<li><strong>判空</strong>：判断线性表是否为空。</li>
+</ol>
+<h2 id="_6">线性表的顺序存储结构及实现<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>线性表的顺序存储结构称为顺序表，其基本思想是用一段地址连续的存储单元依次存储线性表的数据元素</p>
+<p>设顺序表的每个元素占用c个存储单元，则第i个元素的存储地址为：
+$$
+Loc(ai)=Loc(a1)+(i-1)*c
+$$
+顺序表中数据元素的存储地址是其序号的线性函数，只要确定了存储顺序表的起始地址（即基地址），计算任何一个元素的存储地址的时间是相等的，具有这一特点的存储结构称为随机存取结构</p>
+<p>通常用一维数组来实现顺序表</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MaxSize</span><span class="o">=</span><span class="mi">100</span><span class="p">;</span><span class="c1">//根据实际问题具体定义</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span><span class="c1">//由于线性表的数据元素类型不确定，所以采用模板机制</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">SeqList</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="n">SeqList</span><span class="p">();</span><span class="c1">//创建一个空的线性表</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">SeqList</span><span class="p">(</span><span class="n">DataType</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="c1">//建立长度为n的顺序表</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="o">~</span><span class="n">SeqList</span><span class="p">();</span><span class="c1">//析构函数，销毁线性表，释放其占用的内存空间</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">Length</span><span class="p">();</span><span class="c1">//求线性表的长度</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="nf">Get</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="c1">//按位查找，查找第i个元素的值</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">Locate</span><span class="p">(</span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="c1">//按值查找，查找值为x的元素序号；</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">Insert</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="c1">//插入操作，在第i个位置插入值为x的元素</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="nf">Delete</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="c1">//删除操作，删除第i个元素</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">Empty</span><span class="p">();</span><span class="c1">//判断线性表是否为空</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">PrintList</span><span class="p">();</span><span class="c1">//按序号输出各元素</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">MaxSize</span><span class="p">];</span><span class="c1">//存放数据元素的数组</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="p">;</span><span class="c1">//线性表的长度</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">};</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="n">SeqList</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">SeqList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="n">length</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="p">}</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="n">SeqList</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">SeqList</span><span class="p">(</span><span class="n">DataType</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">&gt;</span><span class="n">MaxSize</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;参数非法&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">        </span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">    </span><span class="n">length</span><span class="o">=</span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="p">}</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="n">SeqList</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::~</span><span class="n">SeqList</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="c1">//</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="kt">int</span><span class="w"> </span><span class="n">SeqList</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Empty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">length</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="p">}</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="kt">int</span><span class="w"> </span><span class="n">SeqList</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Length</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="p">}</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="kt">void</span><span class="w"> </span><span class="n">SeqList</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">PrintList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="sc">&#39;\t&#39;</span><span class="p">;</span>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="p">}</span>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="n">DataType</span><span class="w"> </span><span class="n">SeqList</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Get</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="c1">//时间复杂度为O(1)</span>
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">||</span><span class="n">i</span><span class="o">&gt;</span><span class="n">length</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;查找位置非法&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">];</span>
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="p">}</span>
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a><span class="kt">int</span><span class="w"> </span><span class="n">SeqList</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Locate</span><span class="p">(</span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="c1">//平均时间性能是O(n)</span>
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">x</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a><span class="p">}</span>
+<a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a>
+<a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a><span class="kt">void</span><span class="w"> </span><span class="n">SeqList</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Insert</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="c1">//平均时间性能是O(n)</span>
+<a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">length</span><span class="o">==</span><span class="n">MaxSize</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;表满，上溢&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">||</span><span class="n">i</span><span class="o">&gt;</span><span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;插入位置错误&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="n">length</span><span class="p">;</span><span class="n">j</span><span class="o">&gt;=</span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a><span class="w">        </span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="mi">-1</span><span class="p">];</span>
+<a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a><span class="w">    </span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a><span class="w">    </span><span class="n">length</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a><span class="p">}</span>
+<a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a>
+<a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a><span class="n">DataType</span><span class="w"> </span><span class="n">SeqList</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Delete</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="c1">//平均时间性能是O(n)</span>
+<a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-2-86" name="__codelineno-2-86" href="#__codelineno-2-86"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">length</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;空表 下溢&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-87" name="__codelineno-2-87" href="#__codelineno-2-87"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">||</span><span class="n">i</span><span class="o">&gt;</span><span class="n">length</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;删除位置错误&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-88" name="__codelineno-2-88" href="#__codelineno-2-88"></a><span class="w">    </span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">];</span>
+<a id="__codelineno-2-89" name="__codelineno-2-89" href="#__codelineno-2-89"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">length</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-90" name="__codelineno-2-90" href="#__codelineno-2-90"></a><span class="w">        </span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="mi">-1</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+<a id="__codelineno-2-91" name="__codelineno-2-91" href="#__codelineno-2-91"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-92" name="__codelineno-2-92" href="#__codelineno-2-92"></a><span class="w">    </span><span class="n">length</span><span class="o">--</span><span class="p">;</span>
+<a id="__codelineno-2-93" name="__codelineno-2-93" href="#__codelineno-2-93"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-2-94" name="__codelineno-2-94" href="#__codelineno-2-94"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span><span class="n">i</span><span class="p">,</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">SeqList</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">L</span><span class="p">{</span><span class="n">r</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;当前线性表的数据为：&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">L</span><span class="p">.</span><span class="n">PrintList</span><span class="p">();</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="n">L</span><span class="p">.</span><span class="n">Insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">);</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;执行插入操作后数据为：&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="n">L</span><span class="p">.</span><span class="n">PrintList</span><span class="p">();</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="p">}</span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">){</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">str</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;}</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;当前线性表的长度为：&quot;</span><span class="o">&lt;&lt;</span><span class="n">L</span><span class="p">.</span><span class="n">Length</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;请输入查找的元素值：&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="n">i</span><span class="o">=</span><span class="n">L</span><span class="p">.</span><span class="n">Locate</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="o">==</span><span class="n">i</span><span class="p">)</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;查找失败&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;元素&quot;</span><span class="o">&lt;&lt;</span><span class="n">x</span><span class="o">&lt;&lt;</span><span class="s">&quot;的位置为：&quot;</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;请输入查找第几个元素值：&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;第&quot;</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="o">&lt;&lt;</span><span class="s">&quot;个元素值是&quot;</span><span class="o">&lt;&lt;</span><span class="n">L</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="p">}</span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">){</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">str</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;}</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;请输入要删除的第几个元素&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">        </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">        </span><span class="n">x</span><span class="o">=</span><span class="n">L</span><span class="p">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;删除的元素是&quot;</span><span class="o">&lt;&lt;</span><span class="n">x</span><span class="o">&lt;&lt;</span><span class="s">&quot;,删除后数据为：&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">        </span><span class="n">L</span><span class="p">.</span><span class="n">PrintList</span><span class="p">();</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">    </span><span class="p">}</span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">){</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">str</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;}</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="_7">线性表的链接存储结构及其实现<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>单链表是用一组任意的存储单元存放线性表的元素，这组存储单元可以连续也可以不连续，甚至可以零散分布在内存中的任意位置。为了能正确表示元素之间的逻辑关系，每个存储单元在存储数据元素的同时，还必须存储其后继元素所在的地址信息，这个地址信息称为指针</p>
 
 
 
@@ -8698,17 +8985,19 @@ document$.subscribe(() => { lightbox.reload() });
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
