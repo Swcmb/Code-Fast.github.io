@@ -355,6 +355,8 @@ nav:
             - Python3标准库概览: language/python/34_python3-stdlib.html.md
             - Python3实例: language/python/35_python3-examples.html.md
   - 数据结构与算法入门:
+      - 数据结构[从概念到C++实现]:
+          - hello-algo/a.md
       - 第 0 章 &nbsp; 前言:
           # [icon: material/book-open-outline]
           - hello-algo/docs/chapter_preface/index.md
