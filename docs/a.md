@@ -488,3 +488,275 @@ int main() {
 
 ### 双链表的结点结构定义：
 
+```c++
+template<typename Datatype>
+struct DulNode {
+    Datatype data;
+    DulNode<Datatype> *prior,*next;
+};
+```
+
+在双链表中求表长等操作与单链表基本相同，下面讨论插入和删除操作
+
+```c++
+#include <iostream>
+using namespace std;
+
+template<typename Datatype>
+struct DulNode {
+    Datatype data;
+    DulNode<Datatype> *prior,*next;
+};
+
+template<typename DataType>
+class DulLinkList {
+public:
+    DulLinkList();
+    DulLinkList(DataType a[],int n);
+    ~DulLinkList();
+    int Length();//求线性表的长度
+    DataType Get(int i);//按位查找，查找第i个元素的值
+    int Locate(DataType x);//按值查找，查找值为x的元素序号；
+    void Insert(int i,DataType x);//插入操作，在第i个位置插入值为x的元素
+    DataType Delete(int i);//删除操作，删除第i个元素
+    int Empty();//判断线性表是否为空
+    void PrintList();//按序号输出各元素
+private:
+    DulNode<DataType> *first;
+};
+
+template<typename DataType>
+DulLinkList<DataType>::DulLinkList() {
+    first=new DulNode<DataType>;
+    first->next=nullptr;
+    first->prior=nullptr;
+    /* nullptr是一个字面常量，表示空指针
+       它用于初始化指针变量或将其赋值给指针变量，
+       以确保指针不指向任何有效的内存地址 */
+}
+
+template<typename DataType>
+int DulLinkList<DataType>::Empty() {
+    return first->next==nullptr;
+}
+
+template<typename DataType>
+void DulLinkList<DataType>::PrintList() {//时间复杂度为O(n)
+    //设置工作指针p依次指向各节点
+    //p后移不能写作p++
+    DulNode<DataType> *p=first->next;
+    while (p!=nullptr) {
+        cout<<p->data<<" ";
+        p=p->next;//工作指针后移
+    }
+    cout<<endl;
+}
+
+template<typename DataType>
+int DulLinkList<DataType>::Length() {
+    DulNode<DataType> *p=first->next;
+    int count=0;
+    while (p!=nullptr) {
+        p=p->next;//工作指针后移
+        count++;
+    }
+    return count;
+}
+
+template<typename DataType>
+DataType DulLinkList<DataType>::Get(int i) {
+    DulNode<DataType> *p=first->next;
+    int count=1;
+    while (p!=nullptr && count<i) {
+        p=p->next;//工作指针后移
+        count++;
+    }
+    if(p==nullptr)throw "查找位置错误" ;
+    else {
+        return p->data;
+    }
+    //平均时间性能为O(n),单链表是顺序存取结构
+}
+
+template<typename DataType>
+int DulLinkList<DataType>::Locate(DataType x) {
+    DulNode<DataType> *p=first->next;
+    int count=1;
+    while (p!=nullptr) {
+        if(p->data==x) {
+            return count;
+        }
+        p=p->next;
+        count++;
+    }
+    return 0;
+    //平均时间性能为O(n)
+}
+
+template<typename DataType>
+void DulLinkList<DataType>::Insert(int i, DataType x) {//时间复杂度为O(n)
+    DulNode<DataType> *p=first,*s=nullptr;
+    int count=0;
+    while (p!=nullptr && count<i-1) {
+        p=p->next;
+        count++;
+    }
+    if(p==nullptr)throw"插入位置错误";
+    else {
+        s=new DulNode<DataType>;
+        s->data=x;
+        //与单链表不同之处//这里
+        s->prior=p;
+        s->next=p->next;
+        p->next->prior=s;
+        p->next=s;
+    }
+}
+
+template<typename DataType>
+DulLinkList<DataType>::DulLinkList(DataType a[], int n) {
+    //头插法
+    first=new DulNode<DataType>;
+    first->next=nullptr;
+    for(int i=0;i<n;i++) {
+        DulNode<DataType> *s=nullptr;
+        s=new DulNode<DataType>;
+        s->data=a[i];
+        s->next=first->next;
+        first->next=s;
+    }
+    //尾插法
+    // first=new DulNode<DataType>;
+    // DulNode<DataType> *r=first,*s=nullptr;
+    // for(int i=0;i<n;i++) {
+    //     s=new DulNode<DataType>;
+    //     s->data=a[i];
+    //     r->next=s;
+    //     r=s;
+    // }
+    // r->next=nullptr;
+}
+
+template<typename DataType>
+DataType DulLinkList<DataType>::Delete(int i) {//这里
+    DulNode<DataType> *p = first;
+    DulNode<DataType> *q;
+    int count = 0;
+    while (p != nullptr && count < i - 1) {
+        p = p->next;
+        count++;
+    }
+
+    if (p == nullptr || p->next == nullptr) {
+        throw std::runtime_error("删除位置错误");
+    } else {
+        q = p->next; // Save the node to be deleted
+        p->next = q->next; // Update next of the previous node
+        q->next->prior = p; // Update prior of the next node
+        DataType x = q->data; // Save data to return
+        delete q; 
+        return x; 
+    }
+}
+
+template<typename DataType>
+DulLinkList<DataType>::~DulLinkList() {
+    DulNode<DataType> *p=first;
+    while (first!=nullptr) {
+        first=first->next;
+        delete p;
+        p=first;
+    }
+}
+```
+
+```c++
+int main() {
+    int r[5]={1,2,3,4,5},i,x;
+    DulLinkList<int> L{r,5};
+    cout<<"当前线性表的数据为：";
+    L.PrintList();
+    try {
+        L.Insert(2,8);
+        cout<<"执行插入操作后数据为：";
+        L.PrintList();
+    }catch (char *str){cout<<str<<endl;}
+    cout<<"当前线性表的长度为："<<L.Length()<<endl;
+    cout<<"请输入查找的元素值：";
+    cin>>x;
+    i=L.Locate(x);
+    if (0==i)cout<<"查找失败"<<endl;
+    else {
+        cout<<"元素"<<x<<"的位置为："<<i<<endl;
+    }
+    try {
+        cout<<"请输入查找第几个元素值：";
+        cin>>i;
+        cout<<"第"<<i<<"个元素值是"<<L.Get(i)<<endl;
+    }catch (char *str){cout<<str<<endl;}
+    try {
+        cout<<"请输入要删除的第几个元素";
+        cin>>i;
+        x=L.Delete(i);
+        cout<<"删除的元素是"<<x<<",删除后数据为：";
+        L.PrintList();
+    }catch (char *str){cout<<str<<endl;}
+    return 0;
+}
+```
+
+## 循环链表
+
+在单链表中，如果将终端结点的指针由空指针改为指向头结点，就使得整个单链表形成一个环，这种头尾相接的单链表称为循环单链表。实际应用中多采用尾指针指示的循环单链表
+
+在双链表中，如果将终端结点的后继指针由空指针改为指向头结点，将头结点的前驱指针由空指针改为指向终端结点，就使得整个双链表形成一个环，这种头尾相接的单链表称为循环双链表
+
+循环链表中没有明显的尾端，可能会使循环链表的处理操作进入死循环，通常判断用作循环变量的工作指针是否等于某一特定指针（如头指针或尾指针），以判定工作指针是否扫描了整个链表，例如可以用循环条件  `p!=first`  判断工作指针是否扫描了整个链表
+
+## 顺序表和链表的比较
+
+### 1.时间性能比较
+
+所谓时间性能是指基某种存储结构的基本操作（即算法）的时间复杂度。
+
+**随机访问**
+- **顺序表**：能够直接定位到任意位置，实现快速访问，时间复杂度为 O(1)。
+- **链表**：必须从头部开始遍历至目标位置，平均时间复杂度为 O(n)。
+
+**插入与删除**
+- **链表**：一旦拥有指向目标位置的指针，插入或删除操作无需移动其他元素，时间复杂度为 O(1)。
+- **顺序表**：插入或删除元素需要调整后续所有元素的位置，平均时间复杂度为 O(n)，尤其是当元素数量大或每个元素占用较大存储空间时，移动元素的成本显著增加。
+
+**一般来说**
+
+- 当线性表的主要操作是**频繁查找**且**插入和删除较少**，或操作依赖于**数据元素的绝对位置**时，**顺序表**是更优的选择。
+- 若线性表中**频繁执行插入和删除操作**，**链表**则提供更好的性能。
+
+### 2.空间性能比较
+
+所谓空间性能是指某种存储结构所占用的存储空间的大小。
+
+- **存储特性**
+  - **顺序表**: 每个结点仅包含数据元素，存储密度高，空间利用率好。
+  - **链表**: 结点包含数据元素和指针，指针增加结构开销，降低存储密度。
+- **空间分配**
+  - **顺序表**: 需预分配固定大小空间，可能造成浪费（分配过多）或上溢（分配不足）。
+  - **链表**: 动态分配，元素数量不受限，只要系统有可用内存。
+- **适用场景**
+  - **顺序表**: 适合已知大致长度的线性表，以优化空间效率。
+  - **链表**: 更适用于元素数量变化大或未知的情况。
+
+## 扩展与提高
+
+### 线性表的静态链表存储
+
+### 顺序表的动态分配方式
+
+## 应用示例
+
+### 约瑟夫环问题
+
+### 一元多项式求和
+
+## 思想火花
+
