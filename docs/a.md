@@ -752,13 +752,235 @@ int main() {
 
 ### 线性表的静态链表存储
 
+静态链表用数组来表示链表。由于是利用数组定义的链表，属于静态存储分配，因此叫静态链表。最常用的是静态单链表。
+
+avail是空闲链表（全部由空闲数组单元组成的单链表）头指针，first是静态链表头指针，为了运算方便通常静态链表也带头指针。
+
+**静态链表的数组元素定义：**
+
+```c++
+template <typename DateType>
+struct SNode {
+    DateType data;
+    int next;//指针域(也称游标),注意不是指针类型
+};
+```
+
+**静态链表的定义：**
+
+```c++
+const int MaxSize=100;
+template <typename DataType>
+class StaList {
+public:
+    StaList();
+    StaList(DataType a[],int n);
+    ~StaList();
+    //与单链表成员函数相同
+    int Length();//求线性表的长度
+    DataType Get(int i);//按位查找，查找第i个元素的值
+    int Locate(DataType x);//按值查找，查找值为x的元素序号；
+    void Insert(int i,DataType x);//插入操作，在第i个位置插入值为x的元素
+    DataType Delete(int i);//删除操作，删除第i个元素
+    int Empty();//判断线性表是否为空
+    void PrintList();//按序号输出各元素
+private:
+    SNode<DataType> SList[MaxSize];
+    int first,avail;
+};
+```
+
+静态链表采用静态存储分配，因此析构函数为空，求表长等操作的实现基本与单链表相同，下面讨论**插入和删除**操作
+
+在静态链表中进行插入操作，首先从空闲链的最前端摘下一个结点，将该结点插入静态链表中，假设新结点插在结点p的后面，则修改指针的操作为：
+
+```c++
+s=avail;
+avail=SList[avail].next;
+SList[s].data=x;
+SList[s].next=SList[p].next;
+SList[p].next=s;
+```
+
+在静态链表中进行删除操作，首先将被删除结点从静态链表中摘下，再插入空闲链的最前端，假设要删除结点p的后继结点，则修改指针的操作为：
+
+```
+q=SList[p].next;
+SList[p].next=SList[q].next;
+SList[q].next=avail;
+avail=q;
+```
+
 ### 顺序表的动态分配方式
+
+顺序表的动态分配方式是在程序执行过程中通过动态存储分配，一旦数组空间占满，另外再分配一块更大的存储空间，用来替换原来的存储空间，从而达到扩充数组空间的目的
+
+```c++
+const int InitSize=100;//顺序表的初始长度
+const int IncreSize=10;//顺序表存储空间每次扩展的长度
+template <typename DataType>
+class SeqList {
+public:
+    //与顺序表的静态分配相同
+    SeqList();
+    SeqList(DataType a[],int n);
+    ~SeqList();
+    //与单链表成员函数相同
+    int Length();//求线性表的长度
+    DataType Get(int i);//按位查找，查找第i个元素的值
+    int Locate(DataType x);//按值查找，查找值为x的元素序号；
+    void Insert(int i,DataType x);//插入操作，在第i个位置插入值为x的元素
+    DataType Delete(int i);//删除操作，删除第i个元素
+    int Empty();//判断线性表是否为空
+    void PrintList();//按序号输出各元素
+private:
+    DataType *data;//动态申请数组空间的首地址
+    int maxSize;//当前数组空间的最大长度
+    int length;//线性表的长度
+};
+```
+
+在顺序表的动态分配方式下，求线性表的长度等操作与顺序表的静态分配方式相同，下面讨论其他基本操作的实现
+
+#### 无参构造函数——初始化顺序表：
+
+```c++
+template<typename DataType>
+SeqList<DataType>::SeqList() {
+    data=new DataType[InitSize];
+    maxSize=InitSize;
+    length=0;
+}
+```
+
+#### 有参构造函数——建立顺序表：
+
+建立一个长度为*n*的顺序表需要申请长度大于n的存储空间，一般是当前线性表长度两倍的存储空间：
+
+```c++
+template<typename DataType>
+SeqList<DataType>::SeqList(DataType a[], int n) {
+    data=new DataType[2*n];
+    maxSize=2*n;
+    for(int i=0;i<n;i++) {
+        data[i]=a[i];
+    }
+    length=n;
+}
+```
+
+#### 析构函数——销毁顺序表
+
+```c++
+template<typename DataType>
+SeqList<DataType>::~SeqList() {
+    delete[] data;
+}
+```
+
+#### 插入操作
+
+```c++
+// 在序列的第i个位置插入元素x
+template<typename DataType>
+void SeqList<DataType>::Insert(int i, DataType x) {
+    // 检查插入位置是否合法
+    if(i<1||i>length+1)throw"插入位置错误!";
+    // 检查序列是否已满
+    if(length==maxSize) {
+        // 发生上溢,扩充存储空间
+        DataType *oldData=data;
+        maxSize+=IncreSize;
+        data=new DataType[maxSize];
+        // 将旧数据复制到新数组
+        for(int j=0;j<length;j++) {
+            data[j]=oldData[j];
+        }
+        // 释放旧数组的内存
+        delete[] oldData;
+    }
+    // 为新元素腾出空间
+    for(int j=length;j>=i;j--) {
+        data[j]=data[j-1];
+    }
+    // 插入新元素
+    data[i-1]=x;
+    // 更新序列长度
+    length++;
+}
+```
 
 ## 应用示例
 
 ### 约瑟夫环问题
 
+由于约瑟夫环问题本身具有循环性质，考虑采用循环单链表。求解约瑟夫环的问题的基本思路是：设置一个计数器count和工作指针p，当计数器累加到m时删除结点p。为了统一对链表中任意结点进行计数和删除操作，循环单链表不带头结点；为了便于删除操作设两个工作指针pre和p，指针pre指向p的前驱结点；为了使计数器从1开始奇数，采用尾指针指示的循环单链表，将指针pre初始化为指向终端结点，将指针p初始化为开始结点。
+
+```c++
+#include <iostream>
+using namespace std;
+struct Node {//约瑟夫环的结点定义
+    int data;
+    struct Node *next;
+};
+class JosephRing {
+public:
+    JosephRing(int n);//构造函数，初始化n个结点的循环单链表
+    ~JosephRing();//析构函数，类似单链表的析构函数
+    void Joseph(int m);//为m，打印出环的顺序
+private:
+    Node *rear;
+};
+JosephRing::~JosephRing() {
+    
+}
+JosephRing::JosephRing(int n) {
+    Node *s=nullptr;
+    rear=new Node;
+    rear->data=1;rear->next=rear;//建立长度为1的循环单链表
+    for(int i=2;i<=n;i++) {//依次插入数据域为2、3...n的结点
+        s=new Node;
+        s->data=i;
+        s->next=rear->next;//将结点s插入尾结点rear的后面
+        rear->next=s;
+        rear=s;
+    }
+}
+void JosephRing::Joseph(int m) {
+    Node *pre=rear,*p=rear->next;
+    int count=1;
+    cout<<"出环的顺序是:";
+    while (p->next!=p) {
+        if(count<m) {
+            pre=p;p=p->next;
+            count++;
+        }
+        else {
+            cout<<p->data<<"\t";
+            pre->next=p->next;//将p摘链
+            delete p;
+            p=pre->next;//工作指针p后移，但pre不动
+            count=1;
+        }
+    }
+    cout<<p->data<<"\t";
+    delete p;
+}
+int main() {
+    int n,m;
+    cout<<"请输入约瑟夫环的长度：";
+    cin>>n;
+    cout<<"请输入密码：";
+    cin>>m;
+    JosephRing R{n};
+    R.Joseph(m);
+    return 0;
+}
+```
+
 ### 一元多项式求和
+
+
 
 ## 思想火花
 
