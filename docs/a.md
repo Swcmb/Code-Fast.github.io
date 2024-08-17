@@ -980,7 +980,216 @@ int main() {
 
 ### 一元多项式求和
 
+若相加的某两项的指数不等，则两项应分别加在结果中，将引起线性表的插入；若某两项的指数相等，则系数相加，若相加结果为零，将引起线性表的删除。由于在线性表的合并过程中需要频繁地执行插入和删除操作，因此考虑采取单链表存储。
+
+在表示一元多项式的单链表中，每一个非零项对应单链表中的一个结点，且单链表应按指数递增有序排列。
+
+其中，coef 为系数域，存放非零项的系数；exp为指数域，存放非零项的指数；next 为指针域，存放指向下一结点的指针。
+
+下面分析一元多项式求和的执行过程。
+
+设单链表A和B分别存储两个多项式，求和结果存储在单链表 A 中，设两个工作指针p和q分别指向两个单链表的开始结点。
+
+两个多项式求和实质上是对结点p的指数域和结点q的指数域进行比较，有下列三种情况：
+
+① 若p一>exp 小于q一>exp，则结点p应为结果链表中的一个结点，将指针p后移
+
+② 若p->exp大于q一＞exp，则结点q应为结果中的一个结点，将q插入到第一个单链表中结点P之前，并将指针q指向单链表B中的下一个结点。为此，在单链表A 中应该设置两个工作指针 pre 和p，使得pre 指向p的前驱结点。
+
+③ 若p->exp等于q->exp，则p与q所指为同类项，将q的系数加到p的系数上。若相加结果不为0，则将指针P后移，并删除结点q，为此，在单链表B中应该设置两个工作指针 qre 和q，使得gre 指向q的前驱结点；若相加结果为0，则表明结果中无此项，删除结点p和结点 q，并将指针p 和指针q分别后移。
+
+```c++
+#include <iostream>
+using namespace std;
+struct Node {
+    int coef,exp;
+    Node *next;
+};
+class Polynomial {
+public:
+    Polynomial();
+    Polynomial(const Polynomial &B);//拷贝构造函数
+    /*拷贝构造函数是C++中一种特殊的构造函数，用于创建一个对象作为已存在对象的副本
+    这种构造函数的名称与类名相同，形式参数只有一个，即该类的引用类型的对象.
+    通常，这个形参会被声明为const，以确保在构造过程中不会修改原对象.
+    拷贝构造函数的主要应用场景包括，当一个对象作为值传递的参数传递给函数，
+    或者函数返回一个对象时，都需要调用到拷贝构造函数*/
+    ~Polynomial();
+    Polynomial operator+(Polynomial &B);//重载运算符,多项式相加
+    void Print();
+private:
+    Node *first;//一元多项式单链表的头指针
+};
+
+Polynomial::Polynomial() {
+    Node *r=nullptr,*s=nullptr;
+    int coef,exp;
+    first=new Node;//申请头结点
+    r=first;//尾插法建立单链表
+    cout<<"请输入系数和指数";
+    cin>>coef>>exp;
+    while (coef!=0) {//循环结束的条件是输入系数为0
+        s=new Node;
+        s->coef=coef;s->exp=exp;
+        r->next=s;r=s;//将结点s插入单链表的尾部
+        cout<<"请输入系数和指数";
+        cin>>coef>>exp;
+    }
+    r->next=nullptr;
+    cout<<"\n\n";
+}
+Polynomial::Polynomial(const Polynomial &B) {
+    first=B.first;
+}
+Polynomial::~Polynomial() {
+
+}
+Polynomial Polynomial::operator+(Polynomial &B) {
+    Node *pre=first,*p=pre->next;//工作指针pre和p初始化
+    Node *qre=B.first,*q=qre->next;//工作指针qre和q初始化
+    Node *qtemp=nullptr;
+    while (p!=nullptr && q!=nullptr) {
+        if(p->exp < q->exp) {//第1种情况
+            pre=p;p=p->next;
+        }
+        else if(p->exp > q->exp) {//第2种情况
+            qtemp=q->next;
+            pre->next=q;//将结点q插入到结点p之前
+            q->next=p;
+            pre=q;
+            q=qtemp;
+            qre->next=q;
+        }
+        else {//第3种情况
+            p->coef=p->coef+q->coef;
+            if(p->coef==0) {//系数相加为0,则删除结点p
+                pre->next=p->next;
+                delete p;
+                p=pre->next;
+            }
+            else {
+                pre=p;
+                p=p->next;
+            }
+            qre->next=q->next;//第3种情况都要删除结点q
+            delete q;
+            q=qre->next;
+        }
+    }
+    if(q!=nullptr) {
+        pre->next=q;//将结点q链接到第一个单链表的后面
+    }
+    return *this;
+}
+
+void Polynomial::Print() {
+    Node *p=first->next;
+    if(p!=nullptr) {//输出第一项
+        cout<<p->coef<<"x^"<<p->exp;
+    }
+    p=p->next;
+    while (p!=nullptr) {
+        if(p->coef>0) {
+            cout<<"+"<<p->coef<<"x^"<<p->exp;
+        }
+        else {
+            cout<<p->coef<<"x^"<<p->exp;
+        }
+        p=p->next;
+    }
+    cout<<"\n";
+}
+
+int main() {
+    Polynomial A{},B{};
+    A.Print();
+    B.Print();
+    A=A+B;//运算符重载，对象赋值调用拷贝构造函数
+    cout<<"结果是：";
+    A.Print();
+    return 0;
+}
+```
+
+
+
+```
+请输入系数和指数7 0
+请输入系数和指数12 3
+请输入系数和指数-2 8
+请输入系数和指数5 12
+请输入系数和指数0 0
+
+
+请输入系数和指数4 1
+请输入系数和指数6 3
+请输入系数和指数2 8
+请输入系数和指数5 20
+请输入系数和指数7 28
+请输入系数和指数0 0
+
+
+7x^0+12x^3-2x^8+5x^12
+4x^1+6x^3+2x^8+5x^20+7x^28
+结果是：7x^0+4x^1+18x^3+5x^12+5x^20+7x^28
+
+进程已结束，退出代码为 0
+```
+
 
 
 ## 思想火花
 
+ **实验问题：**
+
+  将一个具有n个元素的数组向左循环移动i个位置。
+
+> [!NOTE]
+>
+> 如图1 数组元素循环左移1位：
+>
+> ![img](https://img2018.cnblogs.com/blog/1485495/201906/1485495-20190604181312769-273893486.png)
+>
+> 将一个具有n个元素的数组向左循环移动i个位置，**意味着将数组的前i个元素移动到数组的末尾，而原数组中的其余元素则相应地向左移动**
+
+ 有许多应用程序会调用这个问题的算法，例如在文本编辑器中移动行的操作，磁盘整理时交换两个不同大小的相邻内存块等。所以，这个问题的算法要求有较高的时间和空间性能。 
+
+**基本要求：**
+
+  ⑴在原数组中实现循环右移，不另外申请空间；
+
+  ⑵时间性能尽可能好；
+
+   ⑶分析算法的时间复杂度。
+
+ 要在不另申请空间的情况下，保证算法的时间性能尽可能好，如果先设计一个函数将数组向左移动一位，然后再调用该算法i次，是一些人通常想到的方法，但显然这个算法的时间性能不是最好的。要在有限的资源中解决这个问题，似乎比较困难，是否存在这种既不另申请存储空间，又能够达到最好时间性能的完美算法呢。
+
+  **求解步骤：**
+
+1）可以通过下面的方法解决这个问题：先将数组中的前i个元素存放在一个临时数组中，再将余下的n-i个元素左移i个位置， 最后将前i个元素从临时数组复制回原数组中后面的位置。但是这个算法使用了i个额外的存储单元，使得空间性能降低。
+
+2）如上所述，先设计一个函数将数组向左循环移动一个位置，然后再调用该算法i次， 显然，这个算法的时间性能不好。 
+
+ 3）现在我们换一个角度看这个问题： 将这个问题看作是把数组ab转换成数组ba（a代表数组的前i个元素，b代表数组中余下的n-i个元素）， 先将a逆置得到ar b，再将b逆置得到ar br，最后将整个ar br逆置得到(ar br)r=ba。
+> [!NOTE]
+>
+> **数组元素逆置是指将数组中的元素按照相反的顺序重新排列，即第一个元素和最后一个元素交换，第二个元素和倒数第二个元素交换，以此类推，直到所有元素都逆序排列完毕**。
+
+设Reverse函数执行将数组元素逆置的操作， 对abcdefgh向左循环移动3个位置的过程如下：
+```
+Reverse(0, i-1); //得到cbadefgh(逆置abc)
+Reverse(i, n-1); //得到cbahgfed(逆置defgh)
+Reverse(0, n-1); //得到defghabc(逆置cbahgfed)
+```
+
+其原理可以用一个简单的游戏来理解：将两手的掌心对着自己，左手在右手上面， 可以实现将一个具有10 个元素的数组向左循环移动5位，如图所示。![](img\1358339139_6806.jpg)
+
+该算法在时间和空间上都很有效，并且是这么简短和简单，想出错都很难。 Brian Kernighan在Software Tools in Pascal中使用了这个算法在文本编辑器中移动各行。
+
+[Software tools in Pascal by Brian W. Kernighan | 开放图书馆 (openlibrary.org)](https://openlibrary.org/books/OL4258115M/Software_tools_in_Pascal)
+
+作为一个规律，一个好的算法是反复努力和重新修正的结果，即使足够幸运地得到了一个貌似完美的算法思想， 我们也应该尝试着改进它。 
+
+## 习题
+
+# 第三章
