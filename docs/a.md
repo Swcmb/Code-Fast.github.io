@@ -268,7 +268,7 @@ int main() {
 
 单链表是用一组任意的存储单元存放线性表的元素，这组存储单元可以连续也可以不连续，甚至可以零散分布在内存中的任意位置。为了能正确表示元素之间的逻辑关系，每个存储单元在存储数据元素的同时，还必须存储其后继元素所在的地址信息，这个地址信息称为指针。这两部分组成了数据元素的存储映像，称为结点。
 
-### 单链表的结点定义：
+### 单链表的结点定义
 
 ```c++
 template<typename DataType>
@@ -1193,3 +1193,229 @@ Reverse(0, n-1); //得到defghabc(逆置cbahgfed)
 ## 习题
 
 # 第三章
+
+## 栈
+
+栈是限定仅在表的一段进行插入和删除操作的线性表，允许插入和删除的一端称为栈顶，另一端称为栈底，不含任何数据元素的栈称为空栈
+
+> [!NOTE]
+>
+> 插入元素——入栈、进栈、压栈
+>
+> 删除元素——出栈、弹栈
+
+栈中元素除了具有线性关系外，还具有***==后进先出==***的特性
+
+栈的顺序存储结构称为顺序栈，本质上是顺序表的简化，唯一需要确定的是用数组的哪一端表示栈底
+
+通常把数组中下标为0的一段作为栈底，同时附设变量top指示栈顶元素在数组中的位置
+
+设存储栈的数组长度为StackSize，则栈空时栈顶位置top=-1；栈满时栈顶位置top=StackSize-1
+
+> [!TIP]
+>
+> 在有些教程中，将top指向栈中第一个空闲位置，如果这样的话，空栈应该表示为top=0
+
+入栈时，栈顶位置top加1；出栈时，栈顶位置top减1
+
+## 顺序栈的实现
+
+```c++
+#include <iostream>
+using namespace std;
+const int StackSize=10;//
+template<typename DataType>
+class SeqStack {
+public:
+    SeqStack();//初始化一个空栈
+    ~SeqStack();//析构函数
+    void Push(DataType x);//入栈操作，将元素x入栈
+    DataType Pop();//出栈操作，将栈顶元素弹出
+    DataType GetTop();//取栈顶元素(并不删除)
+    int Empty();//判断栈是否为空
+private:
+    DataType data[StackSize];
+    int top;//栈顶元素在数组中的下标
+};
+template<typename DataType>
+SeqStack<DataType>::SeqStack() {
+    top=-1;
+}
+template<typename DataType>
+SeqStack<DataType>::~SeqStack() {
+
+}
+template<typename DataType>
+void SeqStack<DataType>::Push(DataType x) {
+    if(top==StackSize-1)throw"上溢";
+    data[++top]=x;
+    /*即:
+    top++;
+    s[top] = x;
+    */
+}
+template<typename DataType>
+DataType SeqStack<DataType>::Pop() {
+    DataType x;
+    if(top==-1)throw"下溢";
+    x=data[top--];
+    /*即:
+    x=data[top];
+    top--;
+    */
+    return x;
+}
+template<typename DataType>
+DataType SeqStack<DataType>::GetTop() {
+    return data[top];
+}
+template<typename DataType>
+int SeqStack<DataType>::Empty() {
+    if(top==-1)return 1;
+    else return 0;
+}
+```
+
+```c++
+int main() {
+    int x;
+    SeqStack<int> S{};
+    cout<<"对15和10入栈";
+    S.Push(15);S.Push(10);
+    cout<<"当前栈顶元素为:"<<S.GetTop()<<endl;
+    try {
+        x=S.Pop();
+        cout<<x<<"出栈"<<endl;
+    }catch (char *str){cout<<str<<endl;}
+    try {
+        cout<<"请输入待入栈元素";
+        cin>>x;
+        S.Push(x);
+    }catch (char *str){cout<<str<<endl;}
+    if(S.Empty()==1) {
+        cout<<"栈为空"<<endl;
+    }
+    else {
+        cout<<"栈非空"<<endl;
+    }
+    return 0;
+}
+```
+
+## 栈的链接存储结构及实现
+
+栈的链接存储结构称为链栈，通常用单链表表示，其节点结构与单链表的结点结构相同
+
+```c++
+template<typename DataType>
+struct Node {
+    DataType data;
+    Node<DataType>* next;
+};
+```
+
+因为只能在栈顶执行入栈(插入)和出栈(删除)操作，所以以单链表的头部做栈顶是最方便的，而且没有必要像单链表那样为了运算方便附加头结点
+
+> [!TIP]
+>
+> 在单链表中，如果我们将头部用作栈顶（top），那么入栈和出栈操作都会非常高效，这是因为单链表的特性允许我们在头部进行 O(1) 时间复杂度的操作。
+>
+> 具体来说，有以下几点原因：
+>
+> 1. **插入操作**：当我们需要向栈中添加一个元素时（即入栈操作），我们只需要创建一个新的节点，并让它指向当前的头部（即当前栈顶），然后更新头部指针指向这个新节点。这样的操作不需要遍历整个链表来找到插入位置，因此时间复杂度为 O(1)。
+> 2. **删除操作**：当我们需要从栈中移除一个元素时（即出栈操作），我们只需改变头部指针，让它指向原来的头部所指向的下一个节点，并释放原来的头部节点即可。这也同样是一个 O(1) 的操作。
+> 3. **访问栈顶元素**：由于头部就是栈顶，访问栈顶元素也仅需要返回头部指针指向的节点的数据，这也是 O(1) 的操作。
+>
+> 关于是否需要附加头结点（dummy head）的问题，通常情况下，如果单链表只用于实现栈的功能，并且不需要支持其他额外操作（比如查找特定元素等），那么就没有必要设置一个额外的头结点。因为所有的操作都在头部进行，直接将头部视为栈顶已经足够高效了。
+
+时间复杂度 —— O(1)
+
+```c++
+#include <iostream>
+using namespace std;
+template<typename DataType>
+struct Node {
+    DataType data;
+    Node<DataType>* next;
+};
+template<typename DataType>
+class LinkStack {
+public:
+    LinkStack();
+    ~LinkStack();
+    void Push(DataType x);//入栈操作，将元素x入栈
+    DataType Pop();//出栈操作，将栈顶元素弹出
+    DataType GetTop();//取栈顶元素(并不删除)
+    int Empty();//判断栈是否为空
+private:
+    Node<DataType> *top;//栈顶指针即链栈的头指针
+};
+template<typename DataType>
+LinkStack<DataType>::LinkStack() {
+    top=nullptr;
+}
+template<typename DataType>
+LinkStack<DataType>::~LinkStack() {
+
+}
+template<typename DataType>
+void LinkStack<DataType>::Push(DataType x) {
+    Node<DataType> *s=nullptr;
+    s=new Node<DataType>;
+    s->data=x;
+    s->next=top;
+    top=s;
+}
+template<typename DataType>
+DataType LinkStack<DataType>::Pop() {
+    Node<DataType> *p=nullptr;
+    DataType x;
+    if(top==nullptr)throw"下溢";
+    x=top->data;
+    p=top;
+    top=top->next;
+    delete p;
+    return x;
+}
+template<typename DataType>
+DataType LinkStack<DataType>::GetTop() {
+    return top->data;
+}
+template<typename DataType>
+int LinkStack<DataType>::Empty() {
+    if(top==nullptr)return 1;
+    else return 0;
+}
+```
+
+```c++
+int main() {
+    int x;
+    LinkStack<int> S{};
+    cout<<"对15和10入栈";
+    S.Push(15);S.Push(10);
+    cout<<"当前栈顶元素为:"<<S.GetTop()<<endl;
+    try {
+        x=S.Pop();
+        cout<<x<<"出栈"<<endl;
+    }catch (char *str){cout<<str<<endl;}
+    try {
+        cout<<"请输入待入栈元素";
+        cin>>x;
+        S.Push(x);
+    }catch (char *str){cout<<str<<endl;}
+    if(S.Empty()==1) {
+        cout<<"栈为空"<<endl;
+    }
+    else {
+        cout<<"栈非空"<<endl;
+    }
+    return 0;
+}
+```
+
+## 顺序栈和链栈的比较
+
+作为一般规律，当栈的使用过程中元素变化较大时，应该采用链栈，反之，应使用顺序栈
+
+## 队列

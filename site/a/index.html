@@ -8683,7 +8683,7 @@
 <li><a href="#_5">线性表的定义</a></li>
 <li><a href="#_6">线性表的顺序存储结构及实现</a></li>
 <li><a href="#_7">线性表的链接存储结构及其实现</a><ul>
-<li><a href="#_8">单链表的结点定义：</a></li>
+<li><a href="#_8">单链表的结点定义</a></li>
 <li><a href="#_9">单链表的实现</a></li>
 </ul>
 </li>
@@ -8717,7 +8717,14 @@
 <li><a href="#_25">习题</a></li>
 </ul>
 </li>
-<li><a href="#_26">第三章</a></li>
+<li><a href="#_26">第三章</a><ul>
+<li><a href="#_27">栈</a></li>
+<li><a href="#_28">顺序栈的实现</a></li>
+<li><a href="#_29">栈的链接存储结构及实现</a></li>
+<li><a href="#_30">顺序栈和链栈的比较</a></li>
+<li><a href="#_31">队列</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <h1 id="_1">第一章<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
@@ -8964,7 +8971,7 @@ $$
 </code></pre></div>
 <h2 id="_7">线性表的链接存储结构及其实现<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>单链表是用一组任意的存储单元存放线性表的元素，这组存储单元可以连续也可以不连续，甚至可以零散分布在内存中的任意位置。为了能正确表示元素之间的逻辑关系，每个存储单元在存储数据元素的同时，还必须存储其后继元素所在的地址信息，这个地址信息称为指针。这两部分组成了数据元素的存储映像，称为结点。</p>
-<h3 id="_8">单链表的结点定义：<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_8">单链表的结点定义<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
@@ -9780,6 +9787,205 @@ $$
 <p>作为一个规律，一个好的算法是反复努力和重新修正的结果，即使足够幸运地得到了一个貌似完美的算法思想， 我们也应该尝试着改进它。 </p>
 <h2 id="_25">习题<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
 <h1 id="_26">第三章<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h1>
+<h2 id="_27">栈<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h2>
+<p>栈是限定仅在表的一段进行插入和删除操作的线性表，允许插入和删除的一端称为栈顶，另一端称为栈底，不含任何数据元素的栈称为空栈</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>插入元素——入栈、进栈、压栈</p>
+<p>删除元素——出栈、弹栈</p>
+</blockquote>
+<p>栈中元素除了具有线性关系外，还具有***<mark>后进先出</mark>***的特性</p>
+<p>栈的顺序存储结构称为顺序栈，本质上是顺序表的简化，唯一需要确定的是用数组的哪一端表示栈底</p>
+<p>通常把数组中下标为0的一段作为栈底，同时附设变量top指示栈顶元素在数组中的位置</p>
+<p>设存储栈的数组长度为StackSize，则栈空时栈顶位置top=-1；栈满时栈顶位置top=StackSize-1</p>
+<blockquote>
+<p>[!TIP]</p>
+<p>在有些教程中，将top指向栈中第一个空闲位置，如果这样的话，空栈应该表示为top=0</p>
+</blockquote>
+<p>入栈时，栈顶位置top加1；出栈时，栈顶位置top减1</p>
+<h2 id="_28">顺序栈的实现<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">StackSize</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span><span class="c1">//</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">SeqStack</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="n">SeqStack</span><span class="p">();</span><span class="c1">//初始化一个空栈</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">    </span><span class="o">~</span><span class="n">SeqStack</span><span class="p">();</span><span class="c1">//析构函数</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">Push</span><span class="p">(</span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="c1">//入栈操作，将元素x入栈</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="nf">Pop</span><span class="p">();</span><span class="c1">//出栈操作，将栈顶元素弹出</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="nf">GetTop</span><span class="p">();</span><span class="c1">//取栈顶元素(并不删除)</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">Empty</span><span class="p">();</span><span class="c1">//判断栈是否为空</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">StackSize</span><span class="p">];</span>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">;</span><span class="c1">//栈顶元素在数组中的下标</span>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="p">};</span>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="n">SeqStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">SeqStack</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="w">    </span><span class="n">top</span><span class="o">=</span><span class="mi">-1</span><span class="p">;</span>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="p">}</span>
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="n">SeqStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::~</span><span class="n">SeqStack</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="p">}</span>
+<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a><span class="kt">void</span><span class="w"> </span><span class="n">SeqStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Push</span><span class="p">(</span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">top</span><span class="o">==</span><span class="n">StackSize</span><span class="mi">-1</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;上溢&quot;</span><span class="p">;</span>
+<a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a><span class="w">    </span><span class="n">data</span><span class="p">[</span><span class="o">++</span><span class="n">top</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a><span class="w">    </span><span class="cm">/*即:</span>
+<a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a><span class="cm">    top++;</span>
+<a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a><span class="cm">    s[top] = x;</span>
+<a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a><span class="cm">    */</span>
+<a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a><span class="p">}</span>
+<a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a><span class="n">DataType</span><span class="w"> </span><span class="n">SeqStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Pop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">top</span><span class="o">==</span><span class="mi">-1</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;下溢&quot;</span><span class="p">;</span>
+<a id="__codelineno-23-38" name="__codelineno-23-38" href="#__codelineno-23-38"></a><span class="w">    </span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">top</span><span class="o">--</span><span class="p">];</span>
+<a id="__codelineno-23-39" name="__codelineno-23-39" href="#__codelineno-23-39"></a><span class="w">    </span><span class="cm">/*即:</span>
+<a id="__codelineno-23-40" name="__codelineno-23-40" href="#__codelineno-23-40"></a><span class="cm">    x=data[top];</span>
+<a id="__codelineno-23-41" name="__codelineno-23-41" href="#__codelineno-23-41"></a><span class="cm">    top--;</span>
+<a id="__codelineno-23-42" name="__codelineno-23-42" href="#__codelineno-23-42"></a><span class="cm">    */</span>
+<a id="__codelineno-23-43" name="__codelineno-23-43" href="#__codelineno-23-43"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-23-44" name="__codelineno-23-44" href="#__codelineno-23-44"></a><span class="p">}</span>
+<a id="__codelineno-23-45" name="__codelineno-23-45" href="#__codelineno-23-45"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-23-46" name="__codelineno-23-46" href="#__codelineno-23-46"></a><span class="n">DataType</span><span class="w"> </span><span class="n">SeqStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">GetTop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-47" name="__codelineno-23-47" href="#__codelineno-23-47"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">top</span><span class="p">];</span>
+<a id="__codelineno-23-48" name="__codelineno-23-48" href="#__codelineno-23-48"></a><span class="p">}</span>
+<a id="__codelineno-23-49" name="__codelineno-23-49" href="#__codelineno-23-49"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-23-50" name="__codelineno-23-50" href="#__codelineno-23-50"></a><span class="kt">int</span><span class="w"> </span><span class="n">SeqStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Empty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-51" name="__codelineno-23-51" href="#__codelineno-23-51"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">top</span><span class="o">==</span><span class="mi">-1</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-23-52" name="__codelineno-23-52" href="#__codelineno-23-52"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-23-53" name="__codelineno-23-53" href="#__codelineno-23-53"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="n">SeqStack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">S</span><span class="p">{};</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;对15和10入栈&quot;</span><span class="p">;</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="n">S</span><span class="p">.</span><span class="n">Push</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span><span class="n">S</span><span class="p">.</span><span class="n">Push</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;当前栈顶元素为:&quot;</span><span class="o">&lt;&lt;</span><span class="n">S</span><span class="p">.</span><span class="n">GetTop</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">        </span><span class="n">x</span><span class="o">=</span><span class="n">S</span><span class="p">.</span><span class="n">Pop</span><span class="p">();</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">x</span><span class="o">&lt;&lt;</span><span class="s">&quot;出栈&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">    </span><span class="p">}</span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">){</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">str</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;}</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;请输入待入栈元素&quot;</span><span class="p">;</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="w">        </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="w">        </span><span class="n">S</span><span class="p">.</span><span class="n">Push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="w">    </span><span class="p">}</span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">){</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">str</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;}</span>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">S</span><span class="p">.</span><span class="n">Empty</span><span class="p">()</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;栈为空&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;栈非空&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="_29">栈的链接存储结构及实现<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+<p>栈的链接存储结构称为链栈，通常用单链表表示，其节点结构与单链表的结点结构相同</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="p">};</span>
+</code></pre></div>
+<p>因为只能在栈顶执行入栈(插入)和出栈(删除)操作，所以以单链表的头部做栈顶是最方便的，而且没有必要像单链表那样为了运算方便附加头结点</p>
+<blockquote>
+<p>[!TIP]</p>
+<p>在单链表中，如果我们将头部用作栈顶（top），那么入栈和出栈操作都会非常高效，这是因为单链表的特性允许我们在头部进行 O(1) 时间复杂度的操作。</p>
+<p>具体来说，有以下几点原因：</p>
+<ol>
+<li><strong>插入操作</strong>：当我们需要向栈中添加一个元素时（即入栈操作），我们只需要创建一个新的节点，并让它指向当前的头部（即当前栈顶），然后更新头部指针指向这个新节点。这样的操作不需要遍历整个链表来找到插入位置，因此时间复杂度为 O(1)。</li>
+<li><strong>删除操作</strong>：当我们需要从栈中移除一个元素时（即出栈操作），我们只需改变头部指针，让它指向原来的头部所指向的下一个节点，并释放原来的头部节点即可。这也同样是一个 O(1) 的操作。</li>
+<li><strong>访问栈顶元素</strong>：由于头部就是栈顶，访问栈顶元素也仅需要返回头部指针指向的节点的数据，这也是 O(1) 的操作。</li>
+</ol>
+<p>关于是否需要附加头结点（dummy head）的问题，通常情况下，如果单链表只用于实现栈的功能，并且不需要支持其他额外操作（比如查找特定元素等），那么就没有必要设置一个额外的头结点。因为所有的操作都在头部进行，直接将头部视为栈顶已经足够高效了。</p>
+</blockquote>
+<p>时间复杂度 —— O(1)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="p">};</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="k">class</span><span class="w"> </span><span class="nc">LinkStack</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="w">    </span><span class="n">LinkStack</span><span class="p">();</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w">    </span><span class="o">~</span><span class="n">LinkStack</span><span class="p">();</span>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">Push</span><span class="p">(</span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="c1">//入栈操作，将元素x入栈</span>
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="nf">Pop</span><span class="p">();</span><span class="c1">//出栈操作，将栈顶元素弹出</span>
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="nf">GetTop</span><span class="p">();</span><span class="c1">//取栈顶元素(并不删除)</span>
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">Empty</span><span class="p">();</span><span class="c1">//判断栈是否为空</span>
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">top</span><span class="p">;</span><span class="c1">//栈顶指针即链栈的头指针</span>
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a><span class="p">};</span>
+<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="n">LinkStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">LinkStack</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a><span class="w">    </span><span class="n">top</span><span class="o">=</span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a><span class="p">}</span>
+<a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a><span class="n">LinkStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::~</span><span class="n">LinkStack</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a>
+<a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a><span class="p">}</span>
+<a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a><span class="kt">void</span><span class="w"> </span><span class="n">LinkStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Push</span><span class="p">(</span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-30" name="__codelineno-26-30" href="#__codelineno-26-30"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="o">=</span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-26-31" name="__codelineno-26-31" href="#__codelineno-26-31"></a><span class="w">    </span><span class="n">s</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-26-32" name="__codelineno-26-32" href="#__codelineno-26-32"></a><span class="w">    </span><span class="n">s</span><span class="o">-&gt;</span><span class="n">data</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-26-33" name="__codelineno-26-33" href="#__codelineno-26-33"></a><span class="w">    </span><span class="n">s</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">top</span><span class="p">;</span>
+<a id="__codelineno-26-34" name="__codelineno-26-34" href="#__codelineno-26-34"></a><span class="w">    </span><span class="n">top</span><span class="o">=</span><span class="n">s</span><span class="p">;</span>
+<a id="__codelineno-26-35" name="__codelineno-26-35" href="#__codelineno-26-35"></a><span class="p">}</span>
+<a id="__codelineno-26-36" name="__codelineno-26-36" href="#__codelineno-26-36"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-26-37" name="__codelineno-26-37" href="#__codelineno-26-37"></a><span class="n">DataType</span><span class="w"> </span><span class="n">LinkStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Pop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-38" name="__codelineno-26-38" href="#__codelineno-26-38"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="o">=</span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-26-39" name="__codelineno-26-39" href="#__codelineno-26-39"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-26-40" name="__codelineno-26-40" href="#__codelineno-26-40"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">top</span><span class="o">==</span><span class="k">nullptr</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;下溢&quot;</span><span class="p">;</span>
+<a id="__codelineno-26-41" name="__codelineno-26-41" href="#__codelineno-26-41"></a><span class="w">    </span><span class="n">x</span><span class="o">=</span><span class="n">top</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+<a id="__codelineno-26-42" name="__codelineno-26-42" href="#__codelineno-26-42"></a><span class="w">    </span><span class="n">p</span><span class="o">=</span><span class="n">top</span><span class="p">;</span>
+<a id="__codelineno-26-43" name="__codelineno-26-43" href="#__codelineno-26-43"></a><span class="w">    </span><span class="n">top</span><span class="o">=</span><span class="n">top</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<a id="__codelineno-26-44" name="__codelineno-26-44" href="#__codelineno-26-44"></a><span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<a id="__codelineno-26-45" name="__codelineno-26-45" href="#__codelineno-26-45"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-26-46" name="__codelineno-26-46" href="#__codelineno-26-46"></a><span class="p">}</span>
+<a id="__codelineno-26-47" name="__codelineno-26-47" href="#__codelineno-26-47"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-26-48" name="__codelineno-26-48" href="#__codelineno-26-48"></a><span class="n">DataType</span><span class="w"> </span><span class="n">LinkStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">GetTop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-49" name="__codelineno-26-49" href="#__codelineno-26-49"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">top</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+<a id="__codelineno-26-50" name="__codelineno-26-50" href="#__codelineno-26-50"></a><span class="p">}</span>
+<a id="__codelineno-26-51" name="__codelineno-26-51" href="#__codelineno-26-51"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-26-52" name="__codelineno-26-52" href="#__codelineno-26-52"></a><span class="kt">int</span><span class="w"> </span><span class="n">LinkStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Empty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-53" name="__codelineno-26-53" href="#__codelineno-26-53"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">top</span><span class="o">==</span><span class="k">nullptr</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-26-54" name="__codelineno-26-54" href="#__codelineno-26-54"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-26-55" name="__codelineno-26-55" href="#__codelineno-26-55"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="n">LinkStack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">S</span><span class="p">{};</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;对15和10入栈&quot;</span><span class="p">;</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="n">S</span><span class="p">.</span><span class="n">Push</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span><span class="n">S</span><span class="p">.</span><span class="n">Push</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;当前栈顶元素为:&quot;</span><span class="o">&lt;&lt;</span><span class="n">S</span><span class="p">.</span><span class="n">GetTop</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">        </span><span class="n">x</span><span class="o">=</span><span class="n">S</span><span class="p">.</span><span class="n">Pop</span><span class="p">();</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">x</span><span class="o">&lt;&lt;</span><span class="s">&quot;出栈&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">    </span><span class="p">}</span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">){</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">str</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;}</span>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;请输入待入栈元素&quot;</span><span class="p">;</span>
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">        </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="w">        </span><span class="n">S</span><span class="p">.</span><span class="n">Push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="w">    </span><span class="p">}</span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">){</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">str</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;}</span>
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">S</span><span class="p">.</span><span class="n">Empty</span><span class="p">()</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;栈为空&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;栈非空&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="_30">顺序栈和链栈的比较<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
+<p>作为一般规律，当栈的使用过程中元素变化较大时，应该采用链栈，反之，应使用顺序栈</p>
+<h2 id="_31">队列<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
 
 
 
