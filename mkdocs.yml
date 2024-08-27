@@ -495,3 +495,6 @@ nav:
           - hello-algo/docs/chapter_reference/index.md
   - 数据结构-从概念到C++实现: a.md
   - 软件开发方向选修课程指导: b.md
+  - 计算机二级:
+      - 题库下载: ncre/question_bank.md
+      - 笔记分享1: ncre/note.md
