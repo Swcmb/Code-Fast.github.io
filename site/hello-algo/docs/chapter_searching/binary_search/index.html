@@ -8804,7 +8804,7 @@
 </div>
 </div>
 </div>
-<p>值得注意的是，由于 <span class="arithmatex">\(i\)</span> 和 <span class="arithmatex">\(j\)</span> 都是 <code>int</code> 类型，<strong>因此 <span class="arithmatex">\(i + j\)</span> 可能会超出 <code>int</code> 类型的取值范围</strong>。为了避免大数越界，我们通常采用公式 <span class="arithmatex">\(m = \lfloor {i + (j - i) / 2} \rfloor\)</span> 来计算中点。</p>
+<p>值得注意的是，由于 <span class="arithmatex">\(i\)</span> 和 <span class="arithmatex">\(j\)</span> 都是 <code>int</code> 类型，<strong>因此 <span class="arithmatex">\(i + j\)</span> 可能会超出 <code>int</code> 类型的取值范围</strong>。为了避免大数越界，我们通常采用公式 <span class="arithmatex">\(m = \lfloor {i + (j - i) / 2} \rfloor\)</span>​ 来计算中点。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[file]{binary_search}-[class]{}-[func]{binary_search}
 </code></pre></div>
 <p><strong>时间复杂度 <span class="arithmatex">\(O(\log n)\)</span></strong> ：在二分循环中，区间每轮缩小一半，循环次数为 <span class="arithmatex">\(\log_2 n\)</span> 。</p>
