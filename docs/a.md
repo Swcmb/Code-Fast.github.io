@@ -1446,9 +1446,99 @@ int main() {
 
 队满的条件是(rear+1)%QueueSize=front
 
+```c++
+#include <iostream>
+using namespace std;
+const int QueueSize=100;
+template <typename DataType>
+class CirQueue {
+public:
+    CirQueue();//构造函数，初始化空队列
+    ~CirQueue();//析构函数
+    void EnQueue(DataType x);//入队
+    DataType DeQueue();//出队
+    DataType GetHead();//取队头元素
+    int Empty();//判断队列是否为空
+private:
+    DataType data[QueueSize];//存放队列元素的数组
+    int front,rear;//游标，队头和队尾指针
+};
+template<typename DataType>
+CirQueue<DataType>::CirQueue() {
+    rear=front=QueueSize-1;
+}
+template<typename DataType>
+CirQueue<DataType>::~CirQueue() {
+
+}
+template<typename DataType>
+void CirQueue<DataType>::EnQueue(DataType x) {
+    if((rear+1)%QueueSize==front)throw"上溢";
+    rear=(rear+1)%QueueSize;//队尾指针在循环意义下加1
+    data[rear]=x;//在队尾处插入元素
+}
+template<typename DataType>
+DataType CirQueue<DataType>::DeQueue() {
+    if(rear==front)throw"下溢";
+    front=(front+1)%QueueSize;//队头在循环意义下加1
+    return data[front];//返回出队前的队头元素
+}
+template<typename DataType>
+DataType CirQueue<DataType>::GetHead() {
+    if(rear==front)throw"下溢";
+    return data[(front+1)%QueueSize];
+}
+template<typename DataType>
+int CirQueue<DataType>::Empty() {
+    if (rear==front) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+```
 
 
 
+```c++
+int main() {
+    int x;
+    CirQueue<int> Q{};
+    Q.EnQueue(5);Q.EnQueue(8);
+    cout<<"当前队头元素为："<<Q.GetHead()<<endl;
+    try {
+        x=Q.DeQueue();
+        cout<<"执行一次出队操作，出队元素是："<<x<<endl;
+    }catch (char *str){cout<<str<<endl;}
+    try {
+        cout<<"请输入入队元素:";
+        cin>>x;
+        Q.EnQueue(x);
+    }catch (char *str){cout<<str<<endl;}
+    if(Q.Empty()==1) {
+        cout<<"队列为空"<<endl;
+    }
+    else {
+        cout<<"队列非空"<<endl;
+    }
+    return 0;
+}
+```
+
+## 队列的链存储结构及实现
+
+队列的链接存储结构称为链队列，通常用单链表表示，其结点结构与单链表的结点结构相同
+
+```c++
+template<typename DataType>
+struct Node {
+    DataType data;
+    Node<DataType>* next;
+};
+```
+
+为了使空队列和非空队列的操作一致，链队列也加上头结点；为了操作上的方便，设置队头指针指向链队列的头结点，队尾指针指向终端结点
 
 
 
