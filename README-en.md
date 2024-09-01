@@ -1,74 +1,56 @@
 # Code-Fast
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/Swcmb/Code-Fast.github.io/)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Welcome!
 
-This project aims to create a comprehensive and friendly programming tutorial covering the fundamentals of C, C++, Java, and Python, while delving deep into data structures and algorithms. We utilize animations and diagrams to make the content lively and understandable, guiding you to easily grasp core concepts. The source code can be run directly, assisting you in learning through practice and understanding algorithm mechanisms and data structure implementations. We advocate collaborative learning, with any questions and discussions receiving prompt responses.
+The aim of this project is to create a comprehensive and user-friendly set of programming tutorials covering the basic syntax of C, C++, Java and Python, as well as in-depth explanations of data structures and algorithms. We use animations and illustrations to make the content lively and easy to understand, guiding you to grasp the core concepts with ease. The source code can be run directly, helping you learn by doing and understand the algorithmic mechanism and data structure implementation. We advocate mutual learning, any questions and discussions will be promptly responded to.
 
-If this project is helpful to you, please star it at the top right :star:. Your support is greatly appreciated!
+If this project is helpful to you, please give Star :star: in the upper right corner, thank you for your support!
 
 ---
 
 ## Project Features
 
-- **Multi-Language Support**: Tutorials cover C, C++, Java, and Python, catering to diverse needs.
-- **Clear Learning Path**: Progress from basic syntax to complex data structures step by step.
-- **Interactive Practice**: Hands-on exercises deepen your understanding.
-- **Community Interaction**: Share insights and grow together.
+- **Multi-language support**: tutorials cover C, C++, Java and Python to meet different needs.
+- **Clear Learning Path**: step-by-step progression from basic syntax to complex data structures.
+- **Interactive Practice**: Practical exercises to deepen understanding.
+- **Community interaction**: exchange ideas and grow together.
 
----
+## User's Guide
 
-## Content Overview
+- **Reading**: Start from basic syntax, gradually transition to data structures and algorithms.
+- **Practice**: Write code and run examples.
+- **Communication**: Join the community to share insights and answer questions.
 
-```markdown
-1. Basics of C Programming
-2. Advanced Features of C++
-3. Object-Oriented Programming in Java
-4. Scripting and Web Development with Python
-5. Overview of Data Structures
-   - Arrays
-   - Linked Lists
-   - Stacks and Queues
-   - Tree Structures
-   - Graph Theory
-   - Hash Tables
-   - String Processing
-6. Algorithm Analysis
-   - Sorting Algorithms
-   - Search Algorithms
-   - Greedy Strategies
-   - Dynamic Programming
-   - Backtracking Algorithms
-   - Advanced Algorithm Techniques
-```
+## How to Prepare for Blue Bridge Cup and ACM Algorithm Contests
 
----
+Preparing for algorithmic competitions such as the Blue Bridge Cup and ACM requires an organized approach and a thorough understanding of key data structures and algorithms. Here are some steps to help you prepare effectively:
 
-## Usage Guide
+1. **Understanding the competition format and rules**: familiarize yourself with the competition rules, allowed programming languages, and the types of problems typically encountered.
 
-- **Read**: Start with the basics of syntax and gradually transition to data structures and algorithms.
-- **Practice**: Write code yourself and run examples.
-- **Engage**: Join the community, share perspectives, and answer queries.
+2. **Review of Fundamentals**: make sure you are solidly grounded in data structures (arrays, linked lists, stacks, queues, trees, hash tables) and algorithms (sorting, searching, greedy algorithms, dynamic programming, graph algorithms).
 
-## How to Prepare for Blue Bridge Cup and ACM Algorithm Competitions
+3. **Advanced Concepts**: after mastering the basics, move to more advanced topics such as dynamic programming techniques, tree traversal strategies, graph algorithms, and advanced data structures.
 
-Preparing for algorithm competitions such as the Blue Bridge Cup and ACM requires an organized approach and a thorough understanding of key data structures and algorithms. Here are some steps to help you prepare effectively:
+4. **Practice with Real Problems**: practice a wide range of problems by category and difficulty level using platforms such as Logu. This will help you identify your weaknesses and strengths.
 
-1. **Understand the Format and Rules**: Familiarize yourself with competition rules, permitted programming languages, and common problem types.
-2. **Review Fundamental Knowledge**: Ensure that your foundation in data structures (arrays, linked lists, stacks, queues, trees, hash tables) and algorithms (sorting, searching, greedy algorithms, dynamic programming, graph algorithms) is solid.
-3. **Advanced Concepts**: After mastering the basics, move on to more advanced topics such as dynamic programming techniques, tree traversal strategies, graph algorithms, and advanced data structures.
-4. **Practice with Real Problems**: Use platforms like Code-Fast to practice a wide range of problems categorized by type and difficulty. This will help you identify your strengths and weaknesses.
-5. **Simulate Competition Conditions**: Try solving problems within the time constraints of actual competitions. This will improve your speed and accuracy under pressure.
-6. **Review and Reflect**: After practicing each problem, thoroughly review the solution and understand different approaches. Engage in community discussions and alternative solutions.
-7. **Participate in Online Programming Contests**: Participate in virtual contests to get a feel for real competition environments. Websites like Codeforces, Topcoder, and LeetCode offer such opportunities.
-8. **Review Recent Problems**: As the competition date approaches, focus on solving problems from recent competitions. This will help you understand trends and difficulties in problems.
-9. **Rest and Strategize**: Before the competition, ensure you have good rest and plan your strategy. Know when to switch between problems and manage your time effectively.
+5. **Simulate competition conditions**: try to solve problems within the time constraints of an actual competition. This will improve your speed and accuracy under pressure.
+
+6. **Review and Reflect**: after practicing each problem, thoroughly review the solution and understand the different approaches. Participate in community discussions and alternative solutions.
+
+7. **Participate in online programming competitions**: participate in virtual competitions to get the feel of an actual competition environment. sites such as Codeforces, Topcoder, and LeetCode offer such opportunities.
+
+8. **Review recent problems**: focus on solving problems from competitions in recent years as the competition date approaches. This will help you understand the trends and difficulty of the problems.
+
+9. **Rest and strategize**: Before the tournament, make sure you are well rested and plan your strategy. Know when to switch between problems and manage your time effectively.
 
 ## Contribution Guidelines
 
-We welcome all forms of contributions, including but not limited to submitting new solutions, improving existing code, fixing bugs, and adding new features. Before submitting a PR, ensure your code has passed all tests and adheres to the project's coding standards.
+We welcome contributions of any kind, including but not limited to submitting new solutions, improving existing code, fixing bugs, adding new features, etc. We welcome all contributions. Before submitting a PR, please make sure your code has passed all tests and follows the project's coding guidelines.
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/license/MIT), see [MIT](https://opensource.org/license/MIT) for details.
+This project is under the [MIT](https://opensource.org/license/MIT) license, see [MIT](https://opensource.org/license/MIT) for details.
 
-(For original parts only; for content derived from other open-source projects, please follow the license agreements of the original projects.)
+(Original parts only. Where content from other open source projects is used, please follow the protocols of the original project.)

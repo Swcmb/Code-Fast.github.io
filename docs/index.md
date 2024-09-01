@@ -7,10 +7,7 @@ hide:
 
 # Code-Fast
 
-# 
-
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/Swcmb/Code-Fast.github.io/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/Swcmb/Code-Fast.github.io/)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 欢迎！
 
@@ -26,34 +23,6 @@ hide:
 - **清晰的学习路径**：从基础语法到复杂数据结构，逐步进阶。
 - **互动实践**：实战演练，加深理解。
 - **社区互动**：交流心得，共同成长。
-
----
-
-## 目录概览
-
-```markdown
-1. C语言基础
-2. C++进阶特性
-3. Java面向对象编程
-4. Python脚本与Web开发
-5. 数据结构概览
-   - 数组
-   - 链表
-   - 栈与队列
-   - 树形结构
-   - 图论
-   - 哈希表
-   - 字符串处理
-6. 算法解析
-   - 排序算法
-   - 搜索算法
-   - 贪心策略
-   - 动态规划
-   - 回溯算法
-   - 高级算法技巧
-```
-
----
 
 ## 使用指南
 
@@ -71,7 +40,7 @@ hide:
 
 3. **高级概念**：在掌握基础知识之后，转向更高级的主题，如动态编程技术、树遍历策略、图算法和高级数据结构。
 
-4. **用真实问题练习**：使用Code-Fast等平台按类别和难度练习广泛的问题。这将帮助您识别自己的弱点和优势。
+4. **用真实问题练习**：使用洛谷等平台按类别和难度练习广泛的问题。这将帮助您识别自己的弱点和优势。
 
 5. **模拟比赛条件**：尝试在实际比赛的时间限制内解决问题。这将提高您在压力下的速度和准确性。
 
