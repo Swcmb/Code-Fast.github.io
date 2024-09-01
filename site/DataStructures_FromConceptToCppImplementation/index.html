@@ -9477,14 +9477,39 @@
 </ul>
 </li>
 <li><a href="#_26">第三章</a><ul>
-<li><a href="#_27">栈</a></li>
+<li><a href="#_27">栈</a><ul>
 <li><a href="#_28">顺序栈的实现</a></li>
 <li><a href="#_29">栈的链接存储结构及实现</a></li>
 <li><a href="#_30">顺序栈和链栈的比较</a></li>
-<li><a href="#_31">队列</a></li>
+</ul>
+</li>
+<li><a href="#_31">队列</a><ul>
 <li><a href="#_32">队列的顺序存储结构及实现</a></li>
 <li><a href="#_33">循环队列</a></li>
 <li><a href="#_34">队列的链存储结构及实现</a></li>
+<li><a href="#_35">循环队列和链队列的比较</a></li>
+</ul>
+</li>
+<li><a href="#_36">扩展与提高</a><ul>
+<li><a href="#_37">两栈共享空间</a><ul>
+<li><a href="#_38">入栈</a></li>
+<li><a href="#_39">出栈</a></li>
+<li><a href="#_40">完整代码</a></li>
+</ul>
+</li>
+<li><a href="#_41">双端队列</a><ul>
+<li><a href="#_42">定义</a></li>
+<li><a href="#_43">完整代码</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_44">应用举例</a><ul>
+<li><a href="#_45">括号匹配问题</a></li>
+<li><a href="#_46">表达式求值</a></li>
+</ul>
+</li>
+<li><a href="#_47">习题</a></li>
 </ul>
 </li>
 </ul>
@@ -10565,7 +10590,7 @@ $$
 <p>在有些教程中，将top指向栈中第一个空闲位置，如果这样的话，空栈应该表示为top=0</p>
 </blockquote>
 <p>入栈时，栈顶位置top加1；出栈时，栈顶位置top减1</p>
-<h2 id="_28">顺序栈的实现<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
+<h3 id="_28">顺序栈的实现<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">StackSize</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span><span class="c1">//</span>
@@ -10644,7 +10669,7 @@ $$
 <a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_29">栈的链接存储结构及实现<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+<h3 id="_29">栈的链接存储结构及实现<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
 <p>栈的链接存储结构称为链栈，通常用单链表表示，其节点结构与单链表的结点结构相同</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
@@ -10745,19 +10770,19 @@ $$
 <a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_30">顺序栈和链栈的比较<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
+<h3 id="_30">顺序栈和链栈的比较<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
 <p>作为一般规律，当栈的使用过程中元素变化较大时，应该采用链栈，反之，应使用顺序栈</p>
 <h2 id="_31">队列<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
 <p>队列是只允许在一端进行插入操作，在另一端进行删除操作的线性表，允许插入(入队、进队)的一端称为队尾，允许删除(出队)的一端称为队头。</p>
 <p>队列中的元素除了具有线性关系外，还具有==<strong><em>先进先出</em></strong>==的特性</p>
-<h2 id="_32">队列的顺序存储结构及实现<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
+<h3 id="_32">队列的顺序存储结构及实现<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
 <p>队列的顺序存储结构称为顺序队列。假设队列有n个元素，顺序队列把队列的所有元素存储在数组的前n个单元。如果把队头元素放在数组中下标为0的一端，则入队操作相当于追加，不需要移动元素，其时间性能为O(1)，但是出队操作的时间性能为O(n)，因为要保证剩下的n-1个元素仍然存储在数组的前n-1个单元，所有元素都要向前移动一个位置。</p>
 <p>如果放宽队列的所有元素必须存储在数组的前n个单元这一条件，就可以得到一种更为有效的存储方式。此时入队和出队操作的时间性能都是O(1)，因为没有移动任何元素。需要设置队头、队尾两个位置变量front和rear，入队时rear加1，出队时front加1，并且约定：front指向队头元素的前一个位置，rear指向队尾元素的位置。</p>
 <blockquote>
 <p>[!NOTE]</p>
 <p>这样约定的目的是方便运算，例如rear-front等于队列的长度。</p>
 </blockquote>
-<h2 id="_33">循环队列<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h2>
+<h3 id="_33">循环队列<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
 <p>在顺序队列中，随着队列的插入和删除操作，整个队列向数组的高端移过去，从而产生了队列的“单向移动性”。当元素被插入到数组中下标最大的位置之后，数组空间就用尽了，尽管此时数组的低端还有空闲空间，这种现象叫做“假溢出”</p>
 <p>解决假溢出的方法是将存储队列的数组看成是头尾相接的循环结构，这可以通过取模操作来实现，设存储队列的数组长度为QueueSize，操作语句为rear=(rear+1)%QueueSize</p>
 <p>队列的这种头尾相接的顺序存储结构称为循环队列。</p>
@@ -10837,7 +10862,7 @@ $$
 <a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_34">队列的链存储结构及实现<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h2>
+<h3 id="_34">队列的链存储结构及实现<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
 <p>队列的链接存储结构称为链队列，通常用单链表表示，其结点结构与单链表的结点结构相同</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
@@ -10846,6 +10871,247 @@ $$
 <a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="p">};</span>
 </code></pre></div>
 <p>为了使空队列和非空队列的操作一致，链队列也加上头结点；为了操作上的方便，设置队头指针指向链队列的头结点，队尾指针指向终端结点</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="p">};</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="k">class</span><span class="w"> </span><span class="nc">LinkQueue</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="w">    </span><span class="n">LinkQueue</span><span class="p">();</span><span class="c1">//构造函数，初始化空队列</span>
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="w">    </span><span class="o">~</span><span class="n">LinkQueue</span><span class="p">();</span><span class="c1">//析构函数</span>
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">EnQueue</span><span class="p">(</span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="c1">//入队</span>
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="nf">DeQueue</span><span class="p">();</span><span class="c1">//出队</span>
+<a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="nf">GetHead</span><span class="p">();</span><span class="c1">//取队头元素</span>
+<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">Empty</span><span class="p">();</span><span class="c1">//判断队列是否为空</span>
+<a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">front</span><span class="p">,</span><span class="o">*</span><span class="n">rear</span><span class="p">;</span><span class="c1">//队头和队尾指针</span>
+<a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a><span class="p">};</span>
+<a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a>
+<a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-31-22" name="__codelineno-31-22" href="#__codelineno-31-22"></a><span class="n">LinkQueue</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">LinkQueue</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-23" name="__codelineno-31-23" href="#__codelineno-31-23"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="o">=</span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-31-24" name="__codelineno-31-24" href="#__codelineno-31-24"></a><span class="w">    </span><span class="n">s</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-31-25" name="__codelineno-31-25" href="#__codelineno-31-25"></a><span class="w">    </span><span class="n">s</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-31-26" name="__codelineno-31-26" href="#__codelineno-31-26"></a><span class="w">    </span><span class="n">front</span><span class="o">=</span><span class="n">rear</span><span class="o">=</span><span class="n">s</span><span class="p">;</span><span class="c1">//将队头指针和队尾指针都指向头结点s</span>
+<a id="__codelineno-31-27" name="__codelineno-31-27" href="#__codelineno-31-27"></a><span class="p">}</span>
+<a id="__codelineno-31-28" name="__codelineno-31-28" href="#__codelineno-31-28"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-31-29" name="__codelineno-31-29" href="#__codelineno-31-29"></a><span class="n">LinkQueue</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::~</span><span class="n">LinkQueue</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-30" name="__codelineno-31-30" href="#__codelineno-31-30"></a>
+<a id="__codelineno-31-31" name="__codelineno-31-31" href="#__codelineno-31-31"></a><span class="p">}</span>
+<a id="__codelineno-31-32" name="__codelineno-31-32" href="#__codelineno-31-32"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-31-33" name="__codelineno-31-33" href="#__codelineno-31-33"></a><span class="kt">void</span><span class="w"> </span><span class="n">LinkQueue</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">EnQueue</span><span class="p">(</span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-34" name="__codelineno-31-34" href="#__codelineno-31-34"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="o">=</span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-31-35" name="__codelineno-31-35" href="#__codelineno-31-35"></a><span class="w">    </span><span class="n">s</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-31-36" name="__codelineno-31-36" href="#__codelineno-31-36"></a><span class="w">    </span><span class="n">s</span><span class="o">-&gt;</span><span class="n">data</span><span class="o">=</span><span class="n">x</span><span class="p">;</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-31-37" name="__codelineno-31-37" href="#__codelineno-31-37"></a><span class="w">    </span><span class="n">rear</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">s</span><span class="p">;</span>
+<a id="__codelineno-31-38" name="__codelineno-31-38" href="#__codelineno-31-38"></a><span class="w">    </span><span class="n">rear</span><span class="o">=</span><span class="n">s</span><span class="p">;</span>
+<a id="__codelineno-31-39" name="__codelineno-31-39" href="#__codelineno-31-39"></a><span class="p">}</span>
+<a id="__codelineno-31-40" name="__codelineno-31-40" href="#__codelineno-31-40"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-31-41" name="__codelineno-31-41" href="#__codelineno-31-41"></a><span class="n">DataType</span><span class="w"> </span><span class="n">LinkQueue</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">DeQueue</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-42" name="__codelineno-31-42" href="#__codelineno-31-42"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-31-43" name="__codelineno-31-43" href="#__codelineno-31-43"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="o">=</span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-31-44" name="__codelineno-31-44" href="#__codelineno-31-44"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">rear</span><span class="o">==</span><span class="n">front</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;下溢&quot;</span><span class="p">;</span>
+<a id="__codelineno-31-45" name="__codelineno-31-45" href="#__codelineno-31-45"></a><span class="w">    </span><span class="n">p</span><span class="o">=</span><span class="n">front</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="n">x</span><span class="o">=</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+<a id="__codelineno-31-46" name="__codelineno-31-46" href="#__codelineno-31-46"></a><span class="w">    </span><span class="n">front</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<a id="__codelineno-31-47" name="__codelineno-31-47" href="#__codelineno-31-47"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">==</span><span class="k">nullptr</span><span class="p">){</span><span class="c1">//出队前队列长度为1</span>
+<a id="__codelineno-31-48" name="__codelineno-31-48" href="#__codelineno-31-48"></a><span class="w">        </span><span class="n">rear</span><span class="o">=</span><span class="n">front</span><span class="p">;</span>
+<a id="__codelineno-31-49" name="__codelineno-31-49" href="#__codelineno-31-49"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-31-50" name="__codelineno-31-50" href="#__codelineno-31-50"></a><span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<a id="__codelineno-31-51" name="__codelineno-31-51" href="#__codelineno-31-51"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-31-52" name="__codelineno-31-52" href="#__codelineno-31-52"></a><span class="p">}</span>
+<a id="__codelineno-31-53" name="__codelineno-31-53" href="#__codelineno-31-53"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-31-54" name="__codelineno-31-54" href="#__codelineno-31-54"></a><span class="n">DataType</span><span class="w"> </span><span class="n">LinkQueue</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">GetHead</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-55" name="__codelineno-31-55" href="#__codelineno-31-55"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">front</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+<a id="__codelineno-31-56" name="__codelineno-31-56" href="#__codelineno-31-56"></a><span class="p">}</span>
+<a id="__codelineno-31-57" name="__codelineno-31-57" href="#__codelineno-31-57"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-31-58" name="__codelineno-31-58" href="#__codelineno-31-58"></a><span class="kt">int</span><span class="w"> </span><span class="n">LinkQueue</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Empty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-59" name="__codelineno-31-59" href="#__codelineno-31-59"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">front</span><span class="o">==</span><span class="n">rear</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-60" name="__codelineno-31-60" href="#__codelineno-31-60"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-31-61" name="__codelineno-31-61" href="#__codelineno-31-61"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-31-62" name="__codelineno-31-62" href="#__codelineno-31-62"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-63" name="__codelineno-31-63" href="#__codelineno-31-63"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-31-64" name="__codelineno-31-64" href="#__codelineno-31-64"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-31-65" name="__codelineno-31-65" href="#__codelineno-31-65"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">    </span><span class="n">LinkQueue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Q</span><span class="p">{};</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">    </span><span class="n">Q</span><span class="p">.</span><span class="n">EnQueue</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="n">Q</span><span class="p">.</span><span class="n">EnQueue</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;当前队头元素为：&quot;</span><span class="o">&lt;&lt;</span><span class="n">Q</span><span class="p">.</span><span class="n">GetHead</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="w">        </span><span class="n">x</span><span class="o">=</span><span class="n">Q</span><span class="p">.</span><span class="n">DeQueue</span><span class="p">();</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;执行一次出队操作，出队元素是：&quot;</span><span class="o">&lt;&lt;</span><span class="n">x</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="w">    </span><span class="p">}</span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">){</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">str</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;}</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;请输入入队元素:&quot;</span><span class="p">;</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="w">        </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="w">        </span><span class="n">Q</span><span class="p">.</span><span class="n">EnQueue</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a><span class="w">    </span><span class="p">}</span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">){</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">str</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;}</span>
+<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">Q</span><span class="p">.</span><span class="n">Empty</span><span class="p">()</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;队列为空&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;队列非空&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_35">循环队列和链队列的比较<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
+<p>循环队列和链队列基本操作的时间复杂度均为O(1)，因此可以比较的只有空间性能。作为一般规律，当队列中元素个数变化较大时，应采用链队列，反之，应该采用循环队列，如果确定不会发生假溢出，也可以采用顺序队列</p>
+<h2 id="_36">扩展与提高<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
+<h3 id="_37">两栈共享空间<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
+<p>在一个程序中，如果同时使用具有相同数据类型的两个顺序栈，最直接的方法是为每个栈开辟一个数组空间，这样做的结果可能出现一个栈的空间已被占满而无法再进行插入操作，同时另一个栈的空间仍有大量剩余而没有得到利用的情况，从而造成存储空间的浪费。</p>
+<p>可以充分利用顺序栈单向延伸的特性，使用一个数组来存储两个栈，让一个栈的栈底位于该数组的始端，另一个栈的栈底位于该数组的末端，每个栈从各自的端点向中间延伸。</p>
+<p>其中，topl 和 top2分别为栈1 和栈2 的栈顶位置，StackSize 为整个数组空间的大小，栈1的底位于下标为。的一端；栈2的底位于下标为 StackSize一1 的一端。</p>
+<p>在两栈共享空间中，由于两个栈相向增长，浪费的数组空间就会减少，同时发生上溢的概率也会减少。**但是，只有当两个栈的空间需求有相反的关系时，这种方法才会奏效，也就是说，最好一个栈增长时另一个栈缩短。**下面给出两栈共享空间的类定义：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">StackSize</span><span class="o">=</span><span class="mi">100</span><span class="p">;</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">BothStack</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">    </span><span class="n">BothStack</span><span class="p">();</span><span class="c1">//构造函数，将两个栈分别初始化</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">    </span><span class="o">~</span><span class="n">BothStack</span><span class="p">();</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">Push</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="c1">//入栈操作，将元素x压入栈i</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="nf">Pop</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="c1">//出栈操作，对栈i执行出栈操作</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="nf">GetTop</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="c1">//取栈i的栈顶元素</span>
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">Empty</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="c1">//判断栈i是否为空栈</span>
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">StackSize</span><span class="p">];</span><span class="c1">//存放两个栈的数组</span>
+<a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">top1</span><span class="p">,</span><span class="n">top2</span><span class="p">;</span><span class="c1">//两个栈的栈顶指针，分别为各自栈顶元素在数组中的下标</span>
+<a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a><span class="p">};</span>
+</code></pre></div>
+<p>设整型变量i只取1和2两个值。当i=1时，表示对栈1操作；当i=2时，表示对栈2操作</p>
+<p>下面讨论两栈共享空间的入栈和出栈操作：</p>
+<h4 id="_38">入栈<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h4>
+<p>当存储栈的数组中没用空闲单元时为栈满，此时栈1的栈顶元素和栈2的栈顶元素位于数组中的相邻位置，即top1=top2-1。另外，当新元素插入栈2时，栈顶位置top2不是加一而是减一</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">BothStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Push</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">top1</span><span class="o">==</span><span class="n">top2</span><span class="mi">-1</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;上溢&quot;</span><span class="p">;</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="n">data</span><span class="p">[</span><span class="o">++</span><span class="n">top1</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="w">    </span><span class="cm">/*即:</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="cm">    top1++;</span>
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="cm">    data[top1] = x;</span>
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="cm">    */</span>
+<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span><span class="n">data</span><span class="p">[</span><span class="o">--</span><span class="n">top2</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="w">    </span><span class="cm">/*即:</span>
+<a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a><span class="cm">    top2--;</span>
+<a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a><span class="cm">    data[top2] = x;</span>
+<a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a><span class="cm">    */</span>
+<a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="_39">出栈<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h4>
+<p>当top1=-1时栈1为空，当top2=StackSize时栈2为空。另外，当从栈2删除元素时，top2不是减一而是加一</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="n">DataType</span><span class="w"> </span><span class="n">BothStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Pop</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">top1</span><span class="o">==</span><span class="mi">-1</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;下溢&quot;</span><span class="p">;</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">top1</span><span class="o">--</span><span class="p">];</span>
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">top2</span><span class="o">==</span><span class="n">StackSize</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;下溢&quot;</span><span class="p">;</span>
+<a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">top2</span><span class="o">++</span><span class="p">];</span>
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="_40">完整代码<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">StackSize</span><span class="o">=</span><span class="mi">100</span><span class="p">;</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">BothStack</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="w">    </span><span class="n">BothStack</span><span class="p">();</span><span class="c1">//构造函数，将两个栈分别初始化</span>
+<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="w">    </span><span class="o">~</span><span class="n">BothStack</span><span class="p">();</span>
+<a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">Push</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="c1">//入栈操作，将元素x压入栈i</span>
+<a id="__codelineno-36-10" name="__codelineno-36-10" href="#__codelineno-36-10"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="nf">Pop</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="c1">//出栈操作，对栈i执行出栈操作</span>
+<a id="__codelineno-36-11" name="__codelineno-36-11" href="#__codelineno-36-11"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="nf">GetTop</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="c1">//取栈i的栈顶元素</span>
+<a id="__codelineno-36-12" name="__codelineno-36-12" href="#__codelineno-36-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">Empty</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="c1">//判断栈i是否为空栈</span>
+<a id="__codelineno-36-13" name="__codelineno-36-13" href="#__codelineno-36-13"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-36-14" name="__codelineno-36-14" href="#__codelineno-36-14"></a><span class="w">    </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">StackSize</span><span class="p">];</span><span class="c1">//存放两个栈的数组</span>
+<a id="__codelineno-36-15" name="__codelineno-36-15" href="#__codelineno-36-15"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">top1</span><span class="p">,</span><span class="n">top2</span><span class="p">;</span><span class="c1">//两个栈的栈顶指针，分别为各自栈顶元素在数组中的下标</span>
+<a id="__codelineno-36-16" name="__codelineno-36-16" href="#__codelineno-36-16"></a><span class="p">};</span>
+<a id="__codelineno-36-17" name="__codelineno-36-17" href="#__codelineno-36-17"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-36-18" name="__codelineno-36-18" href="#__codelineno-36-18"></a><span class="kt">void</span><span class="w"> </span><span class="n">BothStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Push</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">DataType</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-19" name="__codelineno-36-19" href="#__codelineno-36-19"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">top1</span><span class="o">==</span><span class="n">top2</span><span class="mi">-1</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;上溢&quot;</span><span class="p">;</span>
+<a id="__codelineno-36-20" name="__codelineno-36-20" href="#__codelineno-36-20"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="n">data</span><span class="p">[</span><span class="o">++</span><span class="n">top1</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-36-21" name="__codelineno-36-21" href="#__codelineno-36-21"></a><span class="w">    </span><span class="cm">/*即:</span>
+<a id="__codelineno-36-22" name="__codelineno-36-22" href="#__codelineno-36-22"></a><span class="cm">    top1++;</span>
+<a id="__codelineno-36-23" name="__codelineno-36-23" href="#__codelineno-36-23"></a><span class="cm">    data[top1] = x;</span>
+<a id="__codelineno-36-24" name="__codelineno-36-24" href="#__codelineno-36-24"></a><span class="cm">    */</span>
+<a id="__codelineno-36-25" name="__codelineno-36-25" href="#__codelineno-36-25"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span><span class="n">data</span><span class="p">[</span><span class="o">--</span><span class="n">top2</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-36-26" name="__codelineno-36-26" href="#__codelineno-36-26"></a><span class="w">    </span><span class="cm">/*即:</span>
+<a id="__codelineno-36-27" name="__codelineno-36-27" href="#__codelineno-36-27"></a><span class="cm">    top2--;</span>
+<a id="__codelineno-36-28" name="__codelineno-36-28" href="#__codelineno-36-28"></a><span class="cm">    data[top2] = x;</span>
+<a id="__codelineno-36-29" name="__codelineno-36-29" href="#__codelineno-36-29"></a><span class="cm">    */</span>
+<a id="__codelineno-36-30" name="__codelineno-36-30" href="#__codelineno-36-30"></a><span class="p">}</span>
+<a id="__codelineno-36-31" name="__codelineno-36-31" href="#__codelineno-36-31"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DataType</span><span class="o">&gt;</span>
+<a id="__codelineno-36-32" name="__codelineno-36-32" href="#__codelineno-36-32"></a><span class="n">DataType</span><span class="w"> </span><span class="n">BothStack</span><span class="o">&lt;</span><span class="n">DataType</span><span class="o">&gt;::</span><span class="n">Pop</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-33" name="__codelineno-36-33" href="#__codelineno-36-33"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-34" name="__codelineno-36-34" href="#__codelineno-36-34"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">top1</span><span class="o">==</span><span class="mi">-1</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;下溢&quot;</span><span class="p">;</span>
+<a id="__codelineno-36-35" name="__codelineno-36-35" href="#__codelineno-36-35"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">top1</span><span class="o">--</span><span class="p">];</span>
+<a id="__codelineno-36-36" name="__codelineno-36-36" href="#__codelineno-36-36"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-36-37" name="__codelineno-36-37" href="#__codelineno-36-37"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-38" name="__codelineno-36-38" href="#__codelineno-36-38"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">top2</span><span class="o">==</span><span class="n">StackSize</span><span class="p">)</span><span class="k">throw</span><span class="s">&quot;下溢&quot;</span><span class="p">;</span>
+<a id="__codelineno-36-39" name="__codelineno-36-39" href="#__codelineno-36-39"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">top2</span><span class="o">++</span><span class="p">];</span>
+<a id="__codelineno-36-40" name="__codelineno-36-40" href="#__codelineno-36-40"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-36-41" name="__codelineno-36-41" href="#__codelineno-36-41"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_41">双端队列<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
+<h4 id="_42">定义<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h4>
+<p>双端队列是队列的扩展，</p>
+<p>如果允许在队列的两端进行插人和删除操作，则称为双端队列；</p>
+<p>如果允许在两端插入但只允许在一端删除，则称为二进一出队列；</p>
+<p>如果只允许在一端插入但允许在两端删除，则称为一进二出队列。</p>
+<p>双端队列和普通队列一样，具有人队、出队、取队头元素等基本操作，不同的是必须指明操作的位置，其抽象数据类型定义如下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>ADT DoubleQueue
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>DataModel
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>    相邻元素具有前驱和后继关系，允许在队列的两端进行插入和删除操作
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>Operation
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>    InitQueue
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>        输入：无
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>        功能：初始化双端队列
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>        输出：一个空的双端队列
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>    DestroyQueue
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>        输人：无
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>        功能：队列的销毁
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>        输出：释放双端队列占用的存储空间
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a>    EnQueueHead
+<a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a>        输入：元素值x
+<a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>        功能：入队操作，将元素x插人到双端队列的队头输出：如果插入成功，双端队列的队头增加了一个元素
+<a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a>    EnQueueTail
+<a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a>        输人：元素值x
+<a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a>        功能：入队操作，将元素×插入到双端队列的队尾输出：如果插入成功，双端队列的队尾增加了一个元系
+<a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a>    DeQueueHead
+<a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a>        输入：无
+<a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a>        功能：出队操作，删除双端队列的队头元素
+<a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a>        输出：如果删除成功，将队头元素出队
+<a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a>    DeQueueTail
+<a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a>        输人：无
+<a id="__codelineno-37-25" name="__codelineno-37-25" href="#__codelineno-37-25"></a>        功能：出队操作，删除双端队列的队尾元素输出：如果删除成功，将队尾元素出队
+<a id="__codelineno-37-26" name="__codelineno-37-26" href="#__codelineno-37-26"></a>    GetHead
+<a id="__codelineno-37-27" name="__codelineno-37-27" href="#__codelineno-37-27"></a>        输人：无
+<a id="__codelineno-37-28" name="__codelineno-37-28" href="#__codelineno-37-28"></a>        功能：读取双端队列的队头元素
+<a id="__codelineno-37-29" name="__codelineno-37-29" href="#__codelineno-37-29"></a>        输出：若双端队列不空，返回队头元素
+<a id="__codelineno-37-30" name="__codelineno-37-30" href="#__codelineno-37-30"></a>    GetTail
+<a id="__codelineno-37-31" name="__codelineno-37-31" href="#__codelineno-37-31"></a>        输人：无
+<a id="__codelineno-37-32" name="__codelineno-37-32" href="#__codelineno-37-32"></a>        功能：读取双端队列的队尾元素
+<a id="__codelineno-37-33" name="__codelineno-37-33" href="#__codelineno-37-33"></a>        输出：若双端队列不空，返回队尾元素
+<a id="__codelineno-37-34" name="__codelineno-37-34" href="#__codelineno-37-34"></a>    Empty
+<a id="__codelineno-37-35" name="__codelineno-37-35" href="#__codelineno-37-35"></a>        输人：无
+<a id="__codelineno-37-36" name="__codelineno-37-36" href="#__codelineno-37-36"></a>        功能：判空操作，判断双端队列是否为空输出：如果双端队列为空，返回1，否则返回0。
+<a id="__codelineno-37-37" name="__codelineno-37-37" href="#__codelineno-37-37"></a>endADT
+</code></pre></div>
+<p>双端队列可以采用循环队列的存储方式，基本算法可以在循环队列的基础上修改而成。不同的是，在队头入队时，先将新元素插人到 front处，再把队头位置 front 在循环意义下减1；在队尾出队时，先将 rear 处的队尾元素暂存，再把队尾位置 rear 在循环意义下减1。</p>
+<h4 id="_43">完整代码<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>
+</code></pre></div>
+<h2 id="_44">应用举例<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h2>
+<h3 id="_45">括号匹配问题<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
+<h3 id="_46">表达式求值<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h3>
+<h2 id="_47">习题<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h2>
 
 
 

@@ -1192,6 +1192,8 @@ Reverse(0, n-1); //得到defghabc(逆置cbahgfed)
 
 ## 习题
 
+
+
 # 第三章
 
 ## 栈
@@ -1218,7 +1220,7 @@ Reverse(0, n-1); //得到defghabc(逆置cbahgfed)
 
 入栈时，栈顶位置top加1；出栈时，栈顶位置top减1
 
-## 顺序栈的实现
+### 顺序栈的实现
 
 ```c++
 #include <iostream>
@@ -1302,7 +1304,7 @@ int main() {
 }
 ```
 
-## 栈的链接存储结构及实现
+### 栈的链接存储结构及实现
 
 栈的链接存储结构称为链栈，通常用单链表表示，其节点结构与单链表的结点结构相同
 
@@ -1414,7 +1416,7 @@ int main() {
 }
 ```
 
-## 顺序栈和链栈的比较
+### 顺序栈和链栈的比较
 
 作为一般规律，当栈的使用过程中元素变化较大时，应该采用链栈，反之，应使用顺序栈
 
@@ -1424,7 +1426,7 @@ int main() {
 
 队列中的元素除了具有线性关系外，还具有==***先进先出***==的特性
 
-## 队列的顺序存储结构及实现
+### 队列的顺序存储结构及实现
 
 队列的顺序存储结构称为顺序队列。假设队列有n个元素，顺序队列把队列的所有元素存储在数组的前n个单元。如果把队头元素放在数组中下标为0的一端，则入队操作相当于追加，不需要移动元素，其时间性能为O(1)，但是出队操作的时间性能为O(n)，因为要保证剩下的n-1个元素仍然存储在数组的前n-1个单元，所有元素都要向前移动一个位置。
 
@@ -1434,7 +1436,7 @@ int main() {
 >
 > 这样约定的目的是方便运算，例如rear-front等于队列的长度。
 
-## 循环队列
+### 循环队列
 
 在顺序队列中，随着队列的插入和删除操作，整个队列向数组的高端移过去，从而产生了队列的“单向移动性”。当元素被插入到数组中下标最大的位置之后，数组空间就用尽了，尽管此时数组的低端还有空闲空间，这种现象叫做“假溢出”
 
@@ -1526,7 +1528,7 @@ int main() {
 }
 ```
 
-## 队列的链存储结构及实现
+### 队列的链存储结构及实现
 
 队列的链接存储结构称为链队列，通常用单链表表示，其结点结构与单链表的结点结构相同
 
@@ -1540,170 +1542,292 @@ struct Node {
 
 为了使空队列和非空队列的操作一致，链队列也加上头结点；为了操作上的方便，设置队头指针指向链队列的头结点，队尾指针指向终端结点
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```c++
+#include <iostream>
+using namespace std;
+template<typename DataType>
+struct Node {
+    DataType data;
+    Node<DataType>* next;
+};
+template <typename DataType>
+class LinkQueue {
+public:
+    LinkQueue();//构造函数，初始化空队列
+    ~LinkQueue();//析构函数
+    void EnQueue(DataType x);//入队
+    DataType DeQueue();//出队
+    DataType GetHead();//取队头元素
+    int Empty();//判断队列是否为空
+private:
+    Node<DataType> *front,*rear;//队头和队尾指针
+};
+
+template<typename DataType>
+LinkQueue<DataType>::LinkQueue() {
+    Node<DataType> *s=nullptr;
+    s=new Node<DataType>;
+    s->next=nullptr;
+    front=rear=s;//将队头指针和队尾指针都指向头结点s
+}
+template<typename DataType>
+LinkQueue<DataType>::~LinkQueue() {
+
+}
+template<typename DataType>
+void LinkQueue<DataType>::EnQueue(DataType x) {
+    Node<DataType> *s=nullptr;
+    s=new Node<DataType>;
+    s->data=x;s->next=nullptr;
+    rear->next=s;
+    rear=s;
+}
+template<typename DataType>
+DataType LinkQueue<DataType>::DeQueue() {
+    DataType x;
+    Node<DataType> *p=nullptr;
+    if(rear==front)throw"下溢";
+    p=front->next;x=p->data;
+    front->next=p->next;
+    if(p->next==nullptr){//出队前队列长度为1
+        rear=front;
+    }
+    delete p;
+    return x;
+}
+template<typename DataType>
+DataType LinkQueue<DataType>::GetHead() {
+    return front->next->data;
+}
+template<typename DataType>
+int LinkQueue<DataType>::Empty() {
+    if(front==rear) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+```
+
+```c++
+int main() {
+    int x;
+    LinkQueue<int> Q{};
+    Q.EnQueue(5);Q.EnQueue(8);
+    cout<<"当前队头元素为："<<Q.GetHead()<<endl;
+    try {
+        x=Q.DeQueue();
+        cout<<"执行一次出队操作，出队元素是："<<x<<endl;
+    }catch (char *str){cout<<str<<endl;}
+    try {
+        cout<<"请输入入队元素:";
+        cin>>x;
+        Q.EnQueue(x);
+    }catch (char *str){cout<<str<<endl;}
+    if(Q.Empty()==1) {
+        cout<<"队列为空"<<endl;
+    }
+    else {
+        cout<<"队列非空"<<endl;
+    }
+    return 0;
+}
+```
+
+### 循环队列和链队列的比较
+
+循环队列和链队列基本操作的时间复杂度均为O(1)，因此可以比较的只有空间性能。作为一般规律，当队列中元素个数变化较大时，应采用链队列，反之，应该采用循环队列，如果确定不会发生假溢出，也可以采用顺序队列
+
+## 扩展与提高
+
+### 两栈共享空间
+
+在一个程序中，如果同时使用具有相同数据类型的两个顺序栈，最直接的方法是为每个栈开辟一个数组空间，这样做的结果可能出现一个栈的空间已被占满而无法再进行插入操作，同时另一个栈的空间仍有大量剩余而没有得到利用的情况，从而造成存储空间的浪费。
+
+可以充分利用顺序栈单向延伸的特性，使用一个数组来存储两个栈，让一个栈的栈底位于该数组的始端，另一个栈的栈底位于该数组的末端，每个栈从各自的端点向中间延伸。
+
+其中，topl 和 top2分别为栈1 和栈2 的栈顶位置，StackSize 为整个数组空间的大小，栈1的底位于下标为。的一端；栈2的底位于下标为 StackSize一1 的一端。
+
+在两栈共享空间中，由于两个栈相向增长，浪费的数组空间就会减少，同时发生上溢的概率也会减少。**但是，只有当两个栈的空间需求有相反的关系时，这种方法才会奏效，也就是说，最好一个栈增长时另一个栈缩短。**下面给出两栈共享空间的类定义：
+
+```c++
+const int StackSize=100;
+template <typename DataType>
+class BothStack {
+public:
+    BothStack();//构造函数，将两个栈分别初始化
+    ~BothStack();
+    void Push(int i,DataType x);//入栈操作，将元素x压入栈i
+    DataType Pop(int i);//出栈操作，对栈i执行出栈操作
+    DataType GetTop(int i);//取栈i的栈顶元素
+    int Empty(int i);//判断栈i是否为空栈
+private:
+    DataType data[StackSize];//存放两个栈的数组
+    int top1,top2;//两个栈的栈顶指针，分别为各自栈顶元素在数组中的下标
+};
+```
+
+设整型变量i只取1和2两个值。当i=1时，表示对栈1操作；当i=2时，表示对栈2操作
+
+下面讨论两栈共享空间的入栈和出栈操作：
+
+#### 入栈
+
+当存储栈的数组中没用空闲单元时为栈满，此时栈1的栈顶元素和栈2的栈顶元素位于数组中的相邻位置，即top1=top2-1。另外，当新元素插入栈2时，栈顶位置top2不是加一而是减一
+
+```c++
+template<typename DataType>
+void BothStack<DataType>::Push(int i, DataType x) {
+    if(top1==top2-1)throw"上溢";
+    if(i==1)data[++top1]=x;
+    /*即:
+    top1++;
+    data[top1] = x;
+    */
+    if(i==2)data[--top2]=x;
+    /*即:
+    top2--;
+    data[top2] = x;
+    */
+}
+```
+
+#### 出栈
+
+当top1=-1时栈1为空，当top2=StackSize时栈2为空。另外，当从栈2删除元素时，top2不是减一而是加一
+
+```c++
+template<typename DataType>
+DataType BothStack<DataType>::Pop(int i) {
+    if(i==1) {
+        if(top1==-1)throw"下溢";
+        return data[top1--];
+    }
+    if(i==2) {
+        if(top2==StackSize)throw"下溢";
+        return data[top2++];
+    }
+}
+```
+
+#### 完整代码
+
+```c++
+#include<iostream>
+using namespace std;
+const int StackSize=100;
+template <typename DataType>
+class BothStack {
+public:
+    BothStack();//构造函数，将两个栈分别初始化
+    ~BothStack();
+    void Push(int i,DataType x);//入栈操作，将元素x压入栈i
+    DataType Pop(int i);//出栈操作，对栈i执行出栈操作
+    DataType GetTop(int i);//取栈i的栈顶元素
+    int Empty(int i);//判断栈i是否为空栈
+private:
+    DataType data[StackSize];//存放两个栈的数组
+    int top1,top2;//两个栈的栈顶指针，分别为各自栈顶元素在数组中的下标
+};
+template<typename DataType>
+void BothStack<DataType>::Push(int i, DataType x) {
+    if(top1==top2-1)throw"上溢";
+    if(i==1)data[++top1]=x;
+    /*即:
+    top1++;
+    data[top1] = x;
+    */
+    if(i==2)data[--top2]=x;
+    /*即:
+    top2--;
+    data[top2] = x;
+    */
+}
+template<typename DataType>
+DataType BothStack<DataType>::Pop(int i) {
+    if(i==1) {
+        if(top1==-1)throw"下溢";
+        return data[top1--];
+    }
+    if(i==2) {
+        if(top2==StackSize)throw"下溢";
+        return data[top2++];
+    }
+}
+```
+
+### 双端队列
+
+#### 定义
+
+双端队列是队列的扩展，
+
+如果允许在队列的两端进行插人和删除操作，则称为双端队列；
+
+如果允许在两端插入但只允许在一端删除，则称为二进一出队列；
+
+如果只允许在一端插入但允许在两端删除，则称为一进二出队列。
+
+双端队列和普通队列一样，具有人队、出队、取队头元素等基本操作，不同的是必须指明操作的位置，其抽象数据类型定义如下：
+
+```ADT
+ADT DoubleQueue
+DataModel
+	相邻元素具有前驱和后继关系，允许在队列的两端进行插入和删除操作
+Operation
+	InitQueue
+		输入：无
+		功能：初始化双端队列
+		输出：一个空的双端队列
+	DestroyQueue
+		输人：无
+		功能：队列的销毁
+		输出：释放双端队列占用的存储空间
+	EnQueueHead
+		输入：元素值x
+		功能：入队操作，将元素x插人到双端队列的队头输出：如果插入成功，双端队列的队头增加了一个元素
+	EnQueueTail
+		输人：元素值x
+		功能：入队操作，将元素×插入到双端队列的队尾输出：如果插入成功，双端队列的队尾增加了一个元系
+	DeQueueHead
+		输入：无
+		功能：出队操作，删除双端队列的队头元素
+		输出：如果删除成功，将队头元素出队
+	DeQueueTail
+		输人：无
+		功能：出队操作，删除双端队列的队尾元素输出：如果删除成功，将队尾元素出队
+	GetHead
+		输人：无
+		功能：读取双端队列的队头元素
+		输出：若双端队列不空，返回队头元素
+	GetTail
+		输人：无
+		功能：读取双端队列的队尾元素
+		输出：若双端队列不空，返回队尾元素
+	Empty
+		输人：无
+		功能：判空操作，判断双端队列是否为空输出：如果双端队列为空，返回1，否则返回0。
+endADT
+```
+
+双端队列可以采用循环队列的存储方式，基本算法可以在循环队列的基础上修改而成。不同的是，在队头入队时，先将新元素插人到 front处，再把队头位置 front 在循环意义下减1；在队尾出队时，先将 rear 处的队尾元素暂存，再把队尾位置 rear 在循环意义下减1。
+
+#### 完整代码
+
+```C++
+
+```
+
+## 应用举例
+
+### 括号匹配问题
+
+
+
+### 表达式求值
+
+
+
+## 习题
 
