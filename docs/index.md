@@ -61,3 +61,9 @@ hide:
 本项目采用 [MIT](https://opensource.org/license/MIT)许可证，详情请参阅  [MIT](https://opensource.org/license/MIT)。
 
 (仅限原创部分，其中使用了其他开源项目的内容，请遵循原项目的协议。)
+
+------
+
+## **特别感谢**
+
+"数据结构与算法入门"由“月隐云纱”和”sunshine“两位同学整理，感谢他们的付出。
