@@ -1182,11 +1182,60 @@ Reverse(i, n-1); //得到cbahgfed(逆置defgh)
 Reverse(0, n-1); //得到defghabc(逆置cbahgfed)
 ```
 
-其原理可以用一个简单的游戏来理解：将两手的掌心对着自己，左手在右手上面， 可以实现将一个具有10 个元素的数组向左循环移动5位，如图所示。![](img\1358339139_6806.jpg)
+其原理可以用一个简单的游戏来理解：将两手的掌心对着自己，左手在右手上面， 可以实现将一个具有10 个元素的数组向左循环移动5位，如图所示。
+
+![](img\1358339139_6806.jpg)
+
+```c++
+#include <iostream>
+using namespace std;
+void reverseArr(int A[],int start,int rear){
+    for(int i=start,j=rear;i<j;i++,j--) {
+        int t=A[i];
+        A[i]=A[j];
+        A[j]=t;
+    }
+}
+void leftCir(int A[],int n,int k){
+    if(k<=0 || k>=n)
+        cout<<"ERROR"<<endl;
+    else{
+        reverseArr(A,0,k-1);
+        reverseArr(A,k,n-1);
+        reverseArr(A,0,n-1);
+    }
+}
+void show(int A[],int n){
+    for(int i=0;i<n;++i)
+        cout<<A[i]<<" ";
+    cout<<endl;
+}
+int main()
+{
+    int n,p;
+    cin>>n>>p;
+    int a[n];
+    for(int i=0;i<n;++i)
+        cin>>a[i];
+    leftCir(a,n,p);
+    show(a,n);
+    return 0;
+}
+```
 
 该算法在时间和空间上都很有效，并且是这么简短和简单，想出错都很难。 Brian Kernighan在Software Tools in Pascal中使用了这个算法在文本编辑器中移动各行。
 
 [Software tools in Pascal by Brian W. Kernighan | 开放图书馆 (openlibrary.org)](https://openlibrary.org/books/OL4258115M/Software_tools_in_Pascal)
+
+> Brian Kernighan 在他的著作 *Software Tools in Pascal* 中，讨论了一个将 n 个元素的数组向左循环移动 i 个位置的算法。原文如下：
+>
+> "To rotate an array left by i positions, reverse the first i elements, then reverse the remaining n-i elements, and finally reverse the entire array."
+>
+> 翻译过来大致是：
+>
+> “要将一个数组向左循环移动 i 个位置，首先反转数组的前 i 个元素，然后反转剩下的 n-i 个元素，最后反转整个数组。”
+>
+> 这种方法基于三个步骤的反转操作，可以高效地完成数组的左循环移动。
 
 作为一个规律，一个好的算法是反复努力和重新修正的结果，即使足够幸运地得到了一个貌似完美的算法思想， 我们也应该尝试着改进它。 
 
