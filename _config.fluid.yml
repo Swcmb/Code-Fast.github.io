@@ -240,9 +240,7 @@ custom_js: /js/music.js
 custom_css:
 
 # 自定义底部 HTML 内容（位于 footer 上方），也可用于外部引入 js css 这些操作，注意不要和 post.custom 配置冲突
-custom_html: '<link rel="stylesheet" href="APlayer.min.css">
-<div id="aplayer"></div>
-<script src="APlayer.min.js"></script>'
+custom_html: '<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1478626435&auto=1&height=66"></iframe>'
 
 # 网页访问统计
 # Analysis of website visitors
